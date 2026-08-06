@@ -198,12 +198,32 @@
   <!-- Main Content Area -->
   <main class="container">
 
-    <!-- Navigation Buttons -->
+    <!-- Navigation Buttons (Resources -> Reviews -> Subscriptions) -->
     <nav class="nav-bar">
-      <button class="nav-btn" onclick="scrollToSection('subscriptions')">Subscriptions</button>
-      <button class="nav-btn" onclick="scrollToSection('reviews')">Reviews</button>
       <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
+      <button class="nav-btn" onclick="scrollToSection('reviews')">Reviews</button>
+      <button class="nav-btn" onclick="scrollToSection('subscriptions')">Subscriptions</button>
     </nav>
+
+    <!-- Resources Section -->
+    <section id="resources" class="panel">
+      <h3 class="panel-title">Resources</h3>
+      <ul class="resource-list">
+        <li><a href="#" class="resource-link">Hyperlink placeholder 1</a></li>
+        <li><a href="#" class="resource-link">Hyperlink placeholder 2</a></li>
+      </ul>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="panel">
+      <h3 class="panel-title">Reviews</h3>
+      <div class="reviews-grid">
+        <div class="review-card">Placeholder text</div>
+        <div class="review-card">Placeholder text</div>
+        <div class="review-card">Placeholder text</div>
+        <div class="review-card">Placeholder text</div>
+      </div>
+    </section>
 
     <!-- Subscriptions Section -->
     <section id="subscriptions" class="panel">
@@ -218,26 +238,6 @@
           <div class="price-placeholder">placeholder text</div>
         </div>
       </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="panel">
-      <h3 class="panel-title">Reviews</h3>
-      <div class="reviews-grid">
-        <div class="review-card">Placeholder text</div>
-        <div class="review-card">Placeholder text</div>
-        <div class="review-card">Placeholder text</div>
-        <div class="review-card">Placeholder text</div>
-      </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="panel">
-      <h3 class="panel-title">Resources</h3>
-      <ul class="resource-list">
-        <li><a href="#" class="resource-link">Hyperlink placeholder 1</a></li>
-        <li><a href="#" class="resource-link">Hyperlink placeholder 2</a></li>
-      </ul>
     </section>
 
   </main>
