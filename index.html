@@ -22,15 +22,17 @@
     header {
       background-color: #4A4A4A; /* Gray background */
       color: #ffffff; /* White text */
-      padding: 40px 20px;
+      padding: 16px 20px 40px 20px;
       text-align: center;
-      position: relative;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
     }
 
     .login-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
       background-color: transparent;
       border: 1px solid #ffffff;
       color: #ffffff;
@@ -74,15 +76,16 @@
     .nav-bar {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin-bottom: 40px;
+      flex-wrap: wrap; /* Allows buttons to wrap cleanly on small phones */
     }
 
     .nav-btn {
       background-color: #007BFF; /* Blue buttons */
       color: #ffffff;
       border: none;
-      padding: 12px 28px;
+      padding: 12px 24px;
       border-radius: 6px;
       font-size: 1rem;
       font-weight: bold;
@@ -121,7 +124,8 @@
       border: 1px solid #CCCCCC;
       border-radius: 12px; /* Inner panels, rounded corners */
       padding: 24px;
-      width: 180px;
+      width: 100%;
+      max-width: 180px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
@@ -150,8 +154,7 @@
       border: 1px solid #CCCCCC;
       border-radius: 8px;
       padding: 15px;
-      flex: 1;
-      min-width: 180px;
+      flex: 1 1 140px;
       text-align: center;
       color: #666666;
       font-size: 0.9rem;
@@ -180,23 +183,29 @@
 </head>
 <body>
 
+  <!-- Header Section -->
   <header>
-    <button class="login-btn" onclick="handleLogin()">
-      <span>👤</span> Login
-    </button>
+    <div class="top-bar">
+      <button class="login-btn" onclick="handleLogin()">
+        <span>👤</span> Login
+      </button>
+    </div>
     <h1 class="hero-title">Ever Upwards!</h1>
     <h2 class="hero-subtitle">Your success is our Mission</h2>
     <p class="hero-cta">Get Started Today!</p>
   </header>
 
+  <!-- Main Content Area -->
   <main class="container">
 
+    <!-- Navigation Buttons -->
     <nav class="nav-bar">
       <button class="nav-btn" onclick="scrollToSection('subscriptions')">Subscriptions</button>
       <button class="nav-btn" onclick="scrollToSection('reviews')">Reviews</button>
       <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
     </nav>
 
+    <!-- Subscriptions Section -->
     <section id="subscriptions" class="panel">
       <h3 class="panel-title">Subscriptions</h3>
       <div class="pricing-grid">
@@ -211,6 +220,7 @@
       </div>
     </section>
 
+    <!-- Reviews Section -->
     <section id="reviews" class="panel">
       <h3 class="panel-title">Reviews</h3>
       <div class="reviews-grid">
@@ -221,6 +231,7 @@
       </div>
     </section>
 
+    <!-- Resources Section -->
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
@@ -231,8 +242,8 @@
 
   </main>
 
+  <!-- JavaScript Logic -->
   <script>
-    // Smooth scrolling to sections when buttons are clicked
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -240,7 +251,6 @@
       }
     }
 
-    // Login button action placeholder
     function handleLogin() {
       alert('Login clicked! Connect this to your Supabase auth login.');
     }
