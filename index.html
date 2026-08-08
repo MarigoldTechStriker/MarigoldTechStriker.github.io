@@ -207,7 +207,7 @@
       padding: 30px;
       border-radius: 16px;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       position: relative;
       animation: modalPop 0.2s ease-in-out;
@@ -232,10 +232,27 @@
     }
 
     .modal-body {
-      font-size: 1rem;
-      color: #666666;
+      font-size: 0.95rem;
+      color: #444444;
       line-height: 1.5;
       margin-bottom: 25px;
+    }
+
+    .modal-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .modal-list li {
+      margin-bottom: 8px;
+    }
+
+    .refund-note {
+      font-size: 0.85rem;
+      color: #888888;
+      font-style: italic;
+      margin-top: 10px;
     }
 
     .modal-close-btn {
@@ -302,16 +319,16 @@
     <section id="subscriptions" class="panel">
       <h3 class="panel-title">Subscriptions</h3>
       <div class="pricing-grid">
-        <div class="price-card" onclick="openModal('$400 Plan', 'This is the placeholder text for the $400 yearly subscription plan features and details.')">
+        <div class="price-card" onclick="openModal('plan400')">
           <div class="price-amount">$400</div>
           <div class="price-placeholder">(yearly + 2 months free)</div>
         </div>
-        <div class="price-card" onclick="openModal('$30 Plan', 'This is the placeholder text for the $30 monthly subscription plan features and details.')">
-          <div class="price-amount">$30</div>
+        <div class="price-card" onclick="openModal('plan40')">
+          <div class="price-amount">$40</div>
           <div class="price-placeholder">(monthly)</div>
         </div>
-        <div class="price-card" onclick="openModal('$40 Plan', 'This is the placeholder text for the $40 monthly subscription plan features and details.')">
-          <div class="price-amount">$40</div>
+        <div class="price-card" onclick="openModal('plan30')">
+          <div class="price-amount">$30</div>
           <div class="price-placeholder">(monthly)</div>
         </div>
       </div>
@@ -342,10 +359,56 @@
       alert('Login clicked! Connect this to your Supabase auth login.');
     }
 
+    // Subscription Options Data
+    const planDetails = {
+      plan400: {
+        title: '$400 Plan',
+        features: [
+          'Unlimited computer-adaptive tests a week',
+          'Unlimited English and mathematics lesson practices',
+          'Tailored study plan and weakness remediation',
+          'Track your historical progress',
+          '2 months on us'
+        ],
+        refund: 'No refunds'
+      },
+      plan40: {
+        title: '$40 Plan',
+        features: [
+          'Unlimited computer-adaptive tests a week',
+          'Unlimited English and mathematics lesson practices',
+          'Tailored study plan and weakness remediation',
+          'Track your historical progress'
+        ],
+        refund: 'No refunds'
+      },
+      plan30: {
+        title: '$30 Plan',
+        features: [
+          '3 computer-adaptive tests a week',
+          'Unlimited English and mathematics lesson practices',
+          'Tailored study plan',
+          'Track your historical progress'
+        ],
+        refund: 'No refunds'
+      }
+    };
+
     // Modal Functions
-    function openModal(title, text) {
-      document.getElementById('modalHeader').innerText = title;
-      document.getElementById('modalBody').innerText = text;
+    function openModal(planKey) {
+      const plan = planDetails[planKey];
+      if (!plan) return;
+
+      document.getElementById('modalHeader').innerText = plan.title;
+
+      let html = '<ul class="modal-list">';
+      plan.features.forEach(item => {
+        html += `<li>${item}</li>`;
+      });
+      html += '</ul>';
+      html += `<p class="refund-note">${plan.refund}</p>`;
+
+      document.getElementById('modalBody').innerHTML = html;
       document.getElementById('subscriptionModal').style.display = 'flex';
     }
 
