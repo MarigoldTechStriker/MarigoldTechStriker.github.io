@@ -78,7 +78,7 @@
       justify-content: center;
       gap: 15px;
       margin-bottom: 40px;
-      flex-wrap: wrap; /* Allows buttons to wrap cleanly on small phones */
+      flex-wrap: wrap; 
     }
 
     .nav-btn {
@@ -128,6 +128,13 @@
       max-width: 180px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-3px);
+      border-color: #007BFF;
     }
 
     .price-amount {
@@ -179,6 +186,72 @@
     .resource-link:hover {
       color: #0056b3;
     }
+
+    /* Popup Modal Styles */
+    .modal-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      position: relative;
+      animation: modalPop 0.2s ease-in-out;
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    .modal-line {
+      height: 2px;
+      background-color: #E0E0E0;
+      margin-bottom: 20px;
+    }
+
+    .modal-body {
+      font-size: 1rem;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .modal-close-btn {
+      background-color: #007BFF;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .modal-close-btn:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -198,7 +271,7 @@
   <!-- Main Content Area -->
   <main class="container">
 
-    <!-- Navigation Buttons (Resources -> Reviews -> Subscriptions) -->
+    <!-- Navigation Buttons -->
     <nav class="nav-bar">
       <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
       <button class="nav-btn" onclick="scrollToSection('reviews')">Reviews</button>
@@ -229,15 +302,15 @@
     <section id="subscriptions" class="panel">
       <h3 class="panel-title">Subscriptions</h3>
       <div class="pricing-grid">
-          <div class="price-card">
+        <div class="price-card" onclick="openModal('$400 Plan', 'This is the placeholder text for the $400 yearly subscription plan features and details.')">
           <div class="price-amount">$400</div>
           <div class="price-placeholder">(yearly + 2 months free)</div>
         </div>
-        <div class="price-card">
+        <div class="price-card" onclick="openModal('$30 Plan', 'This is the placeholder text for the $30 monthly subscription plan features and details.')">
           <div class="price-amount">$30</div>
           <div class="price-placeholder">(monthly)</div>
         </div>
-        <div class="price-card">
+        <div class="price-card" onclick="openModal('$40 Plan', 'This is the placeholder text for the $40 monthly subscription plan features and details.')">
           <div class="price-amount">$40</div>
           <div class="price-placeholder">(monthly)</div>
         </div>
@@ -245,6 +318,16 @@
     </section>
 
   </main>
+
+  <!-- Custom Popup Modal Structure -->
+  <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
+    <div class="modal-content">
+      <div id="modalHeader" class="modal-header">Subscription Header</div>
+      <div class="modal-line"></div>
+      <div id="modalBody" class="modal-body">Placeholder text</div>
+      <button class="modal-close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
   <!-- JavaScript Logic -->
   <script>
@@ -257,6 +340,24 @@
 
     function handleLogin() {
       alert('Login clicked! Connect this to your Supabase auth login.');
+    }
+
+    // Modal Functions
+    function openModal(title, text) {
+      document.getElementById('modalHeader').innerText = title;
+      document.getElementById('modalBody').innerText = text;
+      document.getElementById('subscriptionModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('subscriptionModal').style.display = 'none';
+    }
+
+    function closeModalOutside(event) {
+      const modal = document.getElementById('subscriptionModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
     }
   </script>
 
