@@ -57,12 +57,31 @@
     .hero-subtitle {
       font-size: 1.4rem;
       font-weight: normal;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
-    .hero-cta {
-      font-size: 1.5rem;
+    .hero-cta-text {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #E0E0E0;
+    }
+
+    .diagnostic-btn {
+      background-color: #28A745; /* Green CTA for Diagnostic */
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1.1rem;
       font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .diagnostic-btn:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
     }
 
     /* Main Container */
@@ -111,11 +130,11 @@
       margin-bottom: 20px;
     }
 
-    /* Subscriptions Grid */
+    /* Subscriptions Grid - Centered */
     .pricing-grid {
       display: flex;
       gap: 20px;
-      justify-content: flex-start;
+      justify-content: center; /* Centered cards */
       flex-wrap: wrap;
     }
 
@@ -255,19 +274,34 @@
       margin-top: 10px;
     }
 
-    .modal-close-btn {
+    .modal-action-btn {
       background-color: #007BFF;
       color: #ffffff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 20px;
       border-radius: 6px;
       font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .modal-action-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .modal-close-btn {
+      background-color: transparent;
+      color: #666666;
+      border: 1px solid #CCCCCC;
+      padding: 8px 20px;
+      border-radius: 6px;
       cursor: pointer;
       width: 100%;
     }
 
     .modal-close-btn:hover {
-      background-color: #0056b3;
+      background-color: #F0F0F0;
     }
   </style>
 </head>
@@ -282,7 +316,10 @@
     </div>
     <h1 class="hero-title">Ever Upwards!</h1>
     <h2 class="hero-subtitle">Your success is our Mission</h2>
-    <p class="hero-cta">Get Started Today!</p>
+    <p class="hero-cta-text">Get Started Today!</p>
+    <button class="diagnostic-btn" onclick="openDiagnosticModal()">
+      🎯 Take Free Diagnostic Test
+    </button>
   </header>
 
   <!-- Main Content Area -->
@@ -299,8 +336,8 @@
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
-        <li><a href="#" class="resource-link">Hyperlink placeholder 1</a></li>
-        <li><a href="#" class="resource-link">Hyperlink placeholder 2</a></li>
+        <li><a href="#" class="resource-link" onclick="openDiagnosticModal()">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
+        <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
 
@@ -342,7 +379,9 @@
       <div id="modalHeader" class="modal-header">Subscription Header</div>
       <div class="modal-line"></div>
       <div id="modalBody" class="modal-body">Placeholder text</div>
-      <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      <div id="modalFooter">
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      </div>
     </div>
   </div>
 
@@ -409,7 +448,37 @@
       html += `<p class="refund-note">${plan.refund}</p>`;
 
       document.getElementById('modalBody').innerHTML = html;
+      document.getElementById('modalFooter').innerHTML = `
+        <button class="modal-action-btn" onclick="alert('Proceeding to checkout...')">Subscribe Now</button>
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      `;
       document.getElementById('subscriptionModal').style.display = 'flex';
+    }
+
+    function openDiagnosticModal() {
+      document.getElementById('modalHeader').innerText = 'Free Diagnostic Test';
+      
+      let html = `
+        <p style="margin-bottom: 12px;"><strong>See where you stand without spending a dollar!</strong></p>
+        <ul class="modal-list">
+          <li>15-question Math & ELA evaluation</li>
+          <li>Instant estimated SHSAT score breakdown</li>
+          <li>Detailed topic weakness report</li>
+          <li>100% free with no credit card required</li>
+        </ul>
+      `;
+
+      document.getElementById('modalBody').innerHTML = html;
+      document.getElementById('modalFooter').innerHTML = `
+        <button class="modal-action-btn" style="background-color: #28A745;" onclick="startDiagnostic()">Start Free Diagnostic Now</button>
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      `;
+      document.getElementById('subscriptionModal').style.display = 'flex';
+    }
+
+    function startDiagnostic() {
+      closeModal();
+      alert('Starting your Free Diagnostic Test...');
     }
 
     function closeModal() {
