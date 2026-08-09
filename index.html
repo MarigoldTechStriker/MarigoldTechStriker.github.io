@@ -127,15 +127,53 @@
 
     .panel-title {
       font-size: 1.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
 
-    /* Subscriptions Grid - Centered */
-    .pricing-grid {
+    .panel-subtitle {
+      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 25px;
+    }
+
+    /* Sketch Layout: Subscriptions Split View */
+    .subscription-container {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      position: relative;
+      gap: 30px;
+    }
+
+    .subscription-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .column-header {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+
+    .column-cards {
       display: flex;
       gap: 20px;
-      justify-content: center; /* Centered cards */
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
+      width: 100%;
+    }
+
+    /* Centered Vertical Divider Line */
+    .centered-divider {
+      width: 2px;
+      background-color: #CCCCCC;
+      align-self: stretch;
     }
 
     .price-card {
@@ -144,7 +182,7 @@
       border-radius: 12px; /* Inner panels, rounded corners */
       padding: 24px;
       width: 100%;
-      max-width: 180px;
+      max-width: 160px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       cursor: pointer;
@@ -337,6 +375,18 @@
     .modal-close-btn:hover {
       background-color: #F0F0F0;
     }
+
+    /* Responsive adjustment for mobile screens */
+    @media (max-width: 600px) {
+      .subscription-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .centered-divider {
+        width: 100%;
+        height: 2px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -386,21 +436,39 @@
       </div>
     </section>
 
-    <!-- Subscriptions Section -->
+    <!-- Subscriptions Section (Matched to Sketch) -->
     <section id="subscriptions" class="panel">
-      <h3 class="panel-title">Subscriptions</h3>
-      <div class="pricing-grid">
-        <div class="price-card" onclick="openModal('plan400')">
-          <div class="price-amount">$400</div>
-          <div class="price-placeholder">(yearly + 2 months free)</div>
+      <h3 class="panel-title">Subscription</h3>
+      <p class="panel-subtitle">&gt; click on card for details &lt;</p>
+
+      <div class="subscription-container">
+        <!-- Left Side: Yearly -->
+        <div class="subscription-column">
+          <div class="column-header">Yearly</div>
+          <div class="column-cards">
+            <div class="price-card" onclick="openModal('plan400')">
+              <div class="price-amount">$400</div>
+              <div class="price-placeholder">(yearly + 2 months free)</div>
+            </div>
+          </div>
         </div>
-        <div class="price-card" onclick="openModal('plan40')">
-          <div class="price-amount">$40</div>
-          <div class="price-placeholder">(monthly)</div>
-        </div>
-        <div class="price-card" onclick="openModal('plan30')">
-          <div class="price-amount">$30</div>
-          <div class="price-placeholder">(monthly)</div>
+
+        <!-- Centered Vertical Divider -->
+        <div class="centered-divider"></div>
+
+        <!-- Right Side: Monthly -->
+        <div class="subscription-column">
+          <div class="column-header">Monthly</div>
+          <div class="column-cards">
+            <div class="price-card" onclick="openModal('plan40')">
+              <div class="price-amount">$40</div>
+              <div class="price-placeholder">(monthly)</div>
+            </div>
+            <div class="price-card" onclick="openModal('plan30')">
+              <div class="price-amount">$30</div>
+              <div class="price-placeholder">(monthly)</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -514,10 +582,9 @@
     }
 
     function navigatePlan(direction) {
-      if (isDiagnosticMode) return; // Don't navigate if viewing diagnostic info
+      if (isDiagnosticMode) return;
 
       currentPlanIndex += direction;
-      // Cycle through plans seamlessly
       if (currentPlanIndex < 0) {
         currentPlanIndex = planKeys.length - 1;
       } else if (currentPlanIndex >= planKeys.length) {
@@ -547,7 +614,6 @@
         <button class="modal-close-btn" onclick="closeModal()">Close</button>
       `;
 
-      // Hide side navigation arrows for diagnostic modal
       document.getElementById('prevBtn').style.visibility = 'hidden';
       document.getElementById('nextBtn').style.visibility = 'hidden';
 
