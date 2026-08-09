@@ -221,12 +221,46 @@
       padding: 20px;
     }
 
+    /* Wrapper for modal content + side navigation arrows */
+    .modal-container-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .modal-nav-arrow {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #CCCCCC;
+      color: #333333;
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .modal-nav-arrow:hover {
+      background-color: #007BFF;
+      color: #ffffff;
+      border-color: #007BFF;
+      transform: scale(1.05);
+    }
+
     .modal-content {
       background-color: #ffffff;
       padding: 30px;
       border-radius: 16px;
       width: 100%;
-      max-width: 420px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       position: relative;
       animation: modalPop 0.2s ease-in-out;
@@ -336,6 +370,8 @@
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
+        <li><a href="#" class="resource-link" onclick="openDiagnosticModal()">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
+        <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
 
@@ -371,15 +407,21 @@
 
   </main>
 
-  <!-- Custom Popup Modal Structure -->
+  <!-- Custom Popup Modal Structure with Nav Arrows -->
   <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
-    <div class="modal-content">
-      <div id="modalHeader" class="modal-header">Subscription Header</div>
-      <div class="modal-line"></div>
-      <div id="modalBody" class="modal-body">Placeholder text</div>
-      <div id="modalFooter">
-        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+    <div class="modal-container-wrapper">
+      <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
+      
+      <div class="modal-content">
+        <div id="modalHeader" class="modal-header">Subscription Header</div>
+        <div class="modal-line"></div>
+        <div id="modalBody" class="modal-body">Placeholder text</div>
+        <div id="modalFooter">
+          <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
       </div>
+
+      <button id="nextBtn" class="modal-nav-arrow" onclick="navigatePlan(1)">&gt;</button>
     </div>
   </div>
 
@@ -395,6 +437,11 @@
     function handleLogin() {
       alert('Login clicked! Connect this to your Supabase auth login.');
     }
+
+    // Ordered list of subscription plan keys for navigation
+    const planKeys = ['plan400', 'plan40', 'plan30'];
+    let currentPlanIndex = 0;
+    let isDiagnosticMode = false;
 
     // Subscription Options Data
     const planDetails = {
@@ -431,8 +478,8 @@
       }
     };
 
-    // Modal Functions
-    function openModal(planKey) {
+    // Render Modal Content
+    function renderPlanModal(planKey) {
       const plan = planDetails[planKey];
       if (!plan) return;
 
@@ -450,10 +497,38 @@
         <button class="modal-action-btn" onclick="alert('Proceeding to checkout...')">Subscribe Now</button>
         <button class="modal-close-btn" onclick="closeModal()">Close</button>
       `;
+
+      // Show side navigation arrows for subscription plans
+      document.getElementById('prevBtn').style.visibility = 'visible';
+      document.getElementById('nextBtn').style.visibility = 'visible';
+    }
+
+    // Modal Opening Functions
+    function openModal(planKey) {
+      isDiagnosticMode = false;
+      currentPlanIndex = planKeys.indexOf(planKey);
+      if (currentPlanIndex === -1) currentPlanIndex = 0;
+
+      renderPlanModal(planKeys[currentPlanIndex]);
       document.getElementById('subscriptionModal').style.display = 'flex';
     }
 
+    function navigatePlan(direction) {
+      if (isDiagnosticMode) return; // Don't navigate if viewing diagnostic info
+
+      currentPlanIndex += direction;
+      // Cycle through plans seamlessly
+      if (currentPlanIndex < 0) {
+        currentPlanIndex = planKeys.length - 1;
+      } else if (currentPlanIndex >= planKeys.length) {
+        currentPlanIndex = 0;
+      }
+
+      renderPlanModal(planKeys[currentPlanIndex]);
+    }
+
     function openDiagnosticModal() {
+      isDiagnosticMode = true;
       document.getElementById('modalHeader').innerText = 'Free Diagnostic Test';
       
       let html = `
@@ -471,6 +546,11 @@
         <button class="modal-action-btn" style="background-color: #28A745;" onclick="startDiagnostic()">Start Free Diagnostic Now</button>
         <button class="modal-close-btn" onclick="closeModal()">Close</button>
       `;
+
+      // Hide side navigation arrows for diagnostic modal
+      document.getElementById('prevBtn').style.visibility = 'hidden';
+      document.getElementById('nextBtn').style.visibility = 'hidden';
+
       document.getElementById('subscriptionModal').style.display = 'flex';
     }
 
