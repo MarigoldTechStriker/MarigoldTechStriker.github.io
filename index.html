@@ -18,51 +18,54 @@
       color: #333333;
     }
 
-    /* Header / Hero Section */
+    /* Larger Header / Hero Section */
     header {
-      background-color: #1B3B6F; /* Blue background */
-      color: #ffffff; /* White text */
-      padding: 16px 20px 40px 20px;
+      background-color: #1B3B6F; /* Rich Royal Navy Blue */
+      color: #ffffff;
+      padding: 40px 20px 70px 20px;
       text-align: center;
     }
 
     .top-bar {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .login-btn {
-      background-color: transparent;
-      border: 1px solid #ffffff;
+      background-color: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       color: #ffffff;
       padding: 8px 16px;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
       font-weight: bold;
+      backdrop-filter: blur(4px);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .login-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.25);
+      border-color: #ffffff;
     }
 
     .hero-title {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
     .hero-subtitle {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: normal;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .hero-cta-text {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
       color: #E0E0E0;
     }
 
@@ -70,9 +73,9 @@
       background-color: #28A745; /* Green CTA for Diagnostic */
       color: #ffffff;
       border: none;
-      padding: 14px 28px;
+      padding: 16px 32px;
       border-radius: 8px;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -101,7 +104,7 @@
     }
 
     .nav-btn {
-      background-color: #007BFF; /* Blue buttons */
+      background-color: #007BFF;
       color: #ffffff;
       border: none;
       padding: 12px 24px;
@@ -120,7 +123,7 @@
     .panel {
       border: 2px solid #E0E0E0;
       background-color: #FAFAFA;
-      border-radius: 16px; /* Rounded corners */
+      border-radius: 16px;
       padding: 30px;
       margin-bottom: 30px;
     }
@@ -148,7 +151,6 @@
       display: flex;
       gap: 15px;
       width: max-content;
-      /* Adjusted to 50s for a slower speed */
       animation: scrollReviews 50s linear infinite;
     }
 
@@ -177,7 +179,7 @@
       }
     }
 
-    /* Sketch Layout: Subscriptions Split View */
+    /* Subscriptions Split View */
     .subscription-container {
       display: flex;
       align-items: stretch;
@@ -445,17 +447,15 @@
       </ul>
     </section>
 
-    <!-- Reviews Section with Continuous Slow Scrolling -->
+    <!-- Reviews Section -->
     <section id="reviews" class="panel">
       <h3 class="panel-title">Reviews</h3>
       <div class="reviews-carousel">
         <div class="reviews-track">
-          <!-- First Set of Review Cards -->
           <div class="review-card">Placeholder text 1</div>
           <div class="review-card">Placeholder text 2</div>
           <div class="review-card">Placeholder text 3</div>
           <div class="review-card">Placeholder text 4</div>
-          <!-- Duplicated Set for Infinite Seamless Loop -->
           <div class="review-card">Placeholder text 1</div>
           <div class="review-card">Placeholder text 2</div>
           <div class="review-card">Placeholder text 3</div>
@@ -503,7 +503,7 @@
 
   </main>
 
-  <!-- Custom Popup Modal Structure with Nav Arrows -->
+  <!-- Custom Popup Modal Structure -->
   <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
     <div class="modal-container-wrapper">
       <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
