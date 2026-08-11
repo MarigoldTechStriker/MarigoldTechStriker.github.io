@@ -237,46 +237,86 @@
       margin-bottom: 12px;
     }
 
+    /* Custom Header Background Panel per Hand Sketch */
+    .panel-navy-bg {
+      background-color: #1B3B6F; /* Same background color as header */
+      border: none;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .panel-navy-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    /* Sketch Grid Layout */
+    .sketch-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .sketch-card {
+      background-color: #ffffff;
+      color: #333333;
+      border-radius: 20px; /* Rounded Corners */
+      padding: 24px 20px;
+      flex: 1;
+      min-width: 240px;
+      max-width: 280px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    .sketch-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-sketch-badge {
+      border: 2px solid #1B3B6F;
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 18px;
+      background-color: #F4F7FC;
+      display: inline-block;
+    }
+
+    .card-sketch-title {
+      font-family: Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold; /* Bold Arial */
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .card-sketch-caption {
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: normal; /* Regular Arial */
+      color: #555555;
+      line-height: 1.4;
+    }
+
     .panel-subtitle {
       font-size: 0.9rem;
       color: #666666;
       margin-bottom: 25px;
       text-align: center;
-    }
-
-    /* Why Choose Us Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 15px;
-    }
-
-    .feature-card {
-      background: #ffffff;
-      border: 1px solid #E0E0E0;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .feature-title {
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    .feature-desc {
-      font-size: 0.9rem;
-      color: #666666;
-      line-height: 1.4;
     }
 
     /* Scrolling Reviews Styles */
@@ -558,6 +598,14 @@
         width: 100%;
         height: 2px;
       }
+      .sketch-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sketch-card {
+        max-width: 100%;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -622,7 +670,7 @@
     <!-- Navigation Buttons -->
     <nav class="nav-bar">
       <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
-      <button class="nav-btn" onclick="scrollToSection('why-us')">Why Us</button>
+      <button class="nav-btn" onclick="scrollToSection('raise-score')">How We Help</button>
       <button class="nav-btn" onclick="scrollToSection('reviews')">Reviews</button>
       <button class="nav-btn" onclick="scrollToSection('subscriptions')">Subscriptions</button>
     </nav>
@@ -636,24 +684,30 @@
       </ul>
     </section>
 
-    <!-- NEW SECTION: Why Choose Us (Located between Resources and Reviews) -->
-    <section id="why-us" class="panel">
-      <h3 class="panel-title">Why Choose Us</h3>
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">⚡</span>
-          <div class="feature-title">Adaptive Prep</div>
-          <div class="feature-desc">Tests that adjust to your skill level in real-time.</div>
+    <!-- UPDATED SECTION: How We'll Raise Your Score (From Hand Sketch) -->
+    <section id="raise-score" class="panel-navy-bg">
+      <h2 class="panel-navy-title">How We'll Raise Your Score.</h2>
+      
+      <div class="sketch-grid">
+        <!-- Card 1 -->
+        <div class="sketch-card">
+          <div class="card-sketch-badge">Study Plan</div>
+          <div class="card-sketch-title">Tailored Study Plans</div>
+          <p class="card-sketch-caption">Built to fit you.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">📊</span>
-          <div class="feature-title">Deep Analytics</div>
-          <div class="feature-desc">Identify exact topic weaknesses with detailed breakdown reports.</div>
+
+        <!-- Card 2 -->
+        <div class="sketch-card">
+          <div class="card-sketch-badge">Practice</div>
+          <div class="card-sketch-title">Efficient Studying</div>
+          <p class="card-sketch-caption">Study only the skills you need.</p>
         </div>
-        <div class="feature-card">
-          <span class="feature-icon" aria-hidden="true">🎓</span>
-          <div class="feature-title">Proven Track Record</div>
-          <div class="feature-desc">Targeted training for NYC's top Specialized High Schools.</div>
+
+        <!-- Card 3 -->
+        <div class="sketch-card">
+          <div class="card-sketch-badge">Test</div>
+          <div class="card-sketch-title">Test-Day Accurate Tests</div>
+          <p class="card-sketch-caption">Prep with adaptive and TEI practice tests.</p>
         </div>
       </div>
     </section>
