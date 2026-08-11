@@ -23,6 +23,7 @@
       background-color: #1B3B6F; /* Rich Royal Navy Blue */
       color: #ffffff;
       padding: 25px 20px 60px 20px;
+      width: 100%;
     }
 
     .top-bar {
@@ -191,11 +192,18 @@
       }
     }
 
-    /* Main Container */
+    /* Standard Main Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 30px 20px;
+    }
+
+    /* Slightly Wider Container Specifically for How We Help Section */
+    .container-wide {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     /* Navigation Buttons Bar */
@@ -237,14 +245,15 @@
       margin-bottom: 12px;
     }
 
-    /* Custom Header Background Panel per Hand Sketch */
+    /* Custom Header Background Panel - Slightly Wider Layout */
     .panel-navy-bg {
       background-color: #1B3B6F; /* Same background color as header */
       border: none;
-      border-radius: 16px;
-      padding: 40px 30px;
+      border-radius: 20px;
+      padding: 40px 35px;
       margin-bottom: 30px;
       color: #ffffff;
+      box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
     }
 
     .panel-navy-title {
@@ -259,8 +268,8 @@
     /* Sketch Grid Layout */
     .sketch-grid {
       display: flex;
-      justify-content: center;
-      gap: 24px;
+      justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
@@ -268,10 +277,9 @@
       background-color: #ffffff;
       color: #333333;
       border-radius: 20px; /* Rounded Corners */
-      padding: 24px 20px;
+      padding: 28px 20px;
       flex: 1;
-      min-width: 240px;
-      max-width: 280px;
+      min-width: 250px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -664,9 +672,8 @@
     </div>
   </header>
 
-  <!-- Main Content Area -->
-  <main class="container">
-
+  <!-- Top Main Section -->
+  <div class="container">
     <!-- Navigation Buttons -->
     <nav class="nav-bar">
       <button class="nav-btn" onclick="scrollToSection('resources')">Resources</button>
@@ -683,8 +690,10 @@
         <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
+  </div>
 
-    <!-- UPDATED SECTION: How We'll Raise Your Score (From Hand Sketch) -->
+  <!-- SLIGHTLY WIDER SECTION: How We'll Raise Your Score -->
+  <div class="container-wide">
     <section id="raise-score" class="panel-navy-bg">
       <h2 class="panel-navy-title">How We'll Raise Your Score.</h2>
       
@@ -711,6 +720,10 @@
         </div>
       </div>
     </section>
+  </div>
+
+  <!-- Bottom Main Section -->
+  <main class="container">
 
     <!-- Reviews Section -->
     <section id="reviews" class="panel">
