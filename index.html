@@ -406,7 +406,6 @@
       border-color: #007BFF;
     }
 
-    /* Top background colors from sketch */
     .card-upper-section {
       padding: 16px 12px;
       display: flex;
@@ -433,14 +432,17 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    /* Left-Aligned Lower Section Layout */
     .card-lower-section {
-      padding: 24px 16px;
+      padding: 24px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      text-align: left;
       flex-grow: 1;
       gap: 12px;
+      width: 100%;
     }
 
     /* Times New Roman Black Navy Blue Title */
@@ -452,7 +454,7 @@
       line-height: 1.1;
     }
 
-    /* Smaller Caption font */
+    /* Left-aligned Caption font */
     .card-plan-caption {
       font-family: Arial, sans-serif;
       font-size: 0.82rem;
@@ -461,22 +463,28 @@
       min-height: 34px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      text-align: left;
     }
 
-    /* Price Styling with Smaller Unit Text */
+    /* Price Container & Typography Changes */
     .card-price-container {
-      font-family: Arial, sans-serif;
       color: #1B3B6F;
       font-weight: bold;
       margin-top: auto;
+      display: flex;
+      align-items: baseline;
     }
 
+    /* Price Number: Times New Roman */
     .card-price-main {
-      font-size: 1.85rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2rem;
     }
 
+    /* Text after /: Arial */
     .card-price-unit {
+      font-family: Arial, sans-serif;
       font-size: 0.95rem;
       font-weight: bold;
     }
