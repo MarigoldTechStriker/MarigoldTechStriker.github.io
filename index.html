@@ -352,7 +352,7 @@
       }
     }
 
-    /* Subscription Section Styles */
+    /* Redesigned Subscription Section Styles */
     .subscription-panel-navy {
       background-color: #1B3B6F;
       border-radius: 24px;
@@ -389,8 +389,8 @@
     .remodeled-plan-card {
       background-color: #ffffff;
       color: #333333;
-      border-radius: 20px;
-      width: 230px;
+      border-radius: 24px;
+      width: 250px;
       overflow: hidden;
       cursor: pointer;
       display: flex;
@@ -406,47 +406,79 @@
       border-color: #007BFF;
     }
 
+    /* Top background colors from sketch */
     .card-upper-section {
-      background-color: #F4F7FC;
-      padding: 18px 12px;
-      border-bottom: 1px solid #E0E0E0;
+      padding: 16px 12px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    .card-upper-section.bg-coral {
+      background-color: #FF6B4A;
+    }
+
+    .card-upper-section.bg-amber {
+      background-color: #FF9800;
+    }
+
     .card-upper-badge {
-      background-color: #E2E8F0;
-      border: 1px solid #CBD5E1;
-      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
       padding: 6px 16px;
       font-family: Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: bold;
       color: #1B3B6F;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .card-lower-section {
-      padding: 28px 15px;
+      padding: 24px 16px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       flex-grow: 1;
+      gap: 12px;
     }
 
-    .card-price-text {
-      font-family: Arial, sans-serif;
-      font-size: 1.6rem;
-      font-weight: bold;
+    /* Times New Roman Black Navy Blue Title */
+    .card-plan-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.65rem;
+      font-weight: 900;
       color: #1B3B6F;
-      margin-bottom: 6px;
+      line-height: 1.1;
     }
 
-    .card-price-subtext {
+    /* Smaller Caption font */
+    .card-plan-caption {
       font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      color: #666666;
+      font-size: 0.82rem;
+      color: #555555;
+      line-height: 1.35;
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Price Styling with Smaller Unit Text */
+    .card-price-container {
+      font-family: Arial, sans-serif;
+      color: #1B3B6F;
+      font-weight: bold;
+      margin-top: auto;
+    }
+
+    .card-price-main {
+      font-size: 1.85rem;
+    }
+
+    .card-price-unit {
+      font-size: 0.95rem;
+      font-weight: bold;
     }
 
     .subscription-footer-caption {
@@ -765,36 +797,45 @@
       <p class="subscription-subtitle-arial">The more you practice, the better your scores</p>
 
       <div class="subscription-cards-grid">
-        <!-- Card 1 ($400) -->
+        <!-- Card 1: Annual Plan ($400/year) -->
         <div class="remodeled-plan-card" onclick="openModal('plan400')">
-          <div class="card-upper-section">
-            <div class="card-upper-badge">Annual</div>
+          <div class="card-upper-section bg-coral">
+            <div class="card-upper-badge">2 months on us</div>
           </div>
           <div class="card-lower-section">
-            <div class="card-price-text">$400/year</div>
-            <div class="card-price-subtext">(2 months on us)</div>
+            <div class="card-plan-title">Annual Plan</div>
+            <div class="card-plan-caption">More time to practice</div>
+            <div class="card-price-container">
+              <span class="card-price-main">$400</span><span class="card-price-unit">/year</span>
+            </div>
           </div>
         </div>
 
-        <!-- Card 2 ($40) -->
-        <div class="remodeled-plan-card" onclick="openModal('plan40')">
-          <div class="card-upper-section">
-            <div class="card-upper-badge">Monthly</div>
-          </div>
-          <div class="card-lower-section">
-            <div class="card-price-text">$40</div>
-            <div class="card-price-subtext">(Unlimited practice)</div>
-          </div>
-        </div>
-
-        <!-- Card 3 ($30) -->
+        <!-- Card 2: Monthly Plan ($30/month) -->
         <div class="remodeled-plan-card" onclick="openModal('plan30')">
-          <div class="card-upper-section">
-            <div class="card-upper-badge">Monthly</div>
+          <div class="card-upper-section bg-amber">
+            <div class="card-upper-badge">Budget-Friendly</div>
           </div>
           <div class="card-lower-section">
-            <div class="card-price-text">$30</div>
-            <div class="card-price-subtext">(Budget-friendly)</div>
+            <div class="card-plan-title">Monthly plan</div>
+            <div class="card-plan-caption">Basics for what you need</div>
+            <div class="card-price-container">
+              <span class="card-price-main">$30</span><span class="card-price-unit">/month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Monthly Plan ($40/month) -->
+        <div class="remodeled-plan-card" onclick="openModal('plan40')">
+          <div class="card-upper-section bg-coral">
+            <div class="card-upper-badge">Most popular</div>
+          </div>
+          <div class="card-lower-section">
+            <div class="card-plan-title">Monthly plan</div>
+            <div class="card-plan-caption">Everything included and unlimited weekly practice tests</div>
+            <div class="card-price-container">
+              <span class="card-price-main">$40</span><span class="card-price-unit">/month</span>
+            </div>
           </div>
         </div>
       </div>
@@ -835,7 +876,7 @@
       alert('Login clicked! Connect this to your Supabase auth login.');
     }
 
-    const planKeys = ['plan400', 'plan40', 'plan30'];
+    const planKeys = ['plan400', 'plan30', 'plan40'];
     let currentPlanIndex = 0;
     let isDiagnosticMode = false;
 
@@ -851,22 +892,22 @@
         ],
         refund: 'No refunds'
       },
-      plan40: {
-        title: '$40 Plan',
-        features: [
-          'Unlimited computer-adaptive tests a week',
-          'Unlimited English and mathematics lesson practices',
-          'Tailored study plan and weakness remediation',
-          'Track your historical progress'
-        ],
-        refund: 'No refunds'
-      },
       plan30: {
         title: '$30 Plan',
         features: [
           '3 computer-adaptive tests a week',
           'Unlimited English and mathematics lesson practices',
           'Tailored study plan',
+          'Track your historical progress'
+        ],
+        refund: 'No refunds'
+      },
+      plan40: {
+        title: '$40 Plan',
+        features: [
+          'Unlimited computer-adaptive tests a week',
+          'Unlimited English and mathematics lesson practices',
+          'Tailored study plan and weakness remediation',
           'Track your historical progress'
         ],
         refund: 'No refunds'
