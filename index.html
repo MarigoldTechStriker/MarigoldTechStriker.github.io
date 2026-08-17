@@ -151,7 +151,7 @@
       gap: 50px;
     }
 
-    /* LEFT COLUMN (Left-Aligned Text & Diagnostic Button) */
+    /* LEFT COLUMN */
     .hero-left {
       flex: 1.2;
       display: flex;
@@ -161,7 +161,7 @@
     }
 
     .hero-title-group {
-      margin-bottom: 35px;
+      margin-bottom: 16px;
       width: 100%;
     }
 
@@ -188,6 +188,16 @@
       opacity: 0.9;
       font-weight: bold;
       font-family: Arial, sans-serif;
+    }
+
+    /* ARIAL CAPTION STYLING */
+    .hero-caption {
+      font-family: Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: normal; /* Not bold */
+      color: #D1E0F5;
+      margin-bottom: 24px;
+      line-height: 1.4;
     }
 
     /* Light Green Diagnostic Button */
@@ -305,7 +315,6 @@
       margin-bottom: 12px;
     }
 
-    /* Custom Header Background Panel */
     .panel-navy-bg {
       background-color: #1B3B6F;
       border: none;
@@ -325,7 +334,6 @@
       color: #ffffff;
     }
 
-    /* Sketch Grid Layout */
     .sketch-grid {
       display: flex;
       justify-content: space-between;
@@ -380,7 +388,6 @@
       line-height: 1.4;
     }
 
-    /* Scrolling Reviews Styles */
     .reviews-carousel {
       overflow: hidden;
       width: 100%;
@@ -415,7 +422,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* Subscription Section Styles */
     .subscription-panel-navy {
       background-color: #1B3B6F;
       border-radius: 24px;
@@ -743,7 +749,7 @@
   <nav class="top-nav">
     <div class="nav-container">
       <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <span class="logo-shsat">SHSAT</span>
+        <span class="logo-shsat">ShSat</span>
         <span class="logo-cat">cat</span>
       </div>
 
@@ -761,16 +767,16 @@
   <!-- Full Screen Hero Section -->
   <header class="hero-section">
 
-    <!-- 1. Centered Top Badge (Page-Level Middle) -->
+    <!-- Centered Top Badge -->
     <div class="boost-badge-top-wrapper">
       <div class="boost-badge">
         <span>📈 Boost Your Score</span>
       </div>
     </div>
 
-    <!-- 2. Two Column Main Content -->
+    <!-- Two Column Main Content -->
     <div class="hero-content">
-      <!-- Left Hero Column (Text + Diagnostic Button Left-Aligned) -->
+      <!-- Left Hero Column -->
       <div class="hero-left">
         <div class="hero-title-group">
           <span class="title-serif">Your Dream School</span>
@@ -781,13 +787,16 @@
           <span class="title-serif">With Us</span>
         </div>
 
+        <!-- Arial non-bold caption above button -->
+        <p class="hero-caption">Anywhere, anytime, with the best price.</p>
+
         <!-- Light Green Diagnostic Button -->
         <button class="diagnostic-btn" onclick="openDiagnosticModal()">
           Free Diagnostic &rarr;
         </button>
       </div>
 
-      <!-- Right Hero Column (Rotating High Schools Carousel) -->
+      <!-- Right Hero Column -->
       <div class="hero-right">
         <div class="school-card-window">
           <div class="school-vertical-track">
@@ -833,21 +842,18 @@
       <h2 class="panel-navy-title">How We'll Raise Your Score.</h2>
       
       <div class="sketch-grid">
-        <!-- Card 1 -->
         <div class="sketch-card">
           <div class="card-sketch-badge">Study Plan ✂</div>
           <div class="card-sketch-title">Tailored Study Plans</div>
           <p class="card-sketch-caption">Built to fit you and your goals.</p>
         </div>
 
-        <!-- Card 2 -->
         <div class="sketch-card">
           <div class="card-sketch-badge">Practice ✊</div>
           <div class="card-sketch-title">Efficient Studying</div>
           <p class="card-sketch-caption">Study only the skills you need for the test</p>
         </div>
 
-        <!-- Card 3 -->
         <div class="sketch-card">
           <div class="card-sketch-badge">Test 🧪</div>
           <div class="card-sketch-title">Test-Day Accurate Tests</div>
@@ -879,7 +885,6 @@
       <p class="subscription-subtitle-arial">The more you practice, the better your scores</p>
 
       <div class="subscription-cards-grid">
-        <!-- Card 1: Annual Plan ($400/year) -->
         <div class="remodeled-plan-card" onclick="openModal('plan400')">
           <div class="card-upper-section bg-amber">
             <div class="card-upper-badge">2 months on us</div>
@@ -893,7 +898,6 @@
           </div>
         </div>
 
-        <!-- Card 2: Monthly Plan ($30/month) -->
         <div class="remodeled-plan-card" onclick="openModal('plan30')">
           <div class="card-upper-section bg-coral">
             <div class="card-upper-badge">Budget-Friendly</div>
@@ -907,7 +911,6 @@
           </div>
         </div>
 
-        <!-- Card 3: Monthly Plan ($40/month) -->
         <div class="remodeled-plan-card" onclick="openModal('plan40')">
           <div class="card-upper-section bg-amber">
             <div class="card-upper-badge">Most popular</div>
@@ -945,7 +948,6 @@
     </div>
   </div>
 
-  <!-- JavaScript Logic -->
   <script>
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
@@ -955,7 +957,7 @@
     }
 
     function handleLogin() {
-      alert('Login clicked! Connect this to your auth logic.');
+      alert('Login clicked!');
     }
 
     const planKeys = ['plan400', 'plan30', 'plan40'];
