@@ -109,112 +109,118 @@
     header.hero-section {
       background-color: #1B3B6F; /* Navy Blue Background */
       color: #ffffff;
-      padding: 40px 20px;
+      padding: 60px 20px;
       width: 100%;
-      min-height: calc(100vh - 70px); /* Takes up full screen height on load */
+      min-height: calc(100vh - 70px);
       display: flex;
       align-items: center;
     }
 
     .hero-content {
-      max-width: 1100px;
+      max-width: 1300px;
       width: 100%;
       margin: 0 auto;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 40px;
+      gap: 50px;
     }
 
     .hero-left {
-      flex: 1;
+      flex: 1.2;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center; /* Center horizontally in left column */
+      text-align: center;
     }
 
-    /* Boost Your Score Light Green Badge */
+    /* Centered & Enlarged Boost Your Score Badge */
     .boost-badge {
       background-color: #D4EDDA;
       color: #155724;
-      border-radius: 20px;
-      padding: 8px 18px;
-      font-size: 0.95rem;
+      border-radius: 40px;
+      padding: 18px 45px;
+      font-size: 1.6rem;
       font-weight: bold;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     }
 
     .hero-title-group {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      width: 100%;
     }
 
     /* Times New Roman Hero Titles */
     .title-serif {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 3rem;
+      font-size: 4.2rem;
       font-weight: bold;
       display: block;
-      line-height: 1.2;
+      line-height: 1.15;
       color: #ffffff;
     }
 
     .title-sans-row {
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
+      gap: 20px;
     }
 
     .hero-arrow {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       color: #ffffff;
       opacity: 0.9;
       font-weight: bold;
       font-family: Arial, sans-serif;
     }
 
-    /* Light Green Rounded Button */
+    /* Light Green Diagnostic Button */
     .diagnostic-btn {
-      background-color: #28A745;
-      color: #ffffff;
-      border: none;
-      padding: 16px 32px;
-      border-radius: 30px;
-      font-size: 1.15rem;
+      background-color: #D4EDDA;
+      color: #155724;
+      border: 2px solid #155724;
+      padding: 20px 42px;
+      border-radius: 40px;
+      font-size: 1.4rem;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
     .diagnostic-btn:hover {
-      background-color: #218838;
-      transform: translateY(-2px);
+      background-color: #c3e6cb;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
     }
 
-    /* Right Vertical Rotating Container */
+    /* Right Vertical Rotating Container - Shifted Down */
     .hero-right {
-      flex: 1.2;
+      flex: 1;
       display: flex;
       justify-content: center;
+      margin-top: 100px; /* Shifted further down to accommodate enlarged centered badge */
     }
 
     .school-card-window {
-      width: 380px;
-      height: 290px;
+      width: 440px;
+      height: 380px;
       background: rgba(255, 255, 255, 0.08);
       border: 2px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
+      border-radius: 24px;
       backdrop-filter: blur(8px);
       overflow: hidden;
       position: relative;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .school-card-window::before,
@@ -223,7 +229,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      height: 50px;
+      height: 60px;
       z-index: 2;
       pointer-events: none;
     }
@@ -241,8 +247,8 @@
     .school-vertical-track {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      padding: 20px 15px;
+      gap: 22px;
+      padding: 24px 20px;
       animation: verticalScroll 22s linear infinite;
     }
 
@@ -252,13 +258,13 @@
 
     .school-item {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.25rem;
+      font-size: 1.45rem;
       font-weight: bold;
       text-align: center;
       color: #ffffff;
-      padding: 10px 16px;
+      padding: 14px 20px;
       background: rgba(255, 255, 255, 0.06);
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       line-height: 1.3;
     }
@@ -673,6 +679,12 @@
     .modal-close-btn:hover { background-color: #F0F0F0; }
 
     /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .title-serif { font-size: 3.2rem; }
+      .school-card-window { width: 360px; height: 320px; }
+      .hero-right { margin-top: 0; }
+    }
+
     @media (max-width: 768px) {
       .top-nav { height: auto; padding: 12px 0; }
       .nav-container { flex-direction: column; gap: 12px; }
@@ -688,9 +700,16 @@
       .title-sans-row {
         justify-content: center;
       }
+      .title-serif {
+        font-size: 2.8rem;
+      }
+      .hero-right {
+        margin-top: 0;
+      }
       .school-card-window {
         width: 100%;
         max-width: 380px;
+        height: 300px;
       }
       .subscription-cards-grid {
         flex-direction: column;
@@ -737,9 +756,9 @@
     <div class="hero-content">
       <!-- Left Hero Column -->
       <div class="hero-left">
-        <!-- Rounded Light Green Score Badge -->
+        <!-- Centered & Enlarged Boost Your Score Badge -->
         <div class="boost-badge">
-          <span>📈 Boost Your score</span>
+          <span>📈 Boost Your Score</span>
         </div>
 
         <div class="hero-title-group">
@@ -751,12 +770,13 @@
           <span class="title-serif">With Us</span>
         </div>
 
+        <!-- Light Green Diagnostic Button -->
         <button class="diagnostic-btn" onclick="openDiagnosticModal()">
           Free Diagnostic &rarr;
         </button>
       </div>
 
-      <!-- Right Hero Column: Rotating High Schools Card Window -->
+      <!-- Right Hero Column: Rotating High Schools Card Window (Shifted Down) -->
       <div class="hero-right">
         <div class="school-card-window">
           <div class="school-vertical-track">
