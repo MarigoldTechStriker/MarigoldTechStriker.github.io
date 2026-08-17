@@ -109,56 +109,66 @@
     header.hero-section {
       background-color: #1B3B6F; /* Navy Blue Background */
       color: #ffffff;
-      padding: 60px 20px;
+      padding: 40px 20px 60px 20px;
       width: 100%;
       min-height: calc(100vh - 70px);
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
+    /* CENTERED TOP BADGE (Page-Level Centered) */
+    .boost-badge-top-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
+
+    .boost-badge {
+      background-color: #D4EDDA;
+      color: #155724;
+      border-radius: 40px;
+      padding: 14px 36px;
+      font-size: 1.35rem;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    /* TWO-COLUMN CONTENT GRID */
     .hero-content {
       max-width: 1300px;
       width: 100%;
       margin: 0 auto;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 50px;
     }
 
+    /* LEFT COLUMN (Left-Aligned Text & Diagnostic Button) */
     .hero-left {
       flex: 1.2;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center horizontally in left column */
-      text-align: center;
-    }
-
-    /* Centered & Enlarged Boost Your Score Badge */
-    .boost-badge {
-      background-color: #D4EDDA;
-      color: #155724;
-      border-radius: 40px;
-      padding: 18px 45px;
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin-bottom: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      align-items: flex-start;
+      text-align: left;
     }
 
     .hero-title-group {
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       width: 100%;
     }
 
     /* Times New Roman Hero Titles */
     .title-serif {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 4.2rem;
+      font-size: 4rem;
       font-weight: bold;
       display: block;
       line-height: 1.15;
@@ -168,8 +178,8 @@
     .title-sans-row {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 20px;
+      justify-content: flex-start;
+      gap: 18px;
     }
 
     .hero-arrow {
@@ -185,9 +195,9 @@
       background-color: #D4EDDA;
       color: #155724;
       border: 2px solid #155724;
-      padding: 20px 42px;
+      padding: 18px 40px;
       border-radius: 40px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
@@ -203,12 +213,12 @@
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
     }
 
-    /* Right Vertical Rotating Container - Shifted Down */
+    /* RIGHT COLUMN (Rotating High School Window) */
     .hero-right {
       flex: 1;
       display: flex;
       justify-content: center;
-      margin-top: 100px; /* Shifted further down to accommodate enlarged centered badge */
+      align-items: center;
     }
 
     .school-card-window {
@@ -682,7 +692,6 @@
     @media (max-width: 992px) {
       .title-serif { font-size: 3.2rem; }
       .school-card-window { width: 360px; height: 320px; }
-      .hero-right { margin-top: 0; }
     }
 
     @media (max-width: 768px) {
@@ -696,15 +705,13 @@
       }
       .hero-left {
         align-items: center;
+        text-align: center;
       }
       .title-sans-row {
         justify-content: center;
       }
       .title-serif {
         font-size: 2.8rem;
-      }
-      .hero-right {
-        margin-top: 0;
       }
       .school-card-window {
         width: 100%;
@@ -753,14 +760,18 @@
 
   <!-- Full Screen Hero Section -->
   <header class="hero-section">
-    <div class="hero-content">
-      <!-- Left Hero Column -->
-      <div class="hero-left">
-        <!-- Centered & Enlarged Boost Your Score Badge -->
-        <div class="boost-badge">
-          <span>📈 Boost Your Score</span>
-        </div>
 
+    <!-- 1. Centered Top Badge (Page-Level Middle) -->
+    <div class="boost-badge-top-wrapper">
+      <div class="boost-badge">
+        <span>📈 Boost Your Score</span>
+      </div>
+    </div>
+
+    <!-- 2. Two Column Main Content -->
+    <div class="hero-content">
+      <!-- Left Hero Column (Text + Diagnostic Button Left-Aligned) -->
+      <div class="hero-left">
         <div class="hero-title-group">
           <span class="title-serif">Your Dream School</span>
           <div class="title-sans-row">
@@ -776,7 +787,7 @@
         </button>
       </div>
 
-      <!-- Right Hero Column: Rotating High Schools Card Window (Shifted Down) -->
+      <!-- Right Hero Column (Rotating High Schools Carousel) -->
       <div class="hero-right">
         <div class="school-card-window">
           <div class="school-vertical-track">
