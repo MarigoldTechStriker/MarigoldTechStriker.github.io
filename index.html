@@ -315,11 +315,12 @@
       margin-bottom: 12px;
     }
 
+    /* REVISED SECTION: How We'll Raise Your Score Panel */
     .panel-navy-bg {
       background-color: #1B3B6F;
       border: none;
       border-radius: 20px;
-      padding: 40px 30px;
+      padding: 50px 40px;
       margin-bottom: 40px;
       color: #ffffff;
       box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
@@ -327,67 +328,106 @@
 
     .panel-navy-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: bold;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 45px;
       color: #ffffff;
-    }
-
-    .sketch-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .sketch-card {
-      background-color: #ffffff;
-      color: #333333;
-      border-radius: 20px;
-      padding: 28px 20px;
-      flex: 1;
-      min-width: 240px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease;
-    }
-
-    .sketch-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card-sketch-badge {
-      border: 2px solid #1B3B6F;
-      border-radius: 20px;
-      padding: 6px 18px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      color: #1B3B6F;
-      margin-bottom: 18px;
-      background-color: #F4F7FC;
-      display: inline-block;
-    }
-
-    .card-sketch-title {
-      font-family: Arial, sans-serif;
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 10px;
       line-height: 1.2;
     }
 
-    .card-sketch-caption {
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      font-weight: normal;
-      color: #555555;
-      line-height: 1.4;
+    /* Timeline Stepper Container */
+    .timeline-container {
+      position: relative;
+      max-width: 750px;
+      margin: 0 auto;
+      padding-left: 20px;
     }
 
+    /* Continuous Vertical Line behind nodes */
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      bottom: 30px;
+      left: 49px; /* Centered with the 60px badge (20px pad + 29px) */
+      width: 2px;
+      background-color: rgba(255, 255, 255, 0.4);
+      z-index: 1;
+    }
+
+    .timeline-step {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 40px;
+      z-index: 2;
+    }
+
+    .timeline-step:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Number Badge Box */
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+      border: 2px solid #ffffff;
+      border-radius: 16px; /* Rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff;
+      flex-shrink: 0;
+      position: relative;
+      background-color: #1B3B6F; /* Mask line underneath */
+    }
+
+    /* Connected Circle Dot beneath each badge */
+    .step-number::after {
+      content: '';
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+
+    .timeline-step:last-child .step-number::after {
+      display: none; /* Hide dot after last step */
+    }
+
+    .step-content {
+      padding-top: 4px;
+    }
+
+    .step-title {
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .step-caption {
+      font-family: Arial, sans-serif;
+      font-size: 0.98rem;
+      font-weight: normal;
+      color: #ffffff;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+
+    /* Reviews Carousel */
     .reviews-carousel {
       overflow: hidden;
       width: 100%;
@@ -732,13 +772,20 @@
         width: 100%;
         max-width: 300px;
       }
-      .sketch-grid {
-        flex-direction: column;
-        align-items: center;
+      
+      .panel-navy-bg {
+        padding: 30px 20px;
       }
-      .sketch-card {
-        max-width: 100%;
-        width: 100%;
+      .timeline-container {
+        padding-left: 0;
+      }
+      .timeline-container::before {
+        left: 29px;
+      }
+      .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -837,27 +884,45 @@
       </ul>
     </section>
 
-    <!-- How We'll Raise Your Score Section -->
+    <!-- How We Help You Achieve A Life-Changing Score Section -->
     <section id="raise-score" class="panel-navy-bg">
-      <h2 class="panel-navy-title">How We'll Raise Your Score.</h2>
+      <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
       
-      <div class="sketch-grid">
-        <div class="sketch-card">
-          <div class="card-sketch-badge">Study Plan ✂</div>
-          <div class="card-sketch-title">Tailored Study Plans</div>
-          <p class="card-sketch-caption">Built to fit you and your goals.</p>
+      <div class="timeline-container">
+        <!-- Step 1 -->
+        <div class="timeline-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Take a free diagnostic</div>
+            <div class="step-caption">See your strengths and weaknesses</div>
+          </div>
         </div>
 
-        <div class="sketch-card">
-          <div class="card-sketch-badge">Practice ✊</div>
-          <div class="card-sketch-title">Efficient Studying</div>
-          <p class="card-sketch-caption">Study only the skills you need for the test</p>
+        <!-- Step 2 -->
+        <div class="timeline-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Tailored Study Plan</div>
+            <div class="step-caption">Built to fit you and your goals.</div>
+          </div>
         </div>
 
-        <div class="sketch-card">
-          <div class="card-sketch-badge">Test 🧪</div>
-          <div class="card-sketch-title">Test-Day Accurate Tests</div>
-          <p class="card-sketch-caption">Prep with adaptive and TEI-enhanced practice tests.</p>
+        <!-- Step 3 -->
+        <div class="timeline-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Practice</div>
+            <div class="step-caption">Practice modules to make sure you study what you need</div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-title">Test-Day Accurate Tests</div>
+            <div class="step-caption">Prep with Theta v.2 our testing engine that is fitted with adaptive questions and TEI</div>
+          </div>
         </div>
       </div>
     </section>
