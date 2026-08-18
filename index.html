@@ -107,7 +107,7 @@
 
     /* Full-Screen Hero Section */
     header.hero-section {
-      background-color: #1B3B6F; /* Navy Blue Background */
+      background-color: #1B3B6F;
       color: #ffffff;
       padding: 40px 20px 60px 20px;
       width: 100%;
@@ -194,7 +194,7 @@
     .hero-caption {
       font-family: Arial, sans-serif;
       font-size: 1.25rem;
-      font-weight: normal; /* Not bold */
+      font-weight: normal;
       color: #D1E0F5;
       margin-bottom: 24px;
       line-height: 1.4;
@@ -315,25 +315,31 @@
       margin-bottom: 12px;
     }
 
-    /* FULL-WIDTH SECTION: How We'll Raise Your Score */
+    /* FULL-VIEWPORT SECTION: How We'll Raise Your Score */
     .panel-navy-bg-fullwidth {
       width: 100vw;
+      min-height: 100vh;
       position: relative;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
+      margin-top: -70px;
+      padding-top: 130px;
+      padding-bottom: 60px;
       background-color: #1B3B6F;
       border-radius: 0;
-      padding: 60px 20px;
-      margin-top: 40px;
       margin-bottom: 50px;
       color: #ffffff;
       box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .panel-navy-inner {
       max-width: 1000px;
+      width: 100%;
       margin: 0 auto;
     }
 
@@ -361,7 +367,7 @@
       position: absolute;
       top: 30px;
       bottom: 30px;
-      left: 49px; /* Centered with the 60px badge (20px pad + 29px) */
+      left: 49px;
       width: 2px;
       background-color: rgba(255, 255, 255, 0.4);
       z-index: 1;
@@ -384,9 +390,8 @@
     .step-number {
       width: 60px;
       height: 60px;
-      background-color: transparent;
       border: 2px solid #ffffff;
-      border-radius: 16px; /* Rounded corners */
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -396,7 +401,7 @@
       color: #ffffff;
       flex-shrink: 0;
       position: relative;
-      background-color: #1B3B6F; /* Mask line underneath */
+      background-color: #1B3B6F;
     }
 
     /* Connected Circle Dot beneath each badge */
@@ -413,7 +418,7 @@
     }
 
     .timeline-step:last-child .step-number::after {
-      display: none; /* Hide dot after last step */
+      display: none;
     }
 
     .step-content {
@@ -785,7 +790,10 @@
       }
       
       .panel-navy-bg-fullwidth {
-        padding: 40px 15px;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
       }
       .timeline-container {
         padding-left: 0;
@@ -845,10 +853,8 @@
           <span class="title-serif">With Us</span>
         </div>
 
-        <!-- Arial non-bold caption above button -->
         <p class="hero-caption">Anywhere, anytime, with the best price.</p>
 
-        <!-- Light Green Diagnostic Button -->
         <button class="diagnostic-btn" onclick="openDiagnosticModal()">
           Free Diagnostic &rarr;
         </button>
@@ -895,7 +901,7 @@
       </ul>
     </section>
 
-    <!-- How We Help You Achieve A Life-Changing Score Section (Full Width, No Margins/Whitespace) -->
+    <!-- How We Help You Achieve A Life-Changing Score Section -->
     <section id="raise-score" class="panel-navy-bg-fullwidth">
       <div class="panel-navy-inner">
         <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
