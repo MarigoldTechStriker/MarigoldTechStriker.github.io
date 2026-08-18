@@ -315,15 +315,26 @@
       margin-bottom: 12px;
     }
 
-    /* REVISED SECTION: How We'll Raise Your Score Panel */
-    .panel-navy-bg {
+    /* FULL-WIDTH SECTION: How We'll Raise Your Score */
+    .panel-navy-bg-fullwidth {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       background-color: #1B3B6F;
-      border: none;
-      border-radius: 20px;
-      padding: 50px 40px;
-      margin-bottom: 40px;
+      border-radius: 0;
+      padding: 60px 20px;
+      margin-top: 40px;
+      margin-bottom: 50px;
       color: #ffffff;
       box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
+    }
+
+    .panel-navy-inner {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .panel-navy-title {
@@ -773,8 +784,8 @@
         max-width: 300px;
       }
       
-      .panel-navy-bg {
-        padding: 30px 20px;
+      .panel-navy-bg-fullwidth {
+        padding: 40px 15px;
       }
       .timeline-container {
         padding-left: 0;
@@ -884,44 +895,46 @@
       </ul>
     </section>
 
-    <!-- How We Help You Achieve A Life-Changing Score Section -->
-    <section id="raise-score" class="panel-navy-bg">
-      <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
-      
-      <div class="timeline-container">
-        <!-- Step 1 -->
-        <div class="timeline-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <div class="step-title">Take a free diagnostic</div>
-            <div class="step-caption">See your strengths and weaknesses</div>
+    <!-- How We Help You Achieve A Life-Changing Score Section (Full Width, No Margins/Whitespace) -->
+    <section id="raise-score" class="panel-navy-bg-fullwidth">
+      <div class="panel-navy-inner">
+        <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
+        
+        <div class="timeline-container">
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">Take a free diagnostic</div>
+              <div class="step-caption">See your strengths and weaknesses</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Step 2 -->
-        <div class="timeline-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <div class="step-title">Tailored Study Plan</div>
-            <div class="step-caption">Built to fit you and your goals.</div>
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Tailored Study Plan</div>
+              <div class="step-caption">Built to fit you and your goals.</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Step 3 -->
-        <div class="timeline-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <div class="step-title">Practice</div>
-            <div class="step-caption">Practice modules to make sure you study what you need</div>
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">Practice</div>
+              <div class="step-caption">Practice modules to make sure you study what you need</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Step 4 -->
-        <div class="timeline-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <div class="step-title">Test-Day Accurate Tests</div>
-            <div class="step-caption">Prep with Theta v.2 our testing engine that is fitted with adaptive questions and TEI</div>
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">Test-Day Accurate Tests</div>
+              <div class="step-caption">Prep with Theta v.2 our testing engine that is fitted with adaptive questions and TEI</div>
+            </div>
           </div>
         </div>
       </div>
