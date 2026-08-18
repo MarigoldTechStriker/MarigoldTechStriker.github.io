@@ -334,7 +334,7 @@
     }
 
     .panel-navy-inner {
-      max-width: 900px;
+      max-width: 1300px; /* Aligned with hero-content max-width */
       width: 100%;
       margin: 0 auto;
       padding: 0 20px;
@@ -344,7 +344,7 @@
       font-family: 'Times New Roman', Times, serif;
       font-size: 2.3rem;
       font-weight: bold;
-      text-align: center;
+      text-align: left; /* Aligned text to the left */
       margin-bottom: 45px;
       color: #ffffff;
       line-height: 1.2;
@@ -354,7 +354,7 @@
     .timeline-container {
       position: relative;
       max-width: 800px;
-      margin: 0;
+      margin: 0; /* Align left directly against panel-navy-inner */
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -769,6 +769,9 @@
       .panel-navy-bg-fullwidth {
         padding-top: 60px;
         padding-bottom: 40px;
+      }
+      .panel-navy-title {
+        text-align: center;
       }
       .timeline-step {
         gap: 15px;
