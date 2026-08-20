@@ -109,7 +109,7 @@
     header.hero-section {
       background-color: #1B3B6F;
       color: #ffffff;
-      padding: 15px 20px 30px 20px; /* Reduced top padding to move elements up */
+      padding: 15px 20px 30px 20px;
       width: 100%;
       min-height: calc(100vh - 70px);
       display: flex;
@@ -118,12 +118,12 @@
       justify-content: center;
     }
 
-    /* CENTERED TOP BADGE (Moved higher) */
+    /* CENTERED TOP BADGE */
     .boost-badge-top-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 35px; /* Spaced out slightly from main content */
+      margin-bottom: 35px;
       margin-top: 0;
     }
 
@@ -648,6 +648,56 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* LIGHT BLUE STRIPE CAROUSEL (NO PANELS) */
+    .score-stripe-carousel {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-top: 40px; /* Breathing space beneath the review card carousel */
+      padding: 16px 0;
+      background-color: #EBF4FA; /* Light blue background */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .score-stripe-track {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: max-content;
+      animation: stripeScroll 30s linear infinite;
+      padding-left: 20px;
+    }
+
+    .score-stripe-carousel:hover .score-stripe-track {
+      animation-play-state: paused;
+    }
+
+    .score-stripe-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      white-space: nowrap;
+    }
+
+    .score-stripe-icon {
+      font-size: 1.3rem;
+      opacity: 0.85;
+    }
+
+    @keyframes stripeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* Subscriptions Panel */
     .subscription-panel-navy {
       background-color: #1B3B6F;
@@ -1014,6 +1064,10 @@
         font-size: 2.2rem;
         margin-bottom: 25px;
       }
+
+      .score-stripe-item {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
@@ -1177,6 +1231,7 @@
 
       <h2 class="reviews-title">Worked for hundreds of families.</h2>
       
+      <!-- Review Cards Carousel -->
       <div class="reviews-carousel-full">
         <div class="reviews-track-full">
           
@@ -1314,6 +1369,60 @@
 
         </div>
       </div>
+
+      <!-- LIGHT BLUE STRIPE CAROUSEL (NEW) -->
+      <div class="score-stripe-carousel">
+        <div class="score-stripe-track">
+          <!-- Item 1 -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Jahour SHSAT 496</span>
+          </div>
+          <!-- Item 2 -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Ashton SHSAT 494</span>
+          </div>
+          <!-- Item 3 -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Anusha SHSAT 502</span>
+          </div>
+          <!-- Item 4 -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Zain SHSAT 528</span>
+          </div>
+          <!-- Item 5 -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Tanzin SHSAT 490</span>
+          </div>
+
+          <!-- Duplicate items for smooth infinite loop -->
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Jahour SHSAT 496</span>
+          </div>
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Ashton SHSAT 494</span>
+          </div>
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Anusha SHSAT 502</span>
+          </div>
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Zain SHSAT 528</span>
+          </div>
+          <div class="score-stripe-item">
+            <span class="score-stripe-icon">👤</span>
+            <span>Tanzin SHSAT 490</span>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Subscriptions Section -->
