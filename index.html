@@ -487,7 +487,7 @@
       transform: scale(1.08) rotate(0deg);
     }
 
-    /* REDESIGNED REVIEWS SECTION */
+    /* REVIEWS SECTION */
     .reviews-section-fullwidth {
       width: 100vw;
       position: relative;
@@ -495,7 +495,7 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      padding: 60px 0 40px 0;
+      padding: 60px 0 0 0;
       background-color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -648,7 +648,7 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* LIGHT BLUE STRIPE CAROUSEL (NO PANELS) */
+    /* FULL SCREEN EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL */
     .score-stripe-carousel {
       width: 100vw;
       position: relative;
@@ -656,8 +656,9 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      margin-top: 40px; /* Breathing space beneath the review card carousel */
-      padding: 16px 0;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      padding: 24px 0; /* Taller vertical height */
       background-color: #EBF4FA; /* Light blue background */
       overflow: hidden;
       display: flex;
@@ -667,10 +668,10 @@
     .score-stripe-track {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 60px;
       width: max-content;
       animation: stripeScroll 30s linear infinite;
-      padding-left: 20px;
+      padding-left: 30px;
     }
 
     .score-stripe-carousel:hover .score-stripe-track {
@@ -680,17 +681,23 @@
     .score-stripe-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-family: Arial, sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: bold;
       color: #1B3B6F;
       white-space: nowrap;
     }
 
     .score-stripe-icon {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       opacity: 0.85;
+    }
+
+    .stripe-arrow {
+      font-size: 1.2rem;
+      color: #007BFF;
+      margin: 0 4px;
     }
 
     @keyframes stripeScroll {
@@ -999,7 +1006,7 @@
         padding: 10px 18px;
       }
 
-      .reviews-section-fullwidth { padding: 40px 0 30px 0; }
+      .reviews-section-fullwidth { padding: 40px 0 0 0; }
       .reviews-title { font-size: 2.5rem; margin-bottom: 30px; }
       .review-card-redesigned { width: 320px; min-height: 240px; padding: 20px 18px; }
     }
@@ -1058,7 +1065,7 @@
       }
 
       .reviews-section-fullwidth {
-        padding: 35px 0 25px 0;
+        padding: 35px 0 0 0;
       }
       .reviews-title {
         font-size: 2.2rem;
@@ -1066,7 +1073,10 @@
       }
 
       .score-stripe-item {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
+      }
+      .score-stripe-carousel {
+        padding: 18px 0;
       }
     }
   </style>
@@ -1222,7 +1232,7 @@
       </div>
     </section>
 
-    <!-- REDESIGNED REVIEWS SECTION -->
+    <!-- REVIEWS SECTION -->
     <section id="reviews" class="reviews-section-fullwidth">
       <!-- Centered Unbolded Panel -->
       <div class="reviews-badge-panel">
@@ -1369,61 +1379,80 @@
 
         </div>
       </div>
+    </section>
 
-      <!-- LIGHT BLUE STRIPE CAROUSEL (NEW) -->
-      <div class="score-stripe-carousel">
-        <div class="score-stripe-track">
-          <!-- Item 1 -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Jahour SHSAT 496</span>
-          </div>
-          <!-- Item 2 -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Ashton SHSAT 494</span>
-          </div>
-          <!-- Item 3 -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Anusha SHSAT 502</span>
-          </div>
-          <!-- Item 4 -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Zain SHSAT 528</span>
-          </div>
-          <!-- Item 5 -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Tanzin SHSAT 490</span>
-          </div>
+    <!-- FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL (PLACED OUTSIDE RESTRICTED PARENT) -->
+    <div class="score-stripe-carousel">
+      <div class="score-stripe-track">
+        <!-- Item 1 -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Jahour SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>496</span>
+        </div>
+        <!-- Item 2 -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Ashton SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>494</span>
+        </div>
+        <!-- Item 3 -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Anusha SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>502</span>
+        </div>
+        <!-- Item 4 -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Zain SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>528</span>
+        </div>
+        <!-- Item 5 -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Tanzin SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>490</span>
+        </div>
 
-          <!-- Duplicate items for smooth infinite loop -->
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Jahour SHSAT 496</span>
-          </div>
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Ashton SHSAT 494</span>
-          </div>
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Anusha SHSAT 502</span>
-          </div>
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Zain SHSAT 528</span>
-          </div>
-          <div class="score-stripe-item">
-            <span class="score-stripe-icon">👤</span>
-            <span>Tanzin SHSAT 490</span>
-          </div>
+        <!-- Duplicate items for seamless continuous scrolling -->
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Jahour SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>496</span>
+        </div>
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Ashton SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>494</span>
+        </div>
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Anusha SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>502</span>
+        </div>
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Zain SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>528</span>
+        </div>
+        <div class="score-stripe-item">
+          <span class="score-stripe-icon">👤</span>
+          <span>Tanzin SHSAT</span>
+          <span class="stripe-arrow">&rarr;</span>
+          <span>490</span>
         </div>
       </div>
-
-    </section>
+    </div>
 
     <!-- Subscriptions Section -->
     <section id="subscriptions" class="subscription-panel-navy">
