@@ -105,12 +105,13 @@
       transform: translateY(-1px);
     }
 
-    /* Hero Section */
+    /* Hero Section (Updated to take up full viewport height under nav) */
     header.hero-section {
       background-color: #1B3B6F;
       color: #ffffff;
-      padding: 40px 20px 40px 20px;
+      padding: 30px 20px;
       width: 100%;
+      min-height: calc(100vh - 70px);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -294,7 +295,7 @@
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 40px 20px 20px 20px;
     }
 
     /* Section Panels */
@@ -321,7 +322,7 @@
       margin-right: -50vw;
       margin-top: 0;
       padding-top: 50px;
-      padding-bottom: 60px; /* Increased padding to create bottom breathing room */
+      padding-bottom: 60px;
       background-color: #1B3B6F;
       border-radius: 0;
       margin-bottom: 0;
@@ -493,7 +494,7 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      padding: 60px 0 40px 0; /* Increased top padding from 30px to 60px */
+      padding: 60px 0 40px 0;
       background-color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -503,7 +504,6 @@
       margin-bottom: 0;
     }
 
-    /* Centered, Unbolded Header Badge */
     .reviews-badge-panel {
       background-color: #E8EEF5;
       color: #1B3B6F;
@@ -547,7 +547,6 @@
       animation-play-state: paused;
     }
 
-    /* Review Card */
     .review-card-redesigned {
       background-color: #F5F6F8;
       border: 1px solid #E2E8F0;
@@ -568,7 +567,6 @@
       box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
     }
 
-    /* Score Badge inside card */
     .review-score-badge {
       align-self: flex-start;
       background-color: #D4EDDA;
@@ -592,7 +590,6 @@
       flex-grow: 1;
     }
 
-    /* Card Footer: Profile + Name & Caption */
     .review-profile-footer {
       display: flex;
       align-items: center;
@@ -926,6 +923,10 @@
 
     /* Responsive Adjustments */
     @media (max-width: 992px) {
+      header.hero-section {
+        min-height: auto;
+        padding: 50px 20px;
+      }
       .title-serif { font-size: 3.2rem; }
       .school-card-window { width: 360px; height: 320px; }
       
