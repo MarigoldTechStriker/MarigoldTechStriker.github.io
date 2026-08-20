@@ -105,11 +105,11 @@
       transform: translateY(-1px);
     }
 
-    /* Hero Section (Updated to take up full viewport height under nav) */
+    /* Hero Section */
     header.hero-section {
       background-color: #1B3B6F;
       color: #ffffff;
-      padding: 30px 20px;
+      padding: 15px 20px 30px 20px; /* Reduced top padding to move elements up */
       width: 100%;
       min-height: calc(100vh - 70px);
       display: flex;
@@ -118,19 +118,20 @@
       justify-content: center;
     }
 
-    /* CENTERED TOP BADGE */
+    /* CENTERED TOP BADGE (Moved higher) */
     .boost-badge-top-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 25px;
+      margin-bottom: 35px; /* Spaced out slightly from main content */
+      margin-top: 0;
     }
 
     .boost-badge {
       background-color: #D4EDDA;
       color: #155724;
       border-radius: 40px;
-      padding: 12px 32px;
+      padding: 10px 28px;
       font-size: 1.25rem;
       font-weight: bold;
       display: inline-flex;
@@ -925,7 +926,7 @@
     @media (max-width: 992px) {
       header.hero-section {
         min-height: auto;
-        padding: 50px 20px;
+        padding: 40px 20px;
       }
       .title-serif { font-size: 3.2rem; }
       .school-card-window { width: 360px; height: 320px; }
