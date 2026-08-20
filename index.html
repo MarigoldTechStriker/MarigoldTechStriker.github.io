@@ -496,7 +496,7 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      padding: 90px 0;
+      padding: 60px 0;
       background-color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -506,13 +506,28 @@
       margin-bottom: 50px;
     }
 
+    /* Centered, Unbolded Header Badge */
+    .reviews-badge-panel {
+      background-color: #E8EEF5;
+      color: #1B3B6F;
+      border: 1px solid #D0DCEB;
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: normal; /* Unbolded */
+      padding: 10px 24px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      display: inline-block;
+      text-align: center;
+    }
+
     .reviews-title {
       font-family: 'Times New Roman', Times, serif;
       font-size: 3.2rem;
       font-weight: bold;
       text-align: center;
       color: #1B3B6F;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       padding: 0 20px;
     }
 
@@ -993,11 +1008,11 @@
       }
 
       .reviews-section-fullwidth {
-        padding: 60px 0;
+        padding: 50px 0;
       }
       .reviews-title {
         font-size: 2.2rem;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
     }
   </style>
@@ -1155,6 +1170,11 @@
 
     <!-- REDESIGNED REVIEWS SECTION (Full Viewport Vertical-to-Vertical) -->
     <section id="reviews" class="reviews-section-fullwidth">
+      <!-- Centered Unbolded Panel -->
+      <div class="reviews-badge-panel">
+        <span>Excellent Reviews</span>
+      </div>
+
       <h2 class="reviews-title">Worked for hundreds of families.</h2>
       
       <div class="reviews-carousel-full">
