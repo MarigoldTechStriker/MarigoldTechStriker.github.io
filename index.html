@@ -657,9 +657,9 @@
       margin-left: -50vw;
       margin-right: -50vw;
       margin-top: 40px;
-      margin-bottom: 30px;
-      padding: 24px 0; /* Taller vertical height */
-      background-color: #EBF4FA; /* Light blue background */
+      margin-bottom: 15px;
+      padding: 24px 0;
+      background-color: #EBF4FA;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -703,6 +703,37 @@
     @keyframes stripeScroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+    /* CENTERED "SEE FOR YOURSELF" CALLOUT DESIGN BELOW STRIPE */
+    .see-for-yourself-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 25px 0 35px 0;
+      text-align: center;
+    }
+
+    .see-for-yourself-text {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 8px;
+    }
+
+    .see-for-yourself-arrow {
+      font-size: 2.8rem;
+      color: #1B3B6F;
+      line-height: 1;
+      animation: bounceDown 2s infinite;
+    }
+
+    @keyframes bounceDown {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(8px); }
+      60% { transform: translateY(4px); }
     }
 
     /* Subscriptions Panel */
@@ -1078,6 +1109,12 @@
       .score-stripe-carousel {
         padding: 18px 0;
       }
+      .see-for-yourself-text {
+        font-size: 1.8rem;
+      }
+      .see-for-yourself-arrow {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
@@ -1381,7 +1418,7 @@
       </div>
     </section>
 
-    <!-- FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL (PLACED OUTSIDE RESTRICTED PARENT) -->
+    <!-- FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL -->
     <div class="score-stripe-carousel">
       <div class="score-stripe-track">
         <!-- Item 1 -->
@@ -1452,6 +1489,12 @@
           <span>490</span>
         </div>
       </div>
+    </div>
+
+    <!-- CENTERED "SEE FOR YOURSELF" CALLOUT -->
+    <div class="see-for-yourself-container">
+      <div class="see-for-yourself-text">See for Yourself</div>
+      <div class="see-for-yourself-arrow">&darr;</div>
     </div>
 
     <!-- Subscriptions Section -->
