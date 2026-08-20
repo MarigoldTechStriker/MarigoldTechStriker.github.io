@@ -15,6 +15,7 @@
     body {
       background-color: #ffffff;
       color: #333333;
+      overflow-x: hidden;
     }
 
     /* Sticky White Top Navigation Bar */
@@ -476,65 +477,169 @@
       z-index: 2;
     }
 
-    .pill-1 {
-      transform: rotate(-7deg) translateX(-110px);
-    }
-
-    .pill-2 {
-      transform: rotate(8deg) translateX(110px);
-    }
-
-    .pill-3 {
-      transform: rotate(-5deg) translateX(-100px);
-    }
-
-    .pill-4 {
-      transform: rotate(6deg) translateX(110px);
-    }
-
-    .pill-5 {
-      transform: rotate(-6deg) translateX(-100px);
-    }
+    .pill-1 { transform: rotate(-7deg) translateX(-110px); }
+    .pill-2 { transform: rotate(8deg) translateX(110px); }
+    .pill-3 { transform: rotate(-5deg) translateX(-100px); }
+    .pill-4 { transform: rotate(6deg) translateX(110px); }
+    .pill-5 { transform: rotate(-6deg) translateX(-100px); }
 
     .tilted-pill:hover {
       transform: scale(1.08) rotate(0deg);
     }
 
-    /* Reviews Carousel */
-    .reviews-carousel {
-      overflow: hidden;
-      width: 100%;
+    /* FULL-VIEWPORT REDESIGNED REVIEWS SECTION */
+    .reviews-section-fullwidth {
+      width: 100vw;
+      min-height: 100vh;
       position: relative;
-    }
-
-    .reviews-track {
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding: 90px 0;
+      background-color: #ffffff;
       display: flex;
-      gap: 15px;
-      width: max-content;
-      animation: scrollReviews 50s linear infinite;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-bottom: 50px;
     }
 
-    .reviews-carousel:hover .reviews-track {
+    .reviews-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 3.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: #1B3B6F;
+      margin-bottom: 60px;
+      padding: 0 20px;
+    }
+
+    .reviews-carousel-full {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0 40px 0;
+    }
+
+    .reviews-track-full {
+      display: flex;
+      gap: 30px;
+      width: max-content;
+      animation: scrollReviewsFull 45s linear infinite;
+      padding-left: 30px;
+    }
+
+    .reviews-carousel-full:hover .reviews-track-full {
       animation-play-state: paused;
     }
 
-    .review-card {
-      background-color: #ffffff;
-      border: 1px solid #CCCCCC;
-      border-radius: 8px;
-      padding: 15px;
-      width: 200px;
-      text-align: center;
-      color: #666666;
-      font-size: 0.9rem;
+    /* Darker White Review Card */
+    .review-card-redesigned {
+      background-color: #F5F6F8;
+      border: 1px solid #E2E8F0;
+      border-radius: 28px;
+      padding: 32px 28px;
+      width: 380px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       flex-shrink: 0;
     }
 
-    @keyframes scrollReviews {
+    .review-card-redesigned:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Score Badge inside card */
+    .review-score-badge {
+      align-self: flex-start;
+      background-color: #D4EDDA;
+      color: #155724;
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(21, 87, 36, 0.12);
+    }
+
+    .review-description {
+      font-family: Arial, sans-serif;
+      font-size: 1.15rem;
+      color: #333333;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+
+    /* Card Footer: Profile + Name & Caption */
+    .review-profile-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #1B3B6F;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .review-user-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .review-user-name {
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1B3B6F;
+    }
+
+    /* Dynamic text sizes for SHSATcat Student */
+    .review-user-caption {
+      font-family: Arial, sans-serif;
+      color: #666666;
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .caption-larger {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #1B3B6F;
+    }
+
+    .caption-smaller {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #1B3B6F;
+    }
+
+    @keyframes scrollReviewsFull {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
+    /* Subscriptions Panel */
     .subscription-panel-navy {
       background-color: #1B3B6F;
       border-radius: 24px;
@@ -829,6 +934,9 @@
         font-size: 0.95rem;
         padding: 10px 18px;
       }
+
+      .reviews-title { font-size: 2.6rem; }
+      .review-card-redesigned { width: 320px; min-height: 280px; padding: 24px 20px; }
     }
 
     @media (max-width: 768px) {
@@ -882,6 +990,14 @@
       }
       .timeline-container::before {
         left: 23px;
+      }
+
+      .reviews-section-fullwidth {
+        padding: 60px 0;
+      }
+      .reviews-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
       }
     }
   </style>
@@ -1037,19 +1153,146 @@
       </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="panel">
-      <h3 class="panel-title">Reviews</h3>
-      <div class="reviews-carousel">
-        <div class="reviews-track">
-          <div class="review-card">Placeholder text 1</div>
-          <div class="review-card">Placeholder text 2</div>
-          <div class="review-card">Placeholder text 3</div>
-          <div class="review-card">Placeholder text 4</div>
-          <div class="review-card">Placeholder text 1</div>
-          <div class="review-card">Placeholder text 2</div>
-          <div class="review-card">Placeholder text 3</div>
-          <div class="review-card">Placeholder text 4</div>
+    <!-- REDESIGNED REVIEWS SECTION (Full Viewport Vertical-to-Vertical) -->
+    <section id="reviews" class="reviews-section-fullwidth">
+      <h2 class="reviews-title">Worked for hundreds of families.</h2>
+      
+      <div class="reviews-carousel-full">
+        <div class="reviews-track-full">
+          
+          <!-- Card 1 (Ridwan S.) -->
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 410 → 495</div>
+            <p class="review-description">Very helpful seeing what I need to study</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Ridwan S.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 (Maori S.) -->
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 420 → 501</div>
+            <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Maori S.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 450 → 535</div>
+            <p class="review-description">The tailored study plan helped me focus directly on my math weaknesses instead of wasting time.</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Alex M.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 430 → 512</div>
+            <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Sophia L.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicated set for seamless loop -->
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 410 → 495</div>
+            <p class="review-description">Very helpful seeing what I need to study</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Ridwan S.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 420 → 501</div>
+            <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Maori S.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 450 → 535</div>
+            <p class="review-description">The tailored study plan helped me focus directly on my math weaknesses instead of wasting time.</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Alex M.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card-redesigned">
+            <div class="review-score-badge">SHSAT Score: 430 → 512</div>
+            <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
+            <div class="review-profile-footer">
+              <div class="review-avatar">👤</div>
+              <div class="review-user-info">
+                <span class="review-user-name">Sophia L.</span>
+                <div class="review-user-caption">
+                  <span class="caption-larger">SHSAT</span>
+                  <span class="caption-smaller">cat</span>
+                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
