@@ -340,6 +340,17 @@
       padding: 0 20px;
     }
 
+    /* CENTERED TITLE */
+    .panel-navy-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
     /* TWO COLUMN LAYOUT FOR HOW WE HELP SECTION */
     .raise-score-grid {
       display: flex;
@@ -353,16 +364,6 @@
       flex: 1.1;
       display: flex;
       flex-direction: column;
-    }
-
-    .panel-navy-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-align: left;
-      margin-bottom: 35px;
-      color: #ffffff;
-      line-height: 1.2;
     }
 
     /* TIMELINE STYLES */
@@ -803,9 +804,6 @@
         flex-direction: column;
         gap: 40px;
       }
-      .panel-navy-title {
-        text-align: center;
-      }
       .circle-panel {
         width: 320px;
         height: 320px;
@@ -852,6 +850,10 @@
       .panel-navy-bg-fullwidth {
         padding-top: 60px;
         padding-bottom: 60px;
+      }
+      .panel-navy-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
       }
       .timeline-step {
         gap: 15px;
@@ -952,15 +954,16 @@
       </ul>
     </section>
 
-    <!-- How We Help Section (Updated Side-by-Side Design) -->
+    <!-- How We Help Section -->
     <section id="raise-score" class="panel-navy-bg-fullwidth">
       <div class="panel-navy-inner">
+        <!-- CENTERED TITLE ABOVE GRID -->
+        <h2 class="panel-navy-title">How We Help You Achieve A Life-Changing Score.</h2>
+
         <div class="raise-score-grid">
           
-          <!-- LEFT COLUMN: Title + Timeline -->
+          <!-- LEFT COLUMN: Timeline -->
           <div class="raise-score-left">
-            <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
-            
             <div class="timeline-container">
               <!-- Step 1 -->
               <div class="timeline-step">
