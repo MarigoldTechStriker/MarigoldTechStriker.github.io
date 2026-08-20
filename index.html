@@ -322,7 +322,7 @@
       margin-right: -50vw;
       margin-top: 0;
       padding-top: 80px;
-      padding-bottom: 60px;
+      padding-bottom: 80px;
       background-color: #1B3B6F;
       border-radius: 0;
       margin-bottom: 50px;
@@ -340,24 +340,38 @@
       padding: 0 20px;
     }
 
+    /* TWO COLUMN LAYOUT FOR HOW WE HELP SECTION */
+    .raise-score-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      width: 100%;
+    }
+
+    .raise-score-left {
+      flex: 1.1;
+      display: flex;
+      flex-direction: column;
+    }
+
     .panel-navy-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 45px;
+      text-align: left;
+      margin-bottom: 35px;
       color: #ffffff;
       line-height: 1.2;
     }
 
-    /* TIMELINE STYLES (Badge Left, Box Right) */
+    /* TIMELINE STYLES */
     .timeline-container {
       position: relative;
-      max-width: 800px;
-      margin: 0;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 25px;
     }
 
     .timeline-container::before {
@@ -375,7 +389,7 @@
       position: relative;
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 20px;
       z-index: 2;
     }
 
@@ -401,17 +415,17 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 16px;
-      padding: 20px 24px;
+      padding: 18px 22px;
       backdrop-filter: blur(6px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .step-title {
       font-family: Arial, sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #ffffff;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .step-caption {
@@ -421,6 +435,59 @@
       line-height: 1.4;
     }
 
+    /* RIGHT COLUMN (Circle Graphic Panel) */
+    .raise-score-right {
+      flex: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-panel {
+      width: 380px;
+      height: 380px;
+      background-color: #D0E4EF;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      padding: 30px;
+    }
+
+    .tilted-pill {
+      background-color: #ffffff;
+      color: #1B3B6F;
+      font-family: Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 14px 28px;
+      border-radius: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      white-space: nowrap;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .pill-1 {
+      transform: rotate(-7deg) translateX(-15px);
+    }
+
+    .pill-2 {
+      transform: rotate(8deg) translateX(20px);
+    }
+
+    .pill-3 {
+      transform: rotate(-5deg) translateX(-10px);
+    }
+
+    .tilted-pill:hover {
+      transform: scale(1.05) rotate(0deg);
+    }
+
+    /* Reviews Carousel */
     .reviews-carousel {
       overflow: hidden;
       width: 100%;
@@ -731,6 +798,22 @@
     @media (max-width: 992px) {
       .title-serif { font-size: 3.2rem; }
       .school-card-window { width: 360px; height: 320px; }
+      
+      .raise-score-grid {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .panel-navy-title {
+        text-align: center;
+      }
+      .circle-panel {
+        width: 320px;
+        height: 320px;
+      }
+      .tilted-pill {
+        font-size: 1rem;
+        padding: 12px 22px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -768,7 +851,7 @@
       
       .panel-navy-bg-fullwidth {
         padding-top: 60px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
       }
       .timeline-step {
         gap: 15px;
@@ -869,47 +952,63 @@
       </ul>
     </section>
 
-    <!-- How We Help Section -->
+    <!-- How We Help Section (Updated Side-by-Side Design) -->
     <section id="raise-score" class="panel-navy-bg-fullwidth">
       <div class="panel-navy-inner">
-        <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
-        
-        <div class="timeline-container">
-          <!-- Step 1 -->
-          <div class="timeline-step">
-            <div class="step-number">1</div>
-            <div class="step-card">
-              <div class="step-title">Take a free diagnostic 🎯</div>
-              <div class="step-caption">See your strengths and weaknesses</div>
+        <div class="raise-score-grid">
+          
+          <!-- LEFT COLUMN: Title + Timeline -->
+          <div class="raise-score-left">
+            <h2 class="panel-navy-title">How We Help You Achieve A<br>Life-Changing Score.</h2>
+            
+            <div class="timeline-container">
+              <!-- Step 1 -->
+              <div class="timeline-step">
+                <div class="step-number">1</div>
+                <div class="step-card">
+                  <div class="step-title">Take a free diagnostic 🎯</div>
+                  <div class="step-caption">See your strengths and weaknesses</div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="timeline-step">
+                <div class="step-number">2</div>
+                <div class="step-card">
+                  <div class="step-title">Tailored Study Plan ✂</div>
+                  <div class="step-caption">Built to fit you and your goals.</div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="timeline-step">
+                <div class="step-number">3</div>
+                <div class="step-card">
+                  <div class="step-title">Practice ✊</div>
+                  <div class="step-caption">Practice modules to make sure you study what you need</div>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="timeline-step">
+                <div class="step-number">4</div>
+                <div class="step-card">
+                  <div class="step-title">Test-Day Accurate Tests 🧪</div>
+                  <div class="step-caption">Prep with Theta Version 2 our testing engine that adapt question difficulty and fitted with new question formats</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="timeline-step">
-            <div class="step-number">2</div>
-            <div class="step-card">
-              <div class="step-title">Tailored Study Plan ✂</div>
-              <div class="step-caption">Built to fit you and your goals.</div>
+          <!-- RIGHT COLUMN: Circle Panel with Tilted Badges -->
+          <div class="raise-score-right">
+            <div class="circle-panel">
+              <div class="tilted-pill pill-1">medium → hard</div>
+              <div class="tilted-pill pill-2">+20 points</div>
+              <div class="tilted-pill pill-3">98% accuracy</div>
             </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="timeline-step">
-            <div class="step-number">3</div>
-            <div class="step-card">
-              <div class="step-title">Practice ✊</div>
-              <div class="step-caption">Practice modules to make sure you study what you need</div>
-            </div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="timeline-step">
-            <div class="step-number">4</div>
-            <div class="step-card">
-              <div class="step-title">Test-Day Accurate Tests 🧪</div>
-              <div class="step-caption">Prep with Theta Version 2 our testing engine that adapt question difficulty and fitted with new question formats</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
