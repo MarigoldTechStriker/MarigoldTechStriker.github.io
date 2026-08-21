@@ -648,63 +648,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* FULL SCREEN EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL */
-    .score-stripe-carousel {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      padding: 24px 0;
-      background-color: #EBF4FA;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
-
-    .score-stripe-track {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      width: max-content;
-      animation: stripeScroll 30s linear infinite;
-      padding-left: 30px;
-    }
-
-    .score-stripe-carousel:hover .score-stripe-track {
-      animation-play-state: paused;
-    }
-
-    .score-stripe-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 1.35rem;
-      font-weight: bold;
-      color: #1B3B6F;
-      white-space: nowrap;
-    }
-
-    .score-stripe-icon {
-      font-size: 1.4rem;
-      opacity: 0.85;
-    }
-
-    .stripe-arrow {
-      font-size: 1.2rem;
-      color: #007BFF;
-      margin: 0 4px;
-    }
-
-    @keyframes stripeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
     /* CENTERED "SEE FOR YOURSELF" CALLOUT DESIGN BELOW STRIPE */
     .see-for-yourself-container {
       display: flex;
@@ -736,13 +679,18 @@
       60% { transform: translateY(4px); }
     }
 
-    /* Subscriptions Panel */
-    .subscription-panel-navy {
+    /* REDESIGNED FULL-WIDTH SUBSCRIPTION SECTION */
+    .subscription-panel-navy-fullwidth {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       background-color: #1B3B6F;
-      border-radius: 24px;
-      padding: 35px 25px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      padding: 60px 0;
+      margin-top: 20px;
+      margin-bottom: 0;
       color: #ffffff;
       text-align: center;
       box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
@@ -750,124 +698,166 @@
 
     .subscription-title-serif {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: #ffffff;
     }
 
     .subscription-subtitle-arial {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #D1E0F5;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
+    }
+
+    /* FULL EDGE-TO-EDGE LIGHT GREEN STRIPE CAROUSEL */
+    .score-stripe-carousel-green {
+      width: 100vw;
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 45px;
+      padding: 20px 0;
+      background-color: #E2F0D9;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .score-stripe-track-green {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: max-content;
+      animation: stripeScroll 30s linear infinite;
+      padding-left: 30px;
+    }
+
+    .score-stripe-carousel-green:hover .score-stripe-track-green {
+      animation-play-state: paused;
+    }
+
+    .score-stripe-item-green {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: #155724;
+      white-space: nowrap;
+    }
+
+    .score-stripe-icon-green {
+      font-size: 1.4rem;
+      opacity: 0.85;
+    }
+
+    .stripe-arrow-green {
+      font-size: 1.2rem;
+      color: #28A745;
+      margin: 0 4px;
+    }
+
+    @keyframes stripeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .subscription-cards-grid {
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 30px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
     }
 
-    .remodeled-plan-card {
-      background-color: #ffffff;
+    /* OFF-WHITE CARD DESIGN WITH LEFT-CENTERED TEXT & TOP BADGES */
+    .remodeled-plan-card-sketch {
+      background-color: #F7F8FA;
       color: #333333;
-      border-radius: 24px;
-      width: 250px;
-      overflow: hidden;
-      cursor: pointer;
+      border-radius: 28px;
+      width: 320px;
+      padding: 32px 28px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      align-items: flex-start;
+      text-align: left;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       border: 2px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.25 ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+      position: relative;
     }
 
-    .remodeled-plan-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+    .remodeled-plan-card-sketch:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
       border-color: #007BFF;
     }
 
-    .card-upper-section {
-      padding: 14px 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card-upper-section.bg-coral { background-color: #FF6B4A; }
-    .card-upper-section.bg-amber { background-color: #FF9800; }
-
-    .card-upper-badge {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
-      padding: 6px 16px;
+    .card-top-badge {
+      align-self: center;
+      background-color: #E8EEF5;
+      color: #1B3B6F;
+      border: 1px solid #C0D2E8;
+      border-radius: 20px;
+      padding: 6px 18px;
       font-family: Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: bold;
-      color: #1B3B6F;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 22px;
     }
 
-    .card-lower-section {
-      padding: 20px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
-      flex-grow: 1;
-      gap: 12px;
-      width: 100%;
-    }
-
-    .card-plan-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #1B3B6F;
-      line-height: 1.1;
-    }
-
-    .card-plan-caption {
-      font-family: Arial, sans-serif;
-      font-size: 0.82rem;
-      color: #555555;
-      line-height: 1.35;
-      min-height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: left;
-    }
-
-    .card-price-container {
-      color: #1B3B6F;
-      font-weight: bold;
-      margin-top: auto;
-      display: flex;
-      align-items: baseline;
-    }
-
-    .card-price-main {
+    .card-sketch-title {
       font-family: 'Times New Roman', Times, serif;
       font-size: 2rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 12px;
+      line-height: 1.15;
     }
 
-    .card-price-unit {
+    .card-sketch-placeholder {
       font-family: Arial, sans-serif;
       font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.45;
+      margin-bottom: 35px;
+      flex-grow: 1;
+    }
+
+    .card-sketch-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: auto;
+    }
+
+    .price-large {
+      font-family: Arial, sans-serif;
+      font-size: 2.3rem;
       font-weight: bold;
+      color: #1B3B6F;
+    }
+
+    .price-small {
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #555555;
     }
 
     .subscription-footer-caption {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       color: #D1E0F5;
-      margin-top: 10px;
+      margin-top: 15px;
+      text-align: center;
     }
 
     .resource-list {
@@ -1070,9 +1060,9 @@
         flex-direction: column;
         align-items: center;
       }
-      .remodeled-plan-card {
+      .remodeled-plan-card-sketch {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
       }
       
       .panel-navy-bg-fullwidth {
@@ -1103,17 +1093,20 @@
         margin-bottom: 25px;
       }
 
-      .score-stripe-item {
+      .score-stripe-item-green {
         font-size: 1.1rem;
       }
-      .score-stripe-carousel {
-        padding: 18px 0;
+      .score-stripe-carousel-green {
+        padding: 16px 0;
       }
       .see-for-yourself-text {
         font-size: 1.8rem;
       }
       .see-for-yourself-arrow {
         font-size: 2.2rem;
+      }
+      .subscription-title-serif {
+        font-size: 2.3rem;
       }
     }
   </style>
@@ -1230,7 +1223,7 @@
                 <div class="step-number">2</div>
                 <div class="step-card">
                   <div class="step-title">Tailored Study Plan ✂</div>
-                  <div class="step-caption">Built to fit you and your goals</div>
+                  <div class="step-caption">Built to fit you and your goals.</div>
                 </div>
               </div>
 
@@ -1418,132 +1411,124 @@
       </div>
     </section>
 
-    <!-- FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL -->
-    <div class="score-stripe-carousel">
-      <div class="score-stripe-track">
-        <!-- Item 1 -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Jahour SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>496</span>
-        </div>
-        <!-- Item 2 -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Ashton SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>494</span>
-        </div>
-        <!-- Item 3 -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Anusha SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>502</span>
-        </div>
-        <!-- Item 4 -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Zain SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>528</span>
-        </div>
-        <!-- Item 5 -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Tanzin SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>490</span>
-        </div>
-
-        <!-- Duplicate items for seamless continuous scrolling -->
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Jahour SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>496</span>
-        </div>
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Ashton SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>494</span>
-        </div>
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Anusha SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>502</span>
-        </div>
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Zain SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>528</span>
-        </div>
-        <div class="score-stripe-item">
-          <span class="score-stripe-icon">👤</span>
-          <span>Tanzin SHSAT</span>
-          <span class="stripe-arrow">&rarr;</span>
-          <span>490</span>
-        </div>
-      </div>
-    </div>
-
     <!-- CENTERED "SEE FOR YOURSELF" CALLOUT -->
     <div class="see-for-yourself-container">
       <div class="see-for-yourself-text">See for Yourself</div>
       <div class="see-for-yourself-arrow">&darr;</div>
     </div>
 
-    <!-- Subscriptions Section -->
-    <section id="subscriptions" class="subscription-panel-navy">
-      <h2 class="subscription-title-serif">Subscriptions</h2>
-      <p class="subscription-subtitle-arial">The more you practice, the better your scores</p>
+    <!-- REDESIGNED FULL-WIDTH SUBSCRIPTIONS SECTION -->
+    <section id="subscriptions" class="subscription-panel-navy-fullwidth">
+      <h2 class="subscription-title-serif">Choose the Plan for You</h2>
+      <p class="subscription-subtitle-arial">The more you practice, the better your score</p>
 
-      <div class="subscription-cards-grid">
-        <div class="remodeled-plan-card" onclick="openModal('plan400')">
-          <div class="card-upper-section bg-amber">
-            <div class="card-upper-badge">2 months on us</div>
+      <!-- LIGHT GREEN SCORE CAROUSEL STRIPE -->
+      <div class="score-stripe-carousel-green">
+        <div class="score-stripe-track-green">
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Jahour SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>496</span>
           </div>
-          <div class="card-lower-section">
-            <div class="card-plan-title">Annual Plan</div>
-            <div class="card-plan-caption">More time to practice and boost your scores.</div>
-            <div class="card-price-container">
-              <span class="card-price-main">$400</span><span class="card-price-unit">/year</span>
-            </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Ashton SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>494</span>
           </div>
-        </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Anusha SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>502</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Zain SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>528</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Tanzin SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>490</span>
+          </div>
 
-        <div class="remodeled-plan-card" onclick="openModal('plan30')">
-          <div class="card-upper-section bg-coral">
-            <div class="card-upper-badge">Budget-Friendly</div>
+          <!-- Continuous scrolling duplicates -->
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Jahour SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>496</span>
           </div>
-          <div class="card-lower-section">
-            <div class="card-plan-title">Monthly plan</div>
-            <div class="card-plan-caption">Basics for what you need without breaking the bank</div>
-            <div class="card-price-container">
-              <span class="card-price-main">$30</span><span class="card-price-unit">/month</span>
-            </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Ashton SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>494</span>
           </div>
-        </div>
-
-        <div class="remodeled-plan-card" onclick="openModal('plan40')">
-          <div class="card-upper-section bg-amber">
-            <div class="card-upper-badge">Most popular</div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Anusha SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>502</span>
           </div>
-          <div class="card-lower-section">
-            <div class="card-plan-title">Monthly plan</div>
-            <div class="card-plan-caption">Everything included and unlimited weekly practice tests</div>
-            <div class="card-price-container">
-              <span class="card-price-main">$40</span><span class="card-price-unit">/month</span>
-            </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Zain SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>528</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Tanzin SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>490</span>
           </div>
         </div>
       </div>
 
-      <p class="subscription-footer-caption">Cancel anytime</p>
+      <!-- PLAN CARDS GRID -->
+      <div class="subscription-cards-grid">
+        
+        <!-- Annual Plan Card -->
+        <div class="remodeled-plan-card-sketch" onclick="openModal('plan400')">
+          <div class="card-top-badge">2 months on us</div>
+          <div class="card-sketch-title">Annual Plan</div>
+          <div class="card-sketch-placeholder">More time to practice and boost your scores with our complete annual toolkit.</div>
+          <div class="card-sketch-price-row">
+            <span class="price-large">$400</span>
+            <span class="price-small">/year</span>
+          </div>
+        </div>
+
+        <!-- Monthly $30 Plan Card -->
+        <div class="remodeled-plan-card-sketch" onclick="openModal('plan30')">
+          <div class="card-top-badge">Budget-Friendly</div>
+          <div class="card-sketch-title">Monthly Plan</div>
+          <div class="card-sketch-placeholder">Basics for what you need without breaking the bank. Great for steady practice.</div>
+          <div class="card-sketch-price-row">
+            <span class="price-large">$30</span>
+            <span class="price-small">/month</span>
+          </div>
+        </div>
+
+        <!-- Monthly $40 Plan Card -->
+        <div class="remodeled-plan-card-sketch" onclick="openModal('plan40')">
+          <div class="card-top-badge">Most Popular</div>
+          <div class="card-sketch-title">Monthly Plan</div>
+          <div class="card-sketch-placeholder">Everything included with unlimited weekly computer-adaptive practice tests.</div>
+          <div class="card-sketch-price-row">
+            <span class="price-large">$40</span>
+            <span class="price-small">/month</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="subscription-footer-caption">cancel anytime</p>
     </section>
 
   </main>
