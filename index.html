@@ -923,7 +923,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay */
+    /* Modal Overlay (Subscription Modal) */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -1048,6 +1048,112 @@
 
     .modal-close-btn:hover { background-color: #F0F0F0; }
 
+    /* FULL-SCREEN CUSTOM DIAGNOSTIC OVERLAY POPUP */
+    .diagnostic-popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #EAEAEA;
+      z-index: 3000;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    /* Top-Right Close Button 'X' */
+    .diagnostic-popup-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333333;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+      line-height: 1;
+    }
+
+    .diagnostic-popup-close:hover {
+      color: #000000;
+      transform: scale(1.15);
+    }
+
+    /* Rounded Split Container Panel */
+    .diagnostic-card-panel {
+      width: 100%;
+      max-width: 860px;
+      min-height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Left Side: Navy Blue Background, Centered White Text */
+    .diagnostic-card-left {
+      flex: 1;
+      background-color: #1B3B6F;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .diagnostic-card-left h2 {
+      font-family: Arial, sans-serif;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .diagnostic-card-left .line-item {
+      display: block;
+    }
+
+    .diagnostic-card-left .arrow-icon {
+      font-size: 2rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* Right Side: White Background, Regular Arial Text Checklist */
+    .diagnostic-card-right {
+      flex: 1;
+      background-color: #ffffff;
+      color: #333333;
+      display: flex;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .diagnostic-card-right ul {
+      list-style-type: disc;
+      padding-left: 24px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .diagnostic-card-right li {
+      margin-bottom: 14px;
+    }
+
+    .diagnostic-card-right li:last-child {
+      margin-bottom: 0;
+    }
+
     /* Responsive Adjustments */
     @media (max-width: 992px) {
       header.hero-section {
@@ -1078,6 +1184,20 @@
       .reviews-section-fullwidth { padding: 40px 0 0 0; }
       .reviews-title { font-size: 2.5rem; margin-bottom: 30px; }
       .review-card-redesigned { width: 320px; min-height: 240px; padding: 20px 18px; }
+
+      .diagnostic-card-panel {
+        flex-direction: column;
+        max-width: 500px;
+      }
+      .diagnostic-card-left, .diagnostic-card-right {
+        padding: 30px 25px;
+      }
+      .diagnostic-card-left h2 {
+        font-size: 1.8rem;
+      }
+      .diagnostic-card-right ul {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1203,7 +1323,7 @@
 
         <p class="hero-caption">Anywhere, anytime, with the best price.</p>
 
-        <button class="diagnostic-btn" onclick="openDiagnosticModal()">
+        <button class="diagnostic-btn" onclick="openDiagnosticOverlay()">
           Free Diagnostic &rarr;
         </button>
       </div>
@@ -1241,7 +1361,7 @@
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
-        <li><a href="#" class="resource-link" onclick="openDiagnosticModal()">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
+        <li><a href="#" class="resource-link" onclick="openDiagnosticOverlay(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
         <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
@@ -1609,6 +1729,7 @@
         </div>
       </div>
 
+      <!-- PLAN CARDS GRID -->
       <div class="subscription-cards-grid">
         
         <!-- Annual Plan Card -->
@@ -1646,12 +1767,12 @@
 
       </div>
 
-      <p class="subscription-footer-caption">Cancel anytime • Click on a plan for more details</p>
+      <p class="subscription-footer-caption">cancel anytime</p>
     </section>
 
   </main>
 
-  <!-- Modal -->
+  <!-- Plan Subscription Modal -->
   <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
     <div class="modal-container-wrapper">
       <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
@@ -1669,6 +1790,33 @@
     </div>
   </div>
 
+  <!-- FULL-SCREEN CUSTOM DIAGNOSTIC READINESS CHECKLIST POPUP -->
+  <div id="diagnosticOverlay" class="diagnostic-popup-overlay">
+    <span class="diagnostic-popup-close" onclick="closeDiagnosticOverlay()">&times;</span>
+    
+    <div class="diagnostic-card-panel">
+      <!-- Left side: Navy background with white centered text -->
+      <div class="diagnostic-card-left">
+        <h2>
+          <span class="line-item">Diagnostic</span>
+          <span class="line-item">Readiness</span>
+          <span class="line-item">Checklist</span>
+        </h2>
+        <div class="arrow-icon">&gt;</div>
+      </div>
+
+      <!-- Right side: White background with regular Arial text list -->
+      <div class="diagnostic-card-right">
+        <ul>
+          <li>Have a stable internet connection</li>
+          <li>Have 3 hours of uninterrupted time</li>
+          <li>Preferably using a computer or tablet</li>
+          <li>Have the latest browser version</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script>
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
@@ -1681,9 +1829,9 @@
       alert('Login clicked!');
     }
 
+    /* Subscription Modal Logic */
     const planKeys = ['plan400', 'plan30', 'plan40'];
     let currentPlanIndex = 0;
-    let isDiagnosticMode = false;
 
     const planDetails = {
       plan400: {
@@ -1743,7 +1891,6 @@
     }
 
     function openModal(planKey) {
-      isDiagnosticMode = false;
       currentPlanIndex = planKeys.indexOf(planKey);
       if (currentPlanIndex === -1) currentPlanIndex = 0;
 
@@ -1752,8 +1899,6 @@
     }
 
     function navigatePlan(direction) {
-      if (isDiagnosticMode) return;
-
       currentPlanIndex += direction;
       if (currentPlanIndex < 0) {
         currentPlanIndex = planKeys.length - 1;
@@ -1762,37 +1907,6 @@
       }
 
       renderPlanModal(planKeys[currentPlanIndex]);
-    }
-
-    function openDiagnosticModal() {
-      isDiagnosticMode = true;
-      document.getElementById('modalHeader').innerText = 'Free Diagnostic Test';
-      
-      let html = `
-        <p style="margin-bottom: 12px;"><strong>See where you stand without spending a dollar!</strong></p>
-        <ul class="modal-list">
-          <li>15-question Math & ELA evaluation</li>
-          <li>Instant estimated SHSAT score breakdown</li>
-          <li>Detailed topic weakness report</li>
-          <li>100% free with no credit card required</li>
-        </ul>
-      `;
-
-      document.getElementById('modalBody').innerHTML = html;
-      document.getElementById('modalFooter').innerHTML = `
-        <button class="modal-action-btn" style="background-color: #28A745;" onclick="startDiagnostic()">Start Free Diagnostic Now</button>
-        <button class="modal-close-btn" onclick="closeModal()">Close</button>
-      `;
-
-      document.getElementById('prevBtn').style.visibility = 'hidden';
-      document.getElementById('nextBtn').style.visibility = 'hidden';
-
-      document.getElementById('subscriptionModal').style.display = 'flex';
-    }
-
-    function startDiagnostic() {
-      closeModal();
-      alert('Starting your Free Diagnostic Test...');
     }
 
     function closeModal() {
@@ -1804,6 +1918,15 @@
       if (event.target === modal) {
         modal.style.display = 'none';
       }
+    }
+
+    /* Diagnostic Readiness Full-Screen Overlay Logic */
+    function openDiagnosticOverlay() {
+      document.getElementById('diagnosticOverlay').style.display = 'flex';
+    }
+
+    function closeDiagnosticOverlay() {
+      document.getElementById('diagnosticOverlay').style.display = 'none';
     }
   </script>
 
