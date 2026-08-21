@@ -525,8 +525,55 @@
       font-weight: bold;
       text-align: center;
       color: #1B3B6F;
-      margin-bottom: 45px;
+      margin-bottom: 30px;
       padding: 0 20px;
+    }
+
+    /* LIGHT GREEN SCORE CAROUSEL STRIPE IN REVIEWS SECTION */
+    .score-stripe-carousel-green {
+      width: 100vw;
+      position: relative;
+      margin-bottom: 40px;
+      padding: 18px 0;
+      background-color: #E2F0D9;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .score-stripe-track-green {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: max-content;
+      animation: stripeScroll 30s linear infinite;
+      padding-left: 30px;
+    }
+
+    .score-stripe-carousel-green:hover .score-stripe-track-green {
+      animation-play-state: paused;
+    }
+
+    .score-stripe-item-green {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: #155724;
+      white-space: nowrap;
+    }
+
+    .score-stripe-icon-green {
+      font-size: 1.4rem;
+      opacity: 0.85;
+    }
+
+    .stripe-arrow-green {
+      font-size: 1.2rem;
+      color: #28A745;
+      margin: 0 4px;
     }
 
     .reviews-carousel-full {
@@ -711,20 +758,20 @@
       margin-bottom: 30px;
     }
 
-    /* FULL EDGE-TO-EDGE LIGHT GREEN STRIPE CAROUSEL */
-    .score-stripe-carousel-green {
+    /* FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL IN PLANS SECTION */
+    .score-stripe-carousel-blue {
       width: 100vw;
       position: relative;
       margin-top: 0;
       margin-bottom: 45px;
       padding: 20px 0;
-      background-color: #E2F0D9;
+      background-color: #E0EEF9;
       overflow: hidden;
       display: flex;
       align-items: center;
     }
 
-    .score-stripe-track-green {
+    .score-stripe-track-blue {
       display: flex;
       align-items: center;
       gap: 60px;
@@ -733,29 +780,29 @@
       padding-left: 30px;
     }
 
-    .score-stripe-carousel-green:hover .score-stripe-track-green {
+    .score-stripe-carousel-blue:hover .score-stripe-track-blue {
       animation-play-state: paused;
     }
 
-    .score-stripe-item-green {
+    .score-stripe-item-blue {
       display: flex;
       align-items: center;
       gap: 12px;
       font-family: Arial, sans-serif;
       font-size: 1.35rem;
       font-weight: bold;
-      color: #155724;
+      color: #1B3B6F;
       white-space: nowrap;
     }
 
-    .score-stripe-icon-green {
+    .score-stripe-icon-blue {
       font-size: 1.4rem;
       opacity: 0.85;
     }
 
-    .stripe-arrow-green {
+    .stripe-arrow-blue {
       font-size: 1.2rem;
-      color: #28A745;
+      color: #007BFF;
       margin: 0 4px;
     }
 
@@ -789,7 +836,7 @@
       text-align: left;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       border: 2px solid transparent;
-      transition: transform 0.25 ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       cursor: pointer;
       position: relative;
     }
@@ -1093,9 +1140,11 @@
         margin-bottom: 25px;
       }
 
+      .score-stripe-item-blue,
       .score-stripe-item-green {
         font-size: 1.1rem;
       }
+      .score-stripe-carousel-blue,
       .score-stripe-carousel-green {
         padding: 16px 0;
       }
@@ -1270,12 +1319,80 @@
       </div>
 
       <h2 class="reviews-title">Worked for hundreds of families.</h2>
+
+      <!-- LIGHT GREEN SCORE CAROUSEL STRIPE IN REVIEWS -->
+      <div class="score-stripe-carousel-green">
+        <div class="score-stripe-track-green">
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Jahour SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>496</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Ashton SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>494</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Anusha SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>502</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Zain SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>528</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Tanzin SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>490</span>
+          </div>
+
+          <!-- Duplicates for infinite scrolling -->
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Jahour SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>496</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Ashton SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>494</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Anusha SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>502</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Zain SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>528</span>
+          </div>
+          <div class="score-stripe-item-green">
+            <span class="score-stripe-icon-green">👤</span>
+            <span>Tanzin SHSAT</span>
+            <span class="stripe-arrow-green">&rarr;</span>
+            <span>490</span>
+          </div>
+        </div>
+      </div>
       
       <!-- Review Cards Carousel -->
       <div class="reviews-carousel-full">
         <div class="reviews-track-full">
           
-          <!-- Card 1 (Ridwan S.) -->
+          <!-- Card 1 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 410 → 495</div>
             <p class="review-description">Very helpful seeing what I need to study</p>
@@ -1292,7 +1409,7 @@
             </div>
           </div>
 
-          <!-- Card 2 (Maori S.) -->
+          <!-- Card 2 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 420 → 501</div>
             <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
@@ -1422,69 +1539,69 @@
       <h2 class="subscription-title-serif">Choose the Plan for You</h2>
       <p class="subscription-subtitle-arial">The more you practice, the better your score</p>
 
-      <!-- LIGHT GREEN SCORE CAROUSEL STRIPE -->
-      <div class="score-stripe-carousel-green">
-        <div class="score-stripe-track-green">
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+      <!-- LIGHT BLUE SCORE CAROUSEL STRIPE IN PLANS -->
+      <div class="score-stripe-carousel-blue">
+        <div class="score-stripe-track-blue">
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>496</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>494</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>502</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Zain SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>528</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>490</span>
           </div>
 
           <!-- Continuous scrolling duplicates -->
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>496</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>494</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>502</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Zain SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>528</span>
           </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
+          <div class="score-stripe-item-blue">
+            <span class="score-stripe-icon-blue">👤</span>
             <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
+            <span class="stripe-arrow-blue">&rarr;</span>
             <span>490</span>
           </div>
         </div>
