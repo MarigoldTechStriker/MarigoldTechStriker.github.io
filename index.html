@@ -923,7 +923,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay (Subscription Modal) */
+    /* Modal Overlay (Subscription Modal & Info Modal) */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -1283,7 +1283,6 @@
 </head>
 <body>
 
-  <!-- Sticky White Navigation Bar -->
   <nav class="top-nav">
     <div class="nav-container">
       <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
@@ -1302,7 +1301,6 @@
     </div>
   </nav>
 
-  <!-- Full Screen Hero Section -->
   <header class="hero-section">
     <div class="boost-badge-top-wrapper">
       <div class="boost-badge">
@@ -1323,7 +1321,7 @@
 
         <p class="hero-caption">Anywhere, anytime, with the best price.</p>
 
-        <button class="diagnostic-btn" onclick="openDiagnosticOverlay()">
+        <button class="diagnostic-btn" onclick="openDiagnosticInfoModal()">
           Free Diagnostic &rarr;
         </button>
       </div>
@@ -1354,32 +1352,26 @@
     </div>
   </header>
 
-  <!-- Main Container -->
   <main class="container">
 
-    <!-- Resources Section -->
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
-        <li><a href="#" class="resource-link" onclick="openDiagnosticOverlay(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
+        <li><a href="#" class="resource-link" onclick="openDiagnosticInfoModal(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
         <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
 
-    <!-- How We Help Section -->
     <section id="raise-score" class="panel-navy-bg-fullwidth">
       <div class="panel-navy-inner">
-        <!-- CENTERED STACKED TITLE -->
         <h2 class="panel-navy-title">
           How We Help You Achieve A<br>Life-Changing Score.
         </h2>
 
         <div class="raise-score-grid">
           
-          <!-- LEFT COLUMN: Timeline -->
           <div class="raise-score-left">
             <div class="timeline-container">
-              <!-- Step 1 -->
               <div class="timeline-step">
                 <div class="step-number">1</div>
                 <div class="step-card">
@@ -1388,7 +1380,6 @@
                 </div>
               </div>
 
-              <!-- Step 2 -->
               <div class="timeline-step">
                 <div class="step-number">2</div>
                 <div class="step-card">
@@ -1397,7 +1388,6 @@
                 </div>
               </div>
 
-              <!-- Step 3 -->
               <div class="timeline-step">
                 <div class="step-number">3</div>
                 <div class="step-card">
@@ -1406,7 +1396,6 @@
                 </div>
               </div>
 
-              <!-- Step 4 -->
               <div class="timeline-step">
                 <div class="step-number">4</div>
                 <div class="step-card">
@@ -1417,7 +1406,6 @@
             </div>
           </div>
 
-          <!-- RIGHT COLUMN: Circle Panel with Tilted Badges Overflowing -->
           <div class="raise-score-right">
             <div class="circle-panel">
               <div class="tilted-pill pill-1">Weakness: Algebra</div>
@@ -1432,20 +1420,16 @@
       </div>
     </section>
 
-    <!-- REVIEWS SECTION -->
     <section id="reviews" class="reviews-section-fullwidth">
-      <!-- Centered Unbolded Panel -->
       <div class="reviews-badge-panel">
         <span>Excellent Reviews</span>
       </div>
 
       <h2 class="reviews-title">Worked for hundreds of families.</h2>
 
-      <!-- Review Cards Carousel -->
       <div class="reviews-carousel-full">
         <div class="reviews-track-full">
           
-          <!-- Card 1 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 410 → 495</div>
             <p class="review-description">Very helpful seeing what I need to study</p>
@@ -1462,7 +1446,6 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 420 → 501</div>
             <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
@@ -1479,7 +1462,6 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 450 → 535</div>
             <p class="review-description">The tailored study plan made me so much better on the English section</p>
@@ -1496,7 +1478,6 @@
             </div>
           </div>
 
-          <!-- Card 4 -->
           <div class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 430 → 512</div>
             <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
@@ -1580,7 +1561,6 @@
         </div>
       </div>
 
-      <!-- LIGHT GREEN SCORE CAROUSEL STRIPE IN REVIEWS (MOVED BELOW REVIEWS) -->
       <div class="score-stripe-carousel-green">
         <div class="score-stripe-track-green">
           <div class="score-stripe-item-green">
@@ -1614,7 +1594,6 @@
             <span>490</span>
           </div>
 
-          <!-- Duplicates for infinite scrolling -->
           <div class="score-stripe-item-green">
             <span class="score-stripe-icon-green">👤</span>
             <span>Jahour SHSAT</span>
@@ -1650,18 +1629,15 @@
 
     </section>
 
-    <!-- CENTERED "SEE FOR YOURSELF" CALLOUT -->
     <div class="see-for-yourself-container">
       <div class="see-for-yourself-text">See for Yourself</div>
       <div class="see-for-yourself-arrow">&darr;</div>
     </div>
 
-    <!-- REDESIGNED FULL-WIDTH SUBSCRIPTIONS SECTION -->
     <section id="subscriptions" class="subscription-panel-navy-fullwidth">
       <h2 class="subscription-title-serif">Choose the Plan for You</h2>
       <p class="subscription-subtitle-arial">The more you practice, the better your score</p>
 
-      <!-- LIGHT BLUE SCORE CAROUSEL STRIPE IN PLANS -->
       <div class="score-stripe-carousel-blue">
         <div class="score-stripe-track-blue">
           <div class="score-stripe-item-blue">
@@ -1695,7 +1671,6 @@
             <span>490</span>
           </div>
 
-          <!-- Continuous scrolling duplicates -->
           <div class="score-stripe-item-blue">
             <span class="score-stripe-icon-blue">👤</span>
             <span>Jahour SHSAT</span>
@@ -1729,10 +1704,8 @@
         </div>
       </div>
 
-      <!-- PLAN CARDS GRID -->
       <div class="subscription-cards-grid">
         
-        <!-- Annual Plan Card -->
         <div class="remodeled-plan-card-sketch" onclick="openModal('plan400')">
           <div class="card-top-badge">2 months on us</div>
           <div class="card-sketch-title">Annual Plan</div>
@@ -1743,7 +1716,6 @@
           </div>
         </div>
 
-        <!-- Monthly $30 Plan Card -->
         <div class="remodeled-plan-card-sketch" onclick="openModal('plan30')">
           <div class="card-top-badge">Budget-Friendly</div>
           <div class="card-sketch-title">Monthly Plan</div>
@@ -1754,7 +1726,6 @@
           </div>
         </div>
 
-        <!-- Monthly $40 Plan Card -->
         <div class="remodeled-plan-card-sketch" onclick="openModal('plan40')">
           <div class="card-top-badge">Most Popular</div>
           <div class="card-sketch-title">Monthly Plan</div>
@@ -1772,7 +1743,6 @@
 
   </main>
 
-  <!-- Plan Subscription Modal -->
   <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
     <div class="modal-container-wrapper">
       <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
@@ -1790,12 +1760,10 @@
     </div>
   </div>
 
-  <!-- FULL-SCREEN CUSTOM DIAGNOSTIC READINESS CHECKLIST POPUP -->
   <div id="diagnosticOverlay" class="diagnostic-popup-overlay">
     <span class="diagnostic-popup-close" onclick="closeDiagnosticOverlay()">&times;</span>
     
     <div class="diagnostic-card-panel">
-      <!-- Left side: Navy background with white centered text -->
       <div class="diagnostic-card-left">
         <h2>
           <span class="line-item">Diagnostic</span>
@@ -1805,7 +1773,6 @@
         <div class="arrow-icon">&gt;</div>
       </div>
 
-      <!-- Right side: White background with regular Arial text list -->
       <div class="diagnostic-card-right">
         <ul>
           <li>Have a stable internet connection</li>
@@ -1918,6 +1885,38 @@
       if (event.target === modal) {
         modal.style.display = 'none';
       }
+    }
+
+    /* First Stage: Open Small Informational Diagnostic Modal */
+    function openDiagnosticInfoModal() {
+      document.getElementById('modalHeader').innerText = 'Free Diagnostic Test';
+      
+      let html = `
+        <p style="margin-bottom: 12px;"><strong>See where you stand without spending a dollar!</strong></p>
+        <ul class="modal-list">
+          <li>15-question Math & ELA evaluation</li>
+          <li>Instant estimated SHSAT score breakdown</li>
+          <li>Detailed topic weakness report</li>
+          <li>100% free with no credit card required</li>
+        </ul>
+      `;
+
+      document.getElementById('modalBody').innerHTML = html;
+      document.getElementById('modalFooter').innerHTML = `
+        <button class="modal-action-btn" style="background-color: #28A745;" onclick="startDiagnostic()">Start Free Diagnostic Now</button>
+        <button class="modal-close-btn" onclick="closeModal()">Close</button>
+      `;
+
+      document.getElementById('prevBtn').style.visibility = 'hidden';
+      document.getElementById('nextBtn').style.visibility = 'hidden';
+
+      document.getElementById('subscriptionModal').style.display = 'flex';
+    }
+
+    /* Second Stage: Trigger Full Screen Readiness Overlay from Start Diagnostic */
+    function startDiagnostic() {
+      closeModal();
+      openDiagnosticOverlay();
     }
 
     /* Diagnostic Readiness Full-Screen Overlay Logic */
