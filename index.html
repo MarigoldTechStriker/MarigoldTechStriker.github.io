@@ -1127,12 +1127,14 @@
       font-weight: bold;
     }
 
-    /* Right Side: White Background, Regular Arial Text Checklist */
+    /* Right Side: White Background, Regular Arial Text Checklist & Centered Button */
     .diagnostic-card-right {
       flex: 1;
       background-color: #ffffff;
       color: #333333;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 40px;
     }
@@ -1144,6 +1146,7 @@
       font-weight: normal;
       font-size: 1.1rem;
       line-height: 1.6;
+      width: 100%;
     }
 
     .diagnostic-card-right li {
@@ -1152,6 +1155,26 @@
 
     .diagnostic-card-right li:last-child {
       margin-bottom: 0;
+    }
+
+    /* Centered Blue Continue Button */
+    .diagnostic-continue-btn {
+      margin-top: 25px;
+      background-color: #007BFF;
+      color: #ffffff;
+      border: none;
+      padding: 12px 36px;
+      border-radius: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .diagnostic-continue-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-1px);
     }
 
     /* Responsive Adjustments */
@@ -1780,6 +1803,7 @@
           <li>⟳ Have the latest browser version preferably Safari or Google Chrome</li>
           <li>모 Preferably use a computer or tablet</li>
         </ul>
+        <button class="diagnostic-continue-btn">Continue</button>
       </div>
     </div>
   </div>
