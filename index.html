@@ -26,7 +26,7 @@
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       width: 100%;
-      height: 70px;
+      min-height: 70px;
       display: flex;
       align-items: center;
     }
@@ -35,10 +35,11 @@
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     /* Logo Styling */
@@ -47,6 +48,7 @@
       align-items: baseline;
       text-decoration: none;
       cursor: pointer;
+      z-index: 1001;
     }
 
     .logo-shsat {
@@ -62,6 +64,28 @@
       font-weight: bold;
       color: #1B3B6F;
       margin-left: 2px;
+    }
+
+    /* Hamburger Menu Button for Mobile */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: #1B3B6F;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
     /* Navigation Links */
@@ -109,7 +133,7 @@
     header.hero-section {
       background-color: #1B3B6F;
       color: #ffffff;
-      padding: 15px 20px 30px 20px;
+      padding: 30px 20px 40px 20px;
       width: 100%;
       min-height: calc(100vh - 70px);
       display: flex;
@@ -132,7 +156,7 @@
       color: #155724;
       border-radius: 40px;
       padding: 10px 28px;
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
       font-weight: bold;
       display: inline-flex;
       align-items: center;
@@ -149,7 +173,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 50px;
+      gap: 40px;
     }
 
     /* LEFT COLUMN */
@@ -168,7 +192,7 @@
 
     .title-serif {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 4rem;
+      font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: bold;
       display: block;
       line-height: 1.15;
@@ -180,10 +204,11 @@
       align-items: center;
       justify-content: flex-start;
       gap: 18px;
+      flex-wrap: wrap;
     }
 
     .hero-arrow {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 5vw, 3.5rem);
       color: #ffffff;
       opacity: 0.9;
       font-weight: bold;
@@ -192,7 +217,7 @@
 
     .hero-caption {
       font-family: Arial, sans-serif;
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
       font-weight: normal;
       color: #D1E0F5;
       margin-bottom: 24px;
@@ -203,9 +228,9 @@
       background-color: #D4EDDA;
       color: #155724;
       border: 2px solid #155724;
-      padding: 18px 40px;
+      padding: 16px 36px;
       border-radius: 40px;
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       font-weight: bold;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
@@ -227,10 +252,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
 
     .school-card-window {
-      width: 550px;
+      width: 100%;
+      max-width: 550px;
       height: 380px;
       background: rgba(255, 255, 255, 0.08);
       border: 2px solid rgba(255, 255, 255, 0.25);
@@ -276,7 +303,7 @@
 
     .school-item {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.45rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
       font-weight: bold;
       text-align: center;
       color: #ffffff;
@@ -345,7 +372,7 @@
     /* CENTERED TITLE */
     .panel-navy-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: bold;
       text-align: center;
       margin-bottom: 30px;
@@ -366,6 +393,7 @@
       flex: 1.1;
       display: flex;
       flex-direction: column;
+      width: 100%;
     }
 
     /* TIMELINE STYLES */
@@ -444,6 +472,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
     }
 
     .circle-panel {
@@ -521,7 +550,7 @@
 
     .reviews-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 3rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: bold;
       text-align: center;
       color: #1B3B6F;
@@ -708,7 +737,7 @@
 
     .see-for-yourself-text {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2.2rem;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: bold;
       color: #1B3B6F;
       margin-bottom: 8px;
@@ -746,7 +775,7 @@
 
     .subscription-title-serif {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 3rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: bold;
       margin-bottom: 8px;
       color: #ffffff;
@@ -757,6 +786,7 @@
       font-size: 1.1rem;
       color: #D1E0F5;
       margin-bottom: 30px;
+      padding: 0 15px;
     }
 
     /* FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL IN PLANS SECTION */
@@ -1062,6 +1092,7 @@
       align-items: center;
       padding: 40px 20px;
       box-sizing: border-box;
+      overflow-y: auto;
     }
 
     /* Top-Right Close Button 'X' */
@@ -1077,6 +1108,7 @@
       user-select: none;
       transition: color 0.2s ease, transform 0.2s ease;
       line-height: 1;
+      z-index: 3001;
     }
 
     .diagnostic-popup-close:hover {
@@ -1183,8 +1215,7 @@
         min-height: auto;
         padding: 40px 20px;
       }
-      .title-serif { font-size: 3.2rem; }
-      .school-card-window { width: 360px; height: 320px; }
+      .school-card-window { max-width: 100%; height: 320px; }
       
       .raise-score-grid {
         flex-direction: column;
@@ -1194,18 +1225,17 @@
         width: 320px;
         height: 320px;
       }
-      .pill-1 { transform: rotate(-7deg) translateX(-80px); }
-      .pill-2 { transform: rotate(8deg) translateX(80px); }
-      .pill-3 { transform: rotate(-5deg) translateX(-70px); }
-      .pill-4 { transform: rotate(6deg) translateX(80px); }
-      .pill-5 { transform: rotate(-6deg) translateX(-70px); }
+      .pill-1 { transform: rotate(-7deg) translateX(-60px); }
+      .pill-2 { transform: rotate(8deg) translateX(60px); }
+      .pill-3 { transform: rotate(-5deg) translateX(-50px); }
+      .pill-4 { transform: rotate(6deg) translateX(60px); }
+      .pill-5 { transform: rotate(-6deg) translateX(-50px); }
       .tilted-pill {
         font-size: 0.95rem;
         padding: 10px 18px;
       }
 
       .reviews-section-fullwidth { padding: 40px 0 0 0; }
-      .reviews-title { font-size: 2.5rem; margin-bottom: 30px; }
       .review-card-redesigned { width: 320px; min-height: 240px; padding: 20px 18px; }
 
       .diagnostic-card-panel {
@@ -1224,10 +1254,33 @@
     }
 
     @media (max-width: 768px) {
-      .top-nav { height: auto; padding: 12px 0; }
-      .nav-container { flex-direction: column; gap: 12px; }
-      .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-      
+      /* Navigation Bar Drawer Mobile Fix */
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .login-btn-nav {
+        width: 80%;
+        margin-top: 10px;
+      }
+
       .hero-content {
         flex-direction: column;
         text-align: center;
@@ -1239,13 +1292,9 @@
       .title-sans-row {
         justify-content: center;
       }
-      .title-serif {
-        font-size: 2.8rem;
-      }
       .school-card-window {
         width: 100%;
-        max-width: 380px;
-        height: 300px;
+        height: 280px;
       }
       .subscription-cards-grid {
         flex-direction: column;
@@ -1253,16 +1302,12 @@
       }
       .remodeled-plan-card-sketch {
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
       }
       
       .panel-navy-bg-fullwidth {
         padding-top: 40px;
         padding-bottom: 40px;
-      }
-      .panel-navy-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
       }
       .timeline-step {
         gap: 15px;
@@ -1279,10 +1324,6 @@
       .reviews-section-fullwidth {
         padding: 35px 0 0 0;
       }
-      .reviews-title {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-      }
 
       .score-stripe-item-blue,
       .score-stripe-item-green {
@@ -1292,14 +1333,39 @@
       .score-stripe-carousel-green {
         padding: 16px 0;
       }
-      .see-for-yourself-text {
-        font-size: 1.8rem;
-      }
       .see-for-yourself-arrow {
         font-size: 2.2rem;
       }
-      .subscription-title-serif {
-        font-size: 2.3rem;
+
+      /* Modal adjustments for mobile */
+      .modal-container-wrapper {
+        position: relative;
+        padding: 0 10px;
+      }
+
+      .modal-nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.95);
+      }
+
+      #prevBtn { left: -10px; }
+      #nextBtn { right: -10px; }
+
+      .circle-panel {
+        width: 280px;
+        height: 280px;
+      }
+      .pill-1 { transform: rotate(-7deg) translateX(-20px); }
+      .pill-2 { transform: rotate(8deg) translateX(20px); }
+      .pill-3 { transform: rotate(-5deg) translateX(-10px); }
+      .pill-4 { transform: rotate(6deg) translateX(20px); }
+      .pill-5 { transform: rotate(-6deg) translateX(-10px); }
+      .tilted-pill {
+        font-size: 0.85rem;
+        padding: 8px 14px;
       }
     }
   </style>
@@ -1313,14 +1379,19 @@
         <span class="logo-cat">cat</span>
       </div>
 
-      <div class="nav-links">
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
         <button class="nav-link-btn" onclick="scrollToSection('resources')">Resources</button>
         <button class="nav-link-btn" onclick="scrollToSection('raise-score')">How we help</button>
         <button class="nav-link-btn" onclick="scrollToSection('reviews')">Reviews</button>
         <button class="nav-link-btn" onclick="scrollToSection('subscriptions')">Plans</button>
+        <button class="login-btn-nav" onclick="handleLogin()">Login</button>
       </div>
-
-      <button class="login-btn-nav" onclick="handleLogin()">Login</button>
     </div>
   </nav>
 
@@ -1809,10 +1880,20 @@
   </div>
 
   <script>
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
+        // Close menu on navigation on mobile screens
+        navLinks.classList.remove('active');
       }
     }
 
