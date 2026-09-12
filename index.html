@@ -1197,7 +1197,7 @@
       transform: translateY(-1px);
     }
 
-    /* REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY */
+    /* REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY (FULL SCREEN) */
     .section-select-overlay {
       display: none;
       position: fixed;
@@ -1220,7 +1220,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #EAEAEA;
+      border-bottom: 1.5px solid #EAEAEA;
       background-color: #ffffff;
     }
 
@@ -1251,23 +1251,24 @@
     }
 
     .overlay-line-separator {
-      width: 2px;
+      width: 1.5px;
       height: 32px;
       background-color: #C0C0C0;
     }
 
     .overlay-close-x {
       font-family: Arial, sans-serif;
-      font-size: 2.2rem;
-      font-weight: bold;
-      color: #1B3B6F;
+      font-size: 1.8rem;
+      font-weight: normal;
+      color: #888888;
       cursor: pointer;
       user-select: none;
-      transition: transform 0.2s ease;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .overlay-close-x:hover {
-      transform: scale(1.15);
+      color: #1B3B6F;
+      transform: scale(1.1);
     }
 
     /* Main Content Wrapper */
@@ -1280,20 +1281,31 @@
       padding: 30px 20px;
     }
 
-    .welcome-header-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: bold;
-      color: #1B3B6F;
-      margin-bottom: 25px;
+    /* Dedicated Container for Welcome Title (Light Blue, Rounded Corners, Centered) */
+    .welcome-header-card {
+      background-color: #D0E4EF;
+      border-radius: 35px;
+      padding: 16px 36px;
+      max-width: 500px;
+      width: 100%;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 25px; /* Separation from Section Selection container */
     }
 
-    /* Light Blue Outer Centered Box with Rounded Corners */
+    .welcome-header-title {
+      font-family: Arial, sans-serif;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: bold;
+      color: #1B3B6F;
+      margin: 0;
+    }
+
+    /* Light Blue Outer Container with Rounded Corners */
     .light-blue-outer-card {
       background-color: #D0E4EF;
       border-radius: 24px;
-      padding: 35px 30px;
+      padding: 30px;
       max-width: 680px;
       width: 100%;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -1301,12 +1313,12 @@
       justify-content: center;
     }
 
-    /* Cream White Inner Box with Square Edges */
+    /* Pure White Inner Box with Square Edges */
     .cream-inner-panel {
-      background-color: #F5F5F0; /* Cream white background */
-      border-radius: 0px;        /* Pure white square edges */
-      border: 1px solid #DCDCDC;
-      padding: 30px 25px;
+      background-color: #ffffff; /* Pure white background */
+      border-radius: 0px;        /* Square edges */
+      border: 1px solid #E2E8F0;
+      padding: 35px 30px;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -1315,19 +1327,19 @@
 
     .section-select-main-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
       color: #1B3B6F;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       text-align: center;
     }
 
     .section-select-subtitle {
       font-family: Arial, sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: normal; /* Not bold */
       color: #1B3B6F;     /* Navy Blue */
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       text-align: center;
     }
 
@@ -1344,8 +1356,8 @@
       flex: 1;
       background-color: #ffffff;
       border: 2px solid #C0D0E0;
-      border-radius: 12px;
-      padding: 20px 15px;
+      border-radius: 16px;
+      padding: 25px 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1353,7 +1365,7 @@
       cursor: pointer;
       position: relative;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
       user-select: none;
     }
 
@@ -1364,17 +1376,17 @@
 
     .selection-panel-btn.selected {
       border-color: #1B3B6F;
-      background-color: #EBF3FA;
+      background-color: #F2F7FC;
     }
 
     .panel-checkbox {
       position: absolute;
       top: 12px;
       right: 12px;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border: 2px solid #1B3B6F;
-      border-radius: 4px;
+      border-radius: 3px;
       background-color: #ffffff;
       display: flex;
       align-items: center;
@@ -1389,7 +1401,7 @@
     .selection-panel-btn.selected .panel-checkbox::after {
       content: '✓';
       color: #ffffff;
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
     }
 
@@ -1414,10 +1426,10 @@
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
       color: #444444;
-      line-height: 1.4;
+      line-height: 1.45;
       text-align: center;
-      border-top: 1px solid #D0D0D0;
-      padding-top: 15px;
+      border-top: 1px solid #E5E5E5;
+      padding-top: 18px;
       width: 100%;
     }
 
@@ -1990,7 +2002,7 @@
     </div>
   </div>
 
-  <!-- FULL-SCREEN DIAGNOSTIC READINESS OVERLAY -->
+  <!-- FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY -->
   <div id="diagnosticOverlay" class="diagnostic-popup-overlay">
     <span class="diagnostic-popup-close" onclick="closeDiagnosticOverlay()">&times;</span>
     
@@ -2030,9 +2042,14 @@
     </div>
 
     <div class="overlay-content-wrapper">
-      <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
+      <!-- Separate Light Blue Rounded Container for Welcome Header -->
+      <div class="welcome-header-card">
+        <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
+      </div>
 
+      <!-- Light Blue Outer Card with Rounded Edges -->
       <div class="light-blue-outer-card">
+        <!-- Pure White Square-Edge Inner Container -->
         <div class="cream-inner-panel">
           <h2 class="section-select-main-title">Section Selection</h2>
           <p class="section-select-subtitle">choose which section you want first</p>
