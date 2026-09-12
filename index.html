@@ -1091,7 +1091,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #EAEAEA;
+      background-color: #EAEAEA; /* Cream White */
       z-index: 3000;
       justify-content: center;
       align-items: center;
@@ -1197,7 +1197,7 @@
       transform: translateY(-1px);
     }
 
-    /* REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY (FULL SCREEN) */
+    /* REDESIGNED SECTION SELECTION OVERLAY (CREAM WHITE BACKGROUND) */
     .section-select-overlay {
       display: none;
       position: fixed;
@@ -1205,7 +1205,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #ffffff; /* Pure white background */
+      background-color: #EAEAEA; /* Cream White to match Diagnostic Readiness page */
       z-index: 3000;
       flex-direction: column;
       box-sizing: border-box;
@@ -1220,8 +1220,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1.5px solid #EAEAEA;
-      background-color: #ffffff;
+      background-color: transparent;
     }
 
     .overlay-logo-group {
@@ -1248,12 +1247,6 @@
       font-weight: bold;
       color: #1B3B6F;
       margin-left: 2px;
-    }
-
-    .overlay-line-separator {
-      width: 1.5px;
-      height: 32px;
-      background-color: #C0C0C0;
     }
 
     .overlay-close-x {
@@ -1301,28 +1294,18 @@
       margin: 0;
     }
 
-    /* Light Blue Outer Container with Rounded Corners */
-    .light-blue-outer-card {
-      background-color: #D0E4EF;
-      border-radius: 24px;
-      padding: 30px;
-      max-width: 680px;
-      width: 100%;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      display: flex;
-      justify-content: center;
-    }
-
-    /* Pure White Inner Box with Square Edges */
+    /* Pure White Inner Box with Square Edges Direct on Cream White */
     .cream-inner-panel {
       background-color: #ffffff; /* Pure white background */
       border-radius: 0px;        /* Square edges */
-      border: 1px solid #E2E8F0;
+      border: 1px solid #D8D8D8;
       padding: 35px 30px;
+      max-width: 680px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
     .section-select-main-title {
@@ -1514,7 +1497,6 @@
       .tilted-pill { font-size: 0.85rem; padding: 8px 14px; }
 
       .section-cards-container { flex-direction: column; gap: 15px; }
-      .light-blue-outer-card { padding: 20px 15px; }
       .cream-inner-panel { padding: 20px 15px; }
     }
   </style>
@@ -2028,7 +2010,7 @@
     </div>
   </div>
 
-  <!-- REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY (FULL SCREEN) -->
+  <!-- REDESIGNED SECTION SELECTION OVERLAY (CREAM WHITE BACKGROUND) -->
   <div id="sectionSelectOverlay" class="section-select-overlay">
     <div class="overlay-top-bar">
       <div class="overlay-logo-group">
@@ -2036,7 +2018,6 @@
           <span class="overlay-logo-shsat">SHSAT</span>
           <span class="overlay-logo-cat">cat</span>
         </div>
-        <div class="overlay-line-separator"></div>
       </div>
       <span class="overlay-close-x" onclick="closeSectionSelectOverlay()">&times;</span>
     </div>
@@ -2047,30 +2028,27 @@
         <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
       </div>
 
-      <!-- Light Blue Outer Card with Rounded Edges -->
-      <div class="light-blue-outer-card">
-        <!-- Pure White Square-Edge Inner Container -->
-        <div class="cream-inner-panel">
-          <h2 class="section-select-main-title">Section Selection</h2>
-          <p class="section-select-subtitle">choose which section you want first</p>
+      <!-- Pure White Square-Edge Inner Container Directly on Cream White -->
+      <div class="cream-inner-panel">
+        <h2 class="section-select-main-title">Section Selection</h2>
+        <p class="section-select-subtitle">choose which section you want first</p>
 
-          <div class="section-cards-container">
-            <div class="selection-panel-btn" id="elaBtn" onclick="selectSection('ELA')">
-              <div class="panel-checkbox"></div>
-              <span class="panel-btn-title">ELA First</span>
-            </div>
-
-            <div class="selection-panel-btn" id="mathBtn" onclick="selectSection('Math')">
-              <div class="panel-checkbox"></div>
-              <span class="panel-btn-title">Math First</span>
-            </div>
+        <div class="section-cards-container">
+          <div class="selection-panel-btn" id="elaBtn" onclick="selectSection('ELA')">
+            <div class="panel-checkbox"></div>
+            <span class="panel-btn-title">ELA First</span>
           </div>
 
-          <div class="selected-section-text" id="selectedSectionDisplay">Selected section: None</div>
-
-          <div class="tip-notice-box">
-            Tip: On the new SHSAT You can't switch between sections, choose the section you are most confident in
+          <div class="selection-panel-btn" id="mathBtn" onclick="selectSection('Math')">
+            <div class="panel-checkbox"></div>
+            <span class="panel-btn-title">Math First</span>
           </div>
+        </div>
+
+        <div class="selected-section-text" id="selectedSectionDisplay">Selected section: None</div>
+
+        <div class="tip-notice-box">
+          Tip: On the new SHSAT You can't switch between sections, choose the section you are most confident in
         </div>
       </div>
     </div>
