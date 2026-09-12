@@ -367,33 +367,30 @@
       width: 100%;
       margin: 0 auto;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* CENTERED TITLE */
-    .panel-navy-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #ffffff;
-      line-height: 1.25;
-    }
-
+    /* CENTERED TITLE & SUBTITLE FIX */
     .raise-score-title-serif {
       font-family: 'Times New Roman', Times, serif;
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: bold;
       margin-bottom: 8px;
       color: #ffffff;
+      text-align: center;
+      width: 100%;
     }
 
     .raise-score-subtitle-arial {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       color: #D1E0F5;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       padding: 0 15px;
+      text-align: center;
+      width: 100%;
     }
 
     /* TWO COLUMN LAYOUT FOR HOW WE HELP SECTION */
@@ -1325,6 +1322,17 @@
         padding-top: 40px;
         padding-bottom: 40px;
       }
+
+      .raise-score-title-serif {
+        font-size: 2.2rem;
+        margin-bottom: 6px;
+      }
+
+      .raise-score-subtitle-arial {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+
       .timeline-step {
         gap: 15px;
       }
