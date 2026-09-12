@@ -372,7 +372,6 @@
       align-items: center;
     }
 
-    /* CENTERED TITLE & SUBTITLE FIX */
     .raise-score-title-serif {
       font-family: 'Times New Roman', Times, serif;
       font-size: clamp(2rem, 5vw, 3rem);
@@ -393,7 +392,6 @@
       width: 100%;
     }
 
-    /* TWO COLUMN LAYOUT FOR HOW WE HELP SECTION */
     .raise-score-grid {
       display: flex;
       align-items: center;
@@ -409,7 +407,6 @@
       width: 100%;
     }
 
-    /* TIMELINE STYLES */
     .timeline-container {
       position: relative;
       width: 100%;
@@ -479,7 +476,6 @@
       line-height: 1.4;
     }
 
-    /* RIGHT COLUMN (Circle Graphic Panel) */
     .raise-score-right {
       flex: 0.9;
       display: flex;
@@ -571,7 +567,6 @@
       padding: 0 20px;
     }
 
-    /* LIGHT GREEN SCORE CAROUSEL STRIPE IN REVIEWS SECTION */
     .score-stripe-carousel-green {
       width: 100vw;
       position: relative;
@@ -738,7 +733,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* CENTERED "SEE FOR YOURSELF" CALLOUT DESIGN BELOW STRIPE */
     .see-for-yourself-container {
       display: flex;
       flex-direction: column;
@@ -802,7 +796,6 @@
       padding: 0 15px;
     }
 
-    /* FULL EDGE-TO-EDGE LIGHT BLUE STRIPE CAROUSEL IN PLANS SECTION */
     .score-stripe-carousel-blue {
       width: 100vw;
       position: relative;
@@ -867,7 +860,6 @@
       padding: 0 20px;
     }
 
-    /* OFF-WHITE CARD DESIGN WITH LEFT-CENTERED TEXT & TOP BADGES */
     .remodeled-plan-card-sketch {
       background-color: #F7F8FA;
       color: #333333;
@@ -966,7 +958,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay (Subscription Modal & Info Modal) */
+    /* Modal Overlay */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -1091,7 +1083,7 @@
 
     .modal-close-btn:hover { background-color: #F0F0F0; }
 
-    /* FULL-SCREEN CUSTOM DIAGNOSTIC OVERLAY POPUP */
+    /* FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY */
     .diagnostic-popup-overlay {
       display: none;
       position: fixed;
@@ -1108,7 +1100,6 @@
       overflow-y: auto;
     }
 
-    /* Top-Right Close Button 'X' */
     .diagnostic-popup-close {
       position: absolute;
       top: 25px;
@@ -1129,7 +1120,6 @@
       transform: scale(1.15);
     }
 
-    /* Rounded Split Container Panel */
     .diagnostic-card-panel {
       width: 100%;
       max-width: 860px;
@@ -1140,7 +1130,6 @@
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
     }
 
-    /* Left Side: Navy Blue Background, Centered White Text */
     .diagnostic-card-left {
       flex: 1;
       background-color: #1B3B6F;
@@ -1162,17 +1151,9 @@
       margin-bottom: 12px;
     }
 
-    .diagnostic-card-left .line-item {
-      display: block;
-    }
+    .diagnostic-card-left .line-item { display: block; }
+    .diagnostic-card-left .arrow-icon { font-size: 2rem; margin-top: 10px; font-weight: bold; }
 
-    .diagnostic-card-left .arrow-icon {
-      font-size: 2rem;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    /* Right Side: White Background, Regular Arial Text Checklist & Centered Button */
     .diagnostic-card-right {
       flex: 1;
       background-color: #ffffff;
@@ -1194,15 +1175,9 @@
       width: 100%;
     }
 
-    .diagnostic-card-right li {
-      margin-bottom: 14px;
-    }
+    .diagnostic-card-right li { margin-bottom: 14px; }
+    .diagnostic-card-right li:last-child { margin-bottom: 0; }
 
-    .diagnostic-card-right li:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Centered Blue Continue Button */
     .diagnostic-continue-btn {
       margin-top: 25px;
       background-color: #007BFF;
@@ -1222,7 +1197,7 @@
       transform: translateY(-1px);
     }
 
-    /* SECTION SELECTION VIEW (FULL SCREEN) */
+    /* REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY */
     .section-select-overlay {
       display: none;
       position: fixed;
@@ -1230,111 +1205,246 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #1B3B6F;
+      background-color: #ffffff; /* Pure white background */
       z-index: 3000;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
       box-sizing: border-box;
-      color: #ffffff;
+      overflow-y: auto;
     }
 
-    .section-select-overlay h2 {
+    /* Top Bar for Section Selection Overlay */
+    .overlay-top-bar {
+      width: 100%;
+      height: 70px;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #EAEAEA;
+      background-color: #ffffff;
+    }
+
+    .overlay-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .overlay-logo-text {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .overlay-logo-shsat {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #1B3B6F;
+    }
+
+    .overlay-logo-cat {
+      font-family: Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-left: 2px;
+    }
+
+    .overlay-line-separator {
+      width: 2px;
+      height: 32px;
+      background-color: #C0C0C0;
+    }
+
+    .overlay-close-x {
       font-family: Arial, sans-serif;
       font-size: 2.2rem;
       font-weight: bold;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .section-select-overlay p {
-      font-family: Arial, sans-serif;
-      font-size: 1.1rem;
-      color: #D1E0F5;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .section-buttons-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .section-choice-btn {
-      background-color: #ffffff;
       color: #1B3B6F;
-      border: 2px solid #ffffff;
-      padding: 20px 30px;
-      border-radius: 16px;
-      font-size: 1.2rem;
-      font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s ease, background-color 0.2s ease;
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      user-select: none;
+      transition: transform 0.2s ease;
     }
 
-    .section-choice-btn:hover {
-      transform: translateY(-3px);
-      background-color: #D1E0F5;
+    .overlay-close-x:hover {
+      transform: scale(1.15);
+    }
+
+    /* Main Content Wrapper */
+    .overlay-content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    .welcome-header-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    /* Light Blue Outer Centered Box with Rounded Corners */
+    .light-blue-outer-card {
+      background-color: #D0E4EF;
+      border-radius: 24px;
+      padding: 35px 30px;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Cream White Inner Box with Square Edges */
+    .cream-inner-panel {
+      background-color: #F5F5F0; /* Cream white background */
+      border-radius: 0px;        /* Pure white square edges */
+      border: 1px solid #DCDCDC;
+      padding: 30px 25px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-select-main-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .section-select-subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: normal; /* Not bold */
+      color: #1B3B6F;     /* Navy Blue */
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    /* Panels Grid for ELA First and Math First */
+    .section-cards-container {
+      display: flex;
+      gap: 25px;
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    .selection-panel-btn {
+      flex: 1;
+      background-color: #ffffff;
+      border: 2px solid #C0D0E0;
+      border-radius: 12px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      user-select: none;
+    }
+
+    .selection-panel-btn:hover {
+      border-color: #1B3B6F;
+      transform: translateY(-2px);
+    }
+
+    .selection-panel-btn.selected {
+      border-color: #1B3B6F;
+      background-color: #EBF3FA;
+    }
+
+    .panel-checkbox {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #1B3B6F;
+      border-radius: 4px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .selection-panel-btn.selected .panel-checkbox {
+      background-color: #1B3B6F;
+    }
+
+    .selection-panel-btn.selected .panel-checkbox::after {
+      content: '✓';
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .panel-btn-title {
+      font-family: Arial, sans-serif;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .selected-section-text {
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      color: #1B3B6F;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .tip-notice-box {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: #444444;
+      line-height: 1.4;
+      text-align: center;
+      border-top: 1px solid #D0D0D0;
+      padding-top: 15px;
+      width: 100%;
     }
 
     /* Responsive Adjustments */
     @media (max-width: 992px) {
-      header.hero-section {
-        min-height: auto;
-        padding: 40px 20px;
-      }
+      header.hero-section { min-height: auto; padding: 40px 20px; }
       .school-card-window { max-width: 100%; height: 320px; }
-      
-      .raise-score-grid {
-        flex-direction: column;
-        gap: 30px;
-      }
-      .circle-panel {
-        width: 320px;
-        height: 320px;
-      }
+      .raise-score-grid { flex-direction: column; gap: 30px; }
+      .circle-panel { width: 320px; height: 320px; }
       .pill-1 { transform: rotate(-7deg) translateX(-60px); }
       .pill-2 { transform: rotate(8deg) translateX(60px); }
       .pill-3 { transform: rotate(-5deg) translateX(-50px); }
       .pill-4 { transform: rotate(6deg) translateX(60px); }
       .pill-5 { transform: rotate(-6deg) translateX(-50px); }
-      .tilted-pill {
-        font-size: 0.95rem;
-        padding: 10px 18px;
-      }
+      .tilted-pill { font-size: 0.95rem; padding: 10px 18px; }
 
       .reviews-section-fullwidth { padding: 40px 0 0 0; }
       .review-card-redesigned { width: 320px; min-height: 240px; padding: 20px 18px; }
 
-      .diagnostic-card-panel {
-        flex-direction: column;
-        max-width: 500px;
-      }
-      .diagnostic-card-left, .diagnostic-card-right {
-        padding: 30px 25px;
-      }
-      .diagnostic-card-left h2 {
-        font-size: 1.8rem;
-      }
-      .diagnostic-card-right ul {
-        font-size: 1rem;
-      }
+      .diagnostic-card-panel { flex-direction: column; max-width: 500px; }
+      .diagnostic-card-left, .diagnostic-card-right { padding: 30px 25px; }
+      .diagnostic-card-left h2 { font-size: 1.8rem; }
+      .diagnostic-card-right ul { font-size: 1rem; }
     }
 
     @media (max-width: 768px) {
-      /* Navigation Bar Drawer Mobile Fix */
-      .mobile-menu-toggle {
-        display: flex;
-      }
+      .mobile-menu-toggle { display: flex; }
 
       .nav-links {
         position: absolute;
@@ -1349,88 +1459,30 @@
         display: none;
       }
 
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
+      .login-btn-nav { width: 80%; margin-top: 10px; }
 
-      .login-btn-nav {
-        width: 80%;
-        margin-top: 10px;
-      }
-
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-left {
-        align-items: center;
-        text-align: center;
-      }
-      .title-sans-row {
-        justify-content: center;
-      }
-      .school-card-window {
-        width: 100%;
-        height: 280px;
-      }
-      .subscription-cards-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .remodeled-plan-card-sketch {
-        width: 100%;
-        max-width: 340px;
-      }
+      .hero-content { flex-direction: column; text-align: center; }
+      .hero-left { align-items: center; text-align: center; }
+      .title-sans-row { justify-content: center; }
+      .school-card-window { width: 100%; height: 280px; }
+      .subscription-cards-grid { flex-direction: column; align-items: center; }
+      .remodeled-plan-card-sketch { width: 100%; max-width: 340px; }
       
-      .panel-navy-bg-fullwidth {
-        padding-top: 40px;
-        padding-bottom: 40px;
-      }
+      .panel-navy-bg-fullwidth { padding-top: 40px; padding-bottom: 40px; }
+      .raise-score-title-serif { font-size: 2.2rem; margin-bottom: 6px; }
+      .raise-score-subtitle-arial { font-size: 1rem; margin-bottom: 25px; }
 
-      .raise-score-title-serif {
-        font-size: 2.2rem;
-        margin-bottom: 6px;
-      }
+      .timeline-step { gap: 15px; }
+      .step-number { width: 48px; height: 48px; font-size: 1.3rem; }
+      .timeline-container::before { left: 23px; }
 
-      .raise-score-subtitle-arial {
-        font-size: 1rem;
-        margin-bottom: 25px;
-      }
+      .reviews-section-fullwidth { padding: 35px 0 0 0; }
+      .score-stripe-item-blue, .score-stripe-item-green { font-size: 1.1rem; }
+      .score-stripe-carousel-blue, .score-stripe-carousel-green { padding: 16px 0; }
+      .see-for-yourself-arrow { font-size: 2.2rem; }
 
-      .timeline-step {
-        gap: 15px;
-      }
-      .step-number {
-        width: 48px;
-        height: 48px;
-        font-size: 1.3rem;
-      }
-      .timeline-container::before {
-        left: 23px;
-      }
-
-      .reviews-section-fullwidth {
-        padding: 35px 0 0 0;
-      }
-
-      .score-stripe-item-blue,
-      .score-stripe-item-green {
-        font-size: 1.1rem;
-      }
-      .score-stripe-carousel-blue,
-      .score-stripe-carousel-green {
-        padding: 16px 0;
-      }
-      .see-for-yourself-arrow {
-        font-size: 2.2rem;
-      }
-
-      /* Modal adjustments for mobile */
-      .modal-container-wrapper {
-        position: relative;
-        padding: 0 10px;
-      }
-
+      .modal-container-wrapper { position: relative; padding: 0 10px; }
       .modal-nav-arrow {
         position: absolute;
         top: 50%;
@@ -1438,23 +1490,20 @@
         z-index: 10;
         background-color: rgba(255, 255, 255, 0.95);
       }
-
       #prevBtn { left: -10px; }
       #nextBtn { right: -10px; }
 
-      .circle-panel {
-        width: 280px;
-        height: 280px;
-      }
+      .circle-panel { width: 280px; height: 280px; }
       .pill-1 { transform: rotate(-7deg) translateX(-20px); }
       .pill-2 { transform: rotate(8deg) translateX(20px); }
       .pill-3 { transform: rotate(-5deg) translateX(-10px); }
       .pill-4 { transform: rotate(6deg) translateX(20px); }
       .pill-5 { transform: rotate(-6deg) translateX(-10px); }
-      .tilted-pill {
-        font-size: 0.85rem;
-        padding: 8px 14px;
-      }
+      .tilted-pill { font-size: 0.85rem; padding: 8px 14px; }
+
+      .section-cards-container { flex-direction: column; gap: 15px; }
+      .light-blue-outer-card { padding: 20px 15px; }
+      .cream-inner-panel { padding: 20px 15px; }
     }
   </style>
 </head>
@@ -1967,14 +2016,46 @@
     </div>
   </div>
 
-  <!-- FULL-SCREEN SECTION SELECTION OVERLAY -->
+  <!-- REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY (FULL SCREEN) -->
   <div id="sectionSelectOverlay" class="section-select-overlay">
-    <span class="diagnostic-popup-close" style="color: #ffffff;" onclick="closeSectionSelectOverlay()">&times;</span>
-    <h2>Select Diagnostic Section</h2>
-    <p>Choose which section you would like to start first.</p>
-    <div class="section-buttons-grid">
-      <button class="section-choice-btn" onclick="startTestSection('Math')">Math Section</button>
-      <button class="section-choice-btn" onclick="startTestSection('ELA')">ELA Section</button>
+    <div class="overlay-top-bar">
+      <div class="overlay-logo-group">
+        <div class="overlay-logo-text">
+          <span class="overlay-logo-shsat">SHSAT</span>
+          <span class="overlay-logo-cat">cat</span>
+        </div>
+        <div class="overlay-line-separator"></div>
+      </div>
+      <span class="overlay-close-x" onclick="closeSectionSelectOverlay()">&times;</span>
+    </div>
+
+    <div class="overlay-content-wrapper">
+      <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
+
+      <div class="light-blue-outer-card">
+        <div class="cream-inner-panel">
+          <h2 class="section-select-main-title">Section Selection</h2>
+          <p class="section-select-subtitle">choose which section you want first</p>
+
+          <div class="section-cards-container">
+            <div class="selection-panel-btn" id="elaBtn" onclick="selectSection('ELA')">
+              <div class="panel-checkbox"></div>
+              <span class="panel-btn-title">ELA First</span>
+            </div>
+
+            <div class="selection-panel-btn" id="mathBtn" onclick="selectSection('Math')">
+              <div class="panel-checkbox"></div>
+              <span class="panel-btn-title">Math First</span>
+            </div>
+          </div>
+
+          <div class="selected-section-text" id="selectedSectionDisplay">Selected section: None</div>
+
+          <div class="tip-notice-box">
+            Tip: On the new SHSAT You can't switch between sections, choose the section you are most confident in
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1991,7 +2072,6 @@
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
-        // Close menu on navigation on mobile screens
         navLinks.classList.remove('active');
       }
     }
@@ -2091,12 +2171,11 @@
       }
     }
 
-    /* Open Diagnostic Info Modal or Direct Overlay */
+    /* Open Diagnostic Readiness Overlay */
     function openDiagnosticInfoModal() {
       openDiagnosticOverlay();
     }
 
-    /* Diagnostic Readiness Full-Screen Overlay Logic */
     function openDiagnosticOverlay() {
       document.getElementById('diagnosticOverlay').style.display = 'flex';
     }
@@ -2115,9 +2194,28 @@
       document.getElementById('sectionSelectOverlay').style.display = 'none';
     }
 
-    function startTestSection(section) {
-      alert(`Starting ${section} section diagnostic!`);
-      closeSectionSelectOverlay();
+    /* Selection Logic for Section Selection Card Panels */
+    let chosenSection = 'None';
+
+    function selectSection(section) {
+      chosenSection = section;
+      const elaBtn = document.getElementById('elaBtn');
+      const mathBtn = document.getElementById('mathBtn');
+      const display = document.getElementById('selectedSectionDisplay');
+
+      if (section === 'ELA') {
+        elaBtn.classList.add('selected');
+        mathBtn.classList.remove('selected');
+        display.innerText = 'Selected section: ELA';
+      } else if (section === 'Math') {
+        mathBtn.classList.add('selected');
+        elaBtn.classList.remove('selected');
+        display.innerText = 'Selected section: Math';
+      }
+
+      setTimeout(() => {
+        alert(`Starting diagnostic test with ${section} section first!`);
+      }, 300);
     }
   </script>
 
