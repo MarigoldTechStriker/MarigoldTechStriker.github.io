@@ -142,7 +142,6 @@
       justify-content: center;
     }
 
-    /* CENTERED TOP BADGE */
     .boost-badge-top-wrapper {
       width: 100%;
       display: flex;
@@ -165,7 +164,6 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     }
 
-    /* TWO-COLUMN CONTENT GRID */
     .hero-content {
       max-width: 1300px;
       width: 100%;
@@ -176,7 +174,6 @@
       gap: 40px;
     }
 
-    /* LEFT COLUMN */
     .hero-left {
       flex: 1.2;
       display: flex;
@@ -246,7 +243,6 @@
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
     }
 
-    /* RIGHT COLUMN (Rotating Window) */
     .hero-right {
       flex: 1;
       display: flex;
@@ -326,7 +322,6 @@
       padding: 40px 20px 20px 20px;
     }
 
-    /* Section Panels */
     .panel {
       border: 2px solid #E0E0E0;
       background-color: #FAFAFA;
@@ -340,7 +335,6 @@
       margin-bottom: 12px;
     }
 
-    /* FULL-WIDTH SECTION: How We'll Raise Your Score */
     .panel-navy-bg-fullwidth {
       width: 100vw;
       position: relative;
@@ -525,424 +519,6 @@
       transform: scale(1.08) rotate(0deg);
     }
 
-    /* REVIEWS SECTION */
-    .reviews-section-fullwidth {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      padding: 60px 0 0 0;
-      background-color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      margin-bottom: 0;
-    }
-
-    .reviews-badge-panel {
-      background-color: #E8EEF5;
-      color: #1B3B6F;
-      border: 1px solid #D0DCEB;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      font-weight: normal;
-      padding: 8px 20px;
-      border-radius: 30px;
-      margin-bottom: 16px;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .reviews-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: bold;
-      text-align: center;
-      color: #1B3B6F;
-      margin-bottom: 30px;
-      padding: 0 20px;
-    }
-
-    .score-stripe-carousel-green {
-      width: 100vw;
-      position: relative;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      padding: 18px 0;
-      background-color: #E2F0D9;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
-
-    .score-stripe-track-green {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      width: max-content;
-      animation: stripeScroll 30s linear infinite;
-      padding-left: 30px;
-    }
-
-    .score-stripe-carousel-green:hover .score-stripe-track-green {
-      animation-play-state: paused;
-    }
-
-    .score-stripe-item-green {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 1.35rem;
-      font-weight: bold;
-      color: #155724;
-      white-space: nowrap;
-    }
-
-    .score-stripe-icon-green {
-      font-size: 1.4rem;
-      opacity: 0.85;
-    }
-
-    .stripe-arrow-green {
-      font-size: 1.2rem;
-      color: #28A745;
-      margin: 0 4px;
-    }
-
-    .reviews-carousel-full {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      padding: 10px 0 20px 0;
-    }
-
-    .reviews-track-full {
-      display: flex;
-      gap: 30px;
-      width: max-content;
-      animation: scrollReviewsFull 45s linear infinite;
-      padding-left: 30px;
-    }
-
-    .reviews-carousel-full:hover .reviews-track-full {
-      animation-play-state: paused;
-    }
-
-    .review-card-redesigned {
-      background-color: #F5F6F8;
-      border: 1px solid #E2E8F0;
-      border-radius: 28px;
-      padding: 28px 24px;
-      width: 380px;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .review-card-redesigned:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1);
-    }
-
-    .review-score-badge {
-      align-self: flex-start;
-      background-color: #D4EDDA;
-      color: #155724;
-      font-family: Arial, sans-serif;
-      font-size: 1rem;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 30px;
-      margin-bottom: 18px;
-      display: inline-block;
-      box-shadow: 0 2px 8px rgba(21, 87, 36, 0.12);
-    }
-
-    .review-description {
-      font-family: Arial, sans-serif;
-      font-size: 1.1rem;
-      color: #333333;
-      line-height: 1.4;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-
-    .review-profile-footer {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .review-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background-color: #1B3B6F;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .review-user-info {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .review-user-name {
-      font-family: Arial, sans-serif;
-      font-size: 1.05rem;
-      font-weight: bold;
-      color: #1B3B6F;
-    }
-
-    .review-user-caption {
-      font-family: Arial, sans-serif;
-      color: #666666;
-      display: flex;
-      align-items: baseline;
-      gap: 3px;
-    }
-
-    .caption-larger {
-      font-size: 0.95rem;
-      font-weight: bold;
-      color: #1B3B6F;
-    }
-
-    .caption-smaller {
-      font-size: 0.78rem;
-      font-weight: bold;
-      color: #1B3B6F;
-    }
-
-    @keyframes scrollReviewsFull {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .see-for-yourself-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 25px 0 35px 0;
-      text-align: center;
-    }
-
-    .see-for-yourself-text {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: bold;
-      color: #1B3B6F;
-      margin-bottom: 8px;
-    }
-
-    .see-for-yourself-arrow {
-      font-size: 2.8rem;
-      color: #1B3B6F;
-      line-height: 1;
-      animation: bounceDown 2s infinite;
-    }
-
-    @keyframes bounceDown {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(8px); }
-      60% { transform: translateY(4px); }
-    }
-
-    /* REDESIGNED FULL-WIDTH SUBSCRIPTION SECTION */
-    .subscription-panel-navy-fullwidth {
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      background-color: #1B3B6F;
-      padding: 60px 0;
-      margin-top: 20px;
-      margin-bottom: 0;
-      color: #ffffff;
-      text-align: center;
-      box-shadow: 0 6px 20px rgba(27, 59, 111, 0.15);
-    }
-
-    .subscription-title-serif {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: #ffffff;
-    }
-
-    .subscription-subtitle-arial {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.1rem;
-      color: #D1E0F5;
-      margin-bottom: 30px;
-      padding: 0 15px;
-    }
-
-    .score-stripe-carousel-blue {
-      width: 100vw;
-      position: relative;
-      margin-top: 0;
-      margin-bottom: 45px;
-      padding: 20px 0;
-      background-color: #E0EEF9;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
-
-    .score-stripe-track-blue {
-      display: flex;
-      align-items: center;
-      gap: 60px;
-      width: max-content;
-      animation: stripeScroll 30s linear infinite;
-      padding-left: 30px;
-    }
-
-    .score-stripe-carousel-blue:hover .score-stripe-track-blue {
-      animation-play-state: paused;
-    }
-
-    .score-stripe-item-blue {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-      font-size: 1.35rem;
-      font-weight: bold;
-      color: #1B3B6F;
-      white-space: nowrap;
-    }
-
-    .score-stripe-icon-blue {
-      font-size: 1.4rem;
-      opacity: 0.85;
-    }
-
-    .stripe-arrow-blue {
-      font-size: 1.2rem;
-      color: #007BFF;
-      margin: 0 4px;
-    }
-
-    @keyframes stripeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .subscription-cards-grid {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 20px;
-    }
-
-    .remodeled-plan-card-sketch {
-      background-color: #F7F8FA;
-      color: #333333;
-      border-radius: 28px;
-      width: 320px;
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      border: 2px solid transparent;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .remodeled-plan-card-sketch:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      border-color: #007BFF;
-    }
-
-    .card-top-badge {
-      align-self: center;
-      background-color: #E8EEF5;
-      color: #1B3B6F;
-      border: 1px solid #C0D2E8;
-      border-radius: 20px;
-      padding: 6px 18px;
-      font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      font-weight: bold;
-      margin-bottom: 22px;
-    }
-
-    .card-sketch-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #1B3B6F;
-      margin-bottom: 12px;
-      line-height: 1.15;
-    }
-
-    .card-sketch-placeholder {
-      font-family: Arial, sans-serif;
-      font-size: 0.95rem;
-      color: #555555;
-      line-height: 1.45;
-      margin-bottom: 35px;
-      flex-grow: 1;
-    }
-
-    .card-sketch-price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-top: auto;
-    }
-
-    .price-large {
-      font-family: Arial, sans-serif;
-      font-size: 2.3rem;
-      font-weight: bold;
-      color: #1B3B6F;
-    }
-
-    .price-small {
-      font-family: Arial, sans-serif;
-      font-size: 1.05rem;
-      font-weight: bold;
-      color: #555555;
-    }
-
-    .subscription-footer-caption {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.1rem;
-      color: #D1E0F5;
-      margin-top: 15px;
-      text-align: center;
-    }
-
     .resource-list {
       list-style-type: disc;
       padding-left: 25px;
@@ -958,132 +534,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-
-    .modal-container-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      max-width: 520px;
-      width: 100%;
-    }
-
-    .modal-nav-arrow {
-      background-color: rgba(255, 255, 255, 0.9);
-      border: 1px solid #CCCCCC;
-      color: #333333;
-      font-size: 1.5rem;
-      font-weight: bold;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: background-color 0.2s ease, transform 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .modal-nav-arrow:hover {
-      background-color: #007BFF;
-      color: #ffffff;
-      border-color: #007BFF;
-      transform: scale(1.05);
-    }
-
-    .modal-content {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
-      width: 100%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      position: relative;
-      animation: modalPop 0.2s ease-in-out;
-    }
-
-    @keyframes modalPop {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .modal-header {
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #333333;
-    }
-
-    .modal-line {
-      height: 2px;
-      background-color: #E0E0E0;
-      margin-bottom: 20px;
-    }
-
-    .modal-body {
-      font-size: 0.95rem;
-      color: #444444;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-
-    .modal-list {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-bottom: 15px;
-    }
-
-    .modal-list li { margin-bottom: 8px; }
-
-    .refund-note {
-      font-size: 0.85rem;
-      color: #888888;
-      font-style: italic;
-      margin-top: 10px;
-    }
-
-    .modal-action-btn {
-      background-color: #007BFF;
-      color: #ffffff;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-
-    .modal-action-btn:hover { background-color: #0056b3; }
-
-    .modal-close-btn {
-      background-color: transparent;
-      color: #666666;
-      border: 1px solid #CCCCCC;
-      padding: 8px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .modal-close-btn:hover { background-color: #F0F0F0; }
-
-    /* FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY */
+    /* Diagnostic Readiness Overlay */
     .diagnostic-popup-overlay {
       display: none;
       position: fixed;
@@ -1197,7 +648,7 @@
       transform: translateY(-1px);
     }
 
-    /* REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY */
+    /* SKETCH-BASED SECTION SELECTION OVERLAY */
     .section-select-overlay {
       display: none;
       position: fixed;
@@ -1205,14 +656,14 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #ffffff; /* Pure white background */
+      background-color: #ffffff; /* White background */
       z-index: 3000;
       flex-direction: column;
       box-sizing: border-box;
       overflow-y: auto;
     }
 
-    /* Top Bar for Section Selection Overlay */
+    /* Top Bar */
     .overlay-top-bar {
       width: 100%;
       height: 70px;
@@ -1239,7 +690,7 @@
       font-family: 'Times New Roman', Times, serif;
       font-size: 1.8rem;
       font-weight: bold;
-      color: #1B3B6F;
+      color: #1B3B6F; /* Logo, Navy blue */
     }
 
     .overlay-logo-cat {
@@ -1253,7 +704,7 @@
     .overlay-line-separator {
       width: 2px;
       height: 32px;
-      background-color: #C0C0C0;
+      background-color: #1B3B6F; /* Line separator */
     }
 
     .overlay-close-x {
@@ -1280,19 +731,25 @@
       padding: 30px 20px;
     }
 
+    /* Welcome Banner Bubble */
     .welcome-header-title {
       font-family: 'Times New Roman', Times, serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
       font-weight: bold;
       color: #1B3B6F;
       margin-bottom: 25px;
       text-align: center;
+      background-color: #ffffff;
+      border: 2px solid #1B3B6F;
+      border-radius: 30px;
+      padding: 10px 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    /* Light Blue Outer Centered Box with Rounded Corners */
+    /* Light Blue Outer Card Centered */
     .light-blue-outer-card {
-      background-color: #D0E4EF;
-      border-radius: 24px;
+      background-color: #D0E4EF; /* Light blue */
+      border-radius: 24px;       /* Rounded corners */
       padding: 35px 30px;
       max-width: 680px;
       width: 100%;
@@ -1301,7 +758,7 @@
       justify-content: center;
     }
 
-    /* Cream White Inner Box with Square Edges */
+    /* Cream White Inner Panel */
     .cream-inner-panel {
       background-color: #F5F5F0; /* Cream white background */
       border-radius: 0px;        /* Pure white square edges */
@@ -1314,24 +771,24 @@
     }
 
     .section-select-main-title {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #1B3B6F;
+      font-family: 'Times New Roman', Times, serif; /* Times New Roman */
+      font-size: 2.2rem;
+      font-weight: bold;        /* Bold */
+      color: #1B3B6F;           /* Navy Blue */
       margin-bottom: 4px;
-      text-align: center;
+      text-align: center;       /* Center */
     }
 
     .section-select-subtitle {
       font-family: Arial, sans-serif;
       font-size: 1rem;
-      font-weight: normal; /* Not bold */
-      color: #1B3B6F;     /* Navy Blue */
+      font-weight: normal;      /* Caption, not bold */
+      color: #1B3B6F;           /* Navy blue */
       margin-bottom: 25px;
       text-align: center;
     }
 
-    /* Panels Grid for ELA First and Math First */
+    /* Selection Panels Container */
     .section-cards-container {
       display: flex;
       gap: 25px;
@@ -1343,9 +800,9 @@
     .selection-panel-btn {
       flex: 1;
       background-color: #ffffff;
-      border: 2px solid #C0D0E0;
-      border-radius: 12px;
-      padding: 20px 15px;
+      border: 2px solid #1B3B6F;
+      border-radius: 16px;
+      padding: 25px 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1358,28 +815,27 @@
     }
 
     .selection-panel-btn:hover {
-      border-color: #1B3B6F;
       transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
 
     .selection-panel-btn.selected {
-      border-color: #1B3B6F;
       background-color: #EBF3FA;
+      border-color: #1B3B6F;
     }
 
     .panel-checkbox {
       position: absolute;
       top: 12px;
       right: 12px;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border: 2px solid #1B3B6F;
-      border-radius: 4px;
+      border-radius: 3px;
       background-color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s ease;
     }
 
     .selection-panel-btn.selected .panel-checkbox {
@@ -1389,7 +845,7 @@
     .selection-panel-btn.selected .panel-checkbox::after {
       content: '✓';
       color: #ffffff;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
     }
 
@@ -1398,13 +854,12 @@
       font-size: 1.4rem;
       font-weight: bold;
       color: #1B3B6F;
-      margin-top: 10px;
-      margin-bottom: 5px;
     }
 
     .selected-section-text {
       font-family: Arial, sans-serif;
       font-size: 1.05rem;
+      font-weight: bold;
       color: #1B3B6F;
       margin-bottom: 25px;
       text-align: center;
@@ -1413,7 +868,7 @@
     .tip-notice-box {
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
-      color: #444444;
+      color: #1B3B6F;
       line-height: 1.4;
       text-align: center;
       border-top: 1px solid #D0D0D0;
@@ -1421,86 +876,7 @@
       width: 100%;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 992px) {
-      header.hero-section { min-height: auto; padding: 40px 20px; }
-      .school-card-window { max-width: 100%; height: 320px; }
-      .raise-score-grid { flex-direction: column; gap: 30px; }
-      .circle-panel { width: 320px; height: 320px; }
-      .pill-1 { transform: rotate(-7deg) translateX(-60px); }
-      .pill-2 { transform: rotate(8deg) translateX(60px); }
-      .pill-3 { transform: rotate(-5deg) translateX(-50px); }
-      .pill-4 { transform: rotate(6deg) translateX(60px); }
-      .pill-5 { transform: rotate(-6deg) translateX(-50px); }
-      .tilted-pill { font-size: 0.95rem; padding: 10px 18px; }
-
-      .reviews-section-fullwidth { padding: 40px 0 0 0; }
-      .review-card-redesigned { width: 320px; min-height: 240px; padding: 20px 18px; }
-
-      .diagnostic-card-panel { flex-direction: column; max-width: 500px; }
-      .diagnostic-card-left, .diagnostic-card-right { padding: 30px 25px; }
-      .diagnostic-card-left h2 { font-size: 1.8rem; }
-      .diagnostic-card-right ul { font-size: 1rem; }
-    }
-
     @media (max-width: 768px) {
-      .mobile-menu-toggle { display: flex; }
-
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        flex-direction: column;
-        padding: 20px 0;
-        gap: 20px;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        display: none;
-      }
-
-      .nav-links.active { display: flex; }
-      .login-btn-nav { width: 80%; margin-top: 10px; }
-
-      .hero-content { flex-direction: column; text-align: center; }
-      .hero-left { align-items: center; text-align: center; }
-      .title-sans-row { justify-content: center; }
-      .school-card-window { width: 100%; height: 280px; }
-      .subscription-cards-grid { flex-direction: column; align-items: center; }
-      .remodeled-plan-card-sketch { width: 100%; max-width: 340px; }
-      
-      .panel-navy-bg-fullwidth { padding-top: 40px; padding-bottom: 40px; }
-      .raise-score-title-serif { font-size: 2.2rem; margin-bottom: 6px; }
-      .raise-score-subtitle-arial { font-size: 1rem; margin-bottom: 25px; }
-
-      .timeline-step { gap: 15px; }
-      .step-number { width: 48px; height: 48px; font-size: 1.3rem; }
-      .timeline-container::before { left: 23px; }
-
-      .reviews-section-fullwidth { padding: 35px 0 0 0; }
-      .score-stripe-item-blue, .score-stripe-item-green { font-size: 1.1rem; }
-      .score-stripe-carousel-blue, .score-stripe-carousel-green { padding: 16px 0; }
-      .see-for-yourself-arrow { font-size: 2.2rem; }
-
-      .modal-container-wrapper { position: relative; padding: 0 10px; }
-      .modal-nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.95);
-      }
-      #prevBtn { left: -10px; }
-      #nextBtn { right: -10px; }
-
-      .circle-panel { width: 280px; height: 280px; }
-      .pill-1 { transform: rotate(-7deg) translateX(-20px); }
-      .pill-2 { transform: rotate(8deg) translateX(20px); }
-      .pill-3 { transform: rotate(-5deg) translateX(-10px); }
-      .pill-4 { transform: rotate(6deg) translateX(20px); }
-      .pill-5 { transform: rotate(-6deg) translateX(-10px); }
-      .tilted-pill { font-size: 0.85rem; padding: 8px 14px; }
-
       .section-cards-container { flex-direction: column; gap: 15px; }
       .light-blue-outer-card { padding: 20px 15px; }
       .cream-inner-panel { padding: 20px 15px; }
@@ -1525,8 +901,6 @@
       <div class="nav-links" id="navLinks">
         <button class="nav-link-btn" onclick="scrollToSection('resources')">Resources</button>
         <button class="nav-link-btn" onclick="scrollToSection('raise-score')">How we help</button>
-        <button class="nav-link-btn" onclick="scrollToSection('reviews')">Reviews</button>
-        <button class="nav-link-btn" onclick="scrollToSection('subscriptions')">Plans</button>
         <button class="login-btn-nav" onclick="handleLogin()">Login</button>
       </div>
     </div>
@@ -1552,445 +926,23 @@
 
         <p class="hero-caption">Anywhere, anytime, with the best price.</p>
 
-        <button class="diagnostic-btn" onclick="openDiagnosticInfoModal()">
+        <button class="diagnostic-btn" onclick="openDiagnosticOverlay()">
           Free Diagnostic &rarr;
         </button>
-      </div>
-
-      <div class="hero-right">
-        <div class="school-card-window">
-          <div class="school-vertical-track">
-            <div class="school-item">Stuyvesant High School <span aria-hidden="true">🗽</span></div>
-            <div class="school-item">Bronx High School of Science <span aria-hidden="true">🧬</span></div>
-            <div class="school-item">Brooklyn Technical High School <span aria-hidden="true">🌉</span></div>
-            <div class="school-item">The Brooklyn Latin School <span aria-hidden="true">🏛️</span></div>
-            <div class="school-item">HS for Math, Science & Engineering at CCNY <span aria-hidden="true">📐</span></div>
-            <div class="school-item">HS of American Studies at Lehman <span aria-hidden="true">🇺🇸</span></div>
-            <div class="school-item">Queens HS for the Sciences at York <span aria-hidden="true">🐦</span></div>
-            <div class="school-item">Staten Island Technical High School <span aria-hidden="true">⛴️</span></div>
-
-            <div class="school-item">Stuyvesant High School <span aria-hidden="true">🗽</span></div>
-            <div class="school-item">Bronx High School of Science <span aria-hidden="true">🧬</span></div>
-            <div class="school-item">Brooklyn Technical High School <span aria-hidden="true">🌉</span></div>
-            <div class="school-item">The Brooklyn Latin School <span aria-hidden="true">🏛️</span></div>
-            <div class="school-item">HS for Math, Science & Engineering at CCNY <span aria-hidden="true">📐</span></div>
-            <div class="school-item">HS of American Studies at Lehman <span aria-hidden="true">🇺🇸</span></div>
-            <div class="school-item">Queens HS for the Sciences at York <span aria-hidden="true">🐦</span></div>
-            <div class="school-item">Staten Island Technical High School <span aria-hidden="true">⛴️</span></div>
-          </div>
-        </div>
       </div>
     </div>
   </header>
 
   <main class="container">
-
     <section id="resources" class="panel">
       <h3 class="panel-title">Resources</h3>
       <ul class="resource-list">
-        <li><a href="#" class="resource-link" onclick="openDiagnosticInfoModal(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
-        <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
+        <li><a href="#" class="resource-link" onclick="openDiagnosticOverlay(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
       </ul>
     </section>
-
-    <section id="raise-score" class="panel-navy-bg-fullwidth">
-      <div class="panel-navy-inner">
-        <h2 class="raise-score-title-serif">How We'll Help You</h2>
-        <p class="raise-score-subtitle-arial">A life-changing score is possible</p>
-
-        <div class="raise-score-grid">
-          
-          <div class="raise-score-left">
-            <div class="timeline-container">
-              <div class="timeline-step">
-                <div class="step-number">1</div>
-                <div class="step-card">
-                  <div class="step-title">Take a free diagnostic 🎯</div>
-                  <div class="step-caption">See your strengths and weaknesses</div>
-                </div>
-              </div>
-
-              <div class="timeline-step">
-                <div class="step-number">2</div>
-                <div class="step-card">
-                  <div class="step-title">Tailored Study Plan ✂</div>
-                  <div class="step-caption">Built to fit you and your goals.</div>
-                </div>
-              </div>
-
-              <div class="timeline-step">
-                <div class="step-number">3</div>
-                <div class="step-card">
-                  <div class="step-title">Practice ✊</div>
-                  <div class="step-caption">Practice modules to make sure you study what you need</div>
-                </div>
-              </div>
-
-              <div class="timeline-step">
-                <div class="step-number">4</div>
-                <div class="step-card">
-                  <div class="step-title">Test-Day Accurate Tests 🧪</div>
-                  <div class="step-caption">Prep with Theta Version 2 our testing engine that adapt question difficulty and fitted with new question formats</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="raise-score-right">
-            <div class="circle-panel">
-              <div class="tilted-pill pill-1">Weakness: Algebra</div>
-              <div class="tilted-pill pill-2">Difficulty: medium → hard</div>
-              <div class="tilted-pill pill-3">Updating study plan…</div>
-              <div class="tilted-pill pill-4">480 (+10 points)</div>
-              <div class="tilted-pill pill-5">Grammar Accuracy: 98% (+18%)</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" class="reviews-section-fullwidth">
-      <div class="reviews-badge-panel">
-        <span>Excellent Reviews</span>
-      </div>
-
-      <h2 class="reviews-title">Worked for hundreds of families.</h2>
-
-      <div class="reviews-carousel-full">
-        <div class="reviews-track-full">
-          
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 410 → 495</div>
-            <p class="review-description">Very helpful seeing what I need to study</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Ridwan S.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 420 → 501</div>
-            <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Maori S.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 450 → 535</div>
-            <p class="review-description">The tailored study plan made me so much better on the English section</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Ismael R.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 430 → 512</div>
-            <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Chris Z.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Parent</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 410 → 495</div>
-            <p class="review-description">Very helpful seeing what I need to study</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Ridwan S.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 420 → 501</div>
-            <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Maori S.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 450 → 535</div>
-            <p class="review-description">The tailored study plan made me so much better on the English section</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Ismael R.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Student</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="review-card-redesigned">
-            <div class="review-score-badge">SHSAT Score: 430 → 512</div>
-            <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
-            <div class="review-profile-footer">
-              <div class="review-avatar">👤</div>
-              <div class="review-user-info">
-                <span class="review-user-name">Chris Z.</span>
-                <div class="review-user-caption">
-                  <span class="caption-larger">SHSAT</span>
-                  <span class="caption-smaller">cat</span>
-                  <span class="caption-larger" style="margin-left: 3px;">Parent</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="score-stripe-carousel-green">
-        <div class="score-stripe-track-green">
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>496</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>494</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>502</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Zain SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>528</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>490</span>
-          </div>
-
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>496</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>494</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>502</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Zain SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>528</span>
-          </div>
-          <div class="score-stripe-item-green">
-            <span class="score-stripe-icon-green">👤</span>
-            <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-green">&rarr;</span>
-            <span>490</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <div class="see-for-yourself-container">
-      <div class="see-for-yourself-text">See for Yourself</div>
-      <div class="see-for-yourself-arrow">&darr;</div>
-    </div>
-
-    <section id="subscriptions" class="subscription-panel-navy-fullwidth">
-      <h2 class="subscription-title-serif">Choose the Plan for You</h2>
-      <p class="subscription-subtitle-arial">The more you practice, the better your score</p>
-
-      <div class="score-stripe-carousel-blue">
-        <div class="score-stripe-track-blue">
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>496</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>494</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>502</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Zain SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>528</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>490</span>
-          </div>
-
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Jahour SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>496</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Ashton SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>494</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Anusha SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>502</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Zain SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>528</span>
-          </div>
-          <div class="score-stripe-item-blue">
-            <span class="score-stripe-icon-blue">👤</span>
-            <span>Tanzin SHSAT</span>
-            <span class="stripe-arrow-blue">&rarr;</span>
-            <span>490</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="subscription-cards-grid">
-        
-        <div class="remodeled-plan-card-sketch" onclick="openModal('plan400')">
-          <div class="card-top-badge">2 months on us</div>
-          <div class="card-sketch-title">Annual Plan</div>
-          <div class="card-sketch-placeholder">More time to practice and boost your scores with our complete annual toolkit.</div>
-          <div class="card-sketch-price-row">
-            <span class="price-large">$400</span>
-            <span class="price-small">/year</span>
-          </div>
-        </div>
-
-        <div class="remodeled-plan-card-sketch" onclick="openModal('plan30')">
-          <div class="card-top-badge">Budget-Friendly</div>
-          <div class="card-sketch-title">Monthly Plan</div>
-          <div class="card-sketch-placeholder">Basics for what you need without breaking the bank. Great for steady practice.</div>
-          <div class="card-sketch-price-row">
-            <span class="price-large">$30</span>
-            <span class="price-small">/month</span>
-          </div>
-        </div>
-
-        <div class="remodeled-plan-card-sketch" onclick="openModal('plan40')">
-          <div class="card-top-badge">Most Popular</div>
-          <div class="card-sketch-title">Monthly Plan</div>
-          <div class="card-sketch-placeholder">Everything included with unlimited weekly computer-adaptive practice tests.</div>
-          <div class="card-sketch-price-row">
-            <span class="price-large">$40</span>
-            <span class="price-small">/month</span>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="subscription-footer-caption">Cancel anytime • Click on a plan for more details</p>
-    </section>
-
   </main>
 
-  <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
-    <div class="modal-container-wrapper">
-      <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
-      
-      <div class="modal-content">
-        <div id="modalHeader" class="modal-header">Subscription Header</div>
-        <div class="modal-line"></div>
-        <div id="modalBody" class="modal-body">Placeholder text</div>
-        <div id="modalFooter">
-          <button class="modal-close-btn" onclick="closeModal()">Close</button>
-        </div>
-      </div>
-
-      <button id="nextBtn" class="modal-nav-arrow" onclick="navigatePlan(1)">&gt;</button>
-    </div>
-  </div>
-
-  <!-- FULL-SCREEN DIAGNOSTIC READINESS OVERLAY -->
+  <!-- DIAGNOSTIC READINESS OVERLAY -->
   <div id="diagnosticOverlay" class="diagnostic-popup-overlay">
     <span class="diagnostic-popup-close" onclick="closeDiagnosticOverlay()">&times;</span>
     
@@ -2016,7 +968,7 @@
     </div>
   </div>
 
-  <!-- REDESIGNED SKETCH-BASED SECTION SELECTION OVERLAY (FULL SCREEN) -->
+  <!-- SECTION SELECTION OVERLAY (SKETCH EXACT MATCH) -->
   <div id="sectionSelectOverlay" class="section-select-overlay">
     <div class="overlay-top-bar">
       <div class="overlay-logo-group">
@@ -2060,122 +1012,6 @@
   </div>
 
   <script>
-    // Mobile Navigation Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    function scrollToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-        navLinks.classList.remove('active');
-      }
-    }
-
-    function handleLogin() {
-      alert('Login clicked!');
-    }
-
-    /* Subscription Modal Logic */
-    const planKeys = ['plan400', 'plan30', 'plan40'];
-    let currentPlanIndex = 0;
-
-    const planDetails = {
-      plan400: {
-        title: '$400 Plan',
-        features: [
-          'Unlimited computer-adaptive tests a week',
-          'Unlimited English and mathematics lesson practices',
-          'Tailored study plan and weakness remediation',
-          'Track your historical progress',
-          '2 months on us'
-        ],
-        refund: 'No refunds'
-      },
-      plan30: {
-        title: '$30 Plan',
-        features: [
-          '3 computer-adaptive tests a week',
-          'Unlimited English and mathematics lesson practices',
-          'Tailored study plan',
-          'Track your historical progress'
-        ],
-        refund: 'No refunds'
-      },
-      plan40: {
-        title: '$40 Plan',
-        features: [
-          'Unlimited computer-adaptive tests a week',
-          'Unlimited English and mathematics lesson practices',
-          'Tailored study plan and weakness remediation',
-          'Track your historical progress'
-        ],
-        refund: 'No refunds'
-      }
-    };
-
-    function renderPlanModal(planKey) {
-      const plan = planDetails[planKey];
-      if (!plan) return;
-
-      document.getElementById('modalHeader').innerText = plan.title;
-
-      let html = '<ul class="modal-list">';
-      plan.features.forEach(item => {
-        html += `<li>${item}</li>`;
-      });
-      html += '</ul>';
-      html += `<p class="refund-note">${plan.refund}</p>`;
-
-      document.getElementById('modalBody').innerHTML = html;
-      document.getElementById('modalFooter').innerHTML = `
-        <button class="modal-action-btn" onclick="alert('Proceeding to checkout...')">Subscribe Now</button>
-        <button class="modal-close-btn" onclick="closeModal()">Close</button>
-      `;
-
-      document.getElementById('prevBtn').style.visibility = 'visible';
-      document.getElementById('nextBtn').style.visibility = 'visible';
-    }
-
-    function openModal(planKey) {
-      currentPlanIndex = planKeys.indexOf(planKey);
-      if (currentPlanIndex === -1) currentPlanIndex = 0;
-
-      renderPlanModal(planKeys[currentPlanIndex]);
-      document.getElementById('subscriptionModal').style.display = 'flex';
-    }
-
-    function navigatePlan(direction) {
-      currentPlanIndex += direction;
-      if (currentPlanIndex < 0) {
-        currentPlanIndex = planKeys.length - 1;
-      } else if (currentPlanIndex >= planKeys.length) {
-        currentPlanIndex = 0;
-      }
-
-      renderPlanModal(planKeys[currentPlanIndex]);
-    }
-
-    function closeModal() {
-      document.getElementById('subscriptionModal').style.display = 'none';
-    }
-
-    function closeModalOutside(event) {
-      const modal = document.getElementById('subscriptionModal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
-
-    /* Open Diagnostic Readiness Overlay */
-    function openDiagnosticInfoModal() {
-      openDiagnosticOverlay();
-    }
-
     function openDiagnosticOverlay() {
       document.getElementById('diagnosticOverlay').style.display = 'flex';
     }
@@ -2184,7 +1020,6 @@
       document.getElementById('diagnosticOverlay').style.display = 'none';
     }
 
-    /* Proceed to Section Selection Overlay via Continue Button */
     function proceedToSectionSelection() {
       closeDiagnosticOverlay();
       document.getElementById('sectionSelectOverlay').style.display = 'flex';
@@ -2194,7 +1029,6 @@
       document.getElementById('sectionSelectOverlay').style.display = 'none';
     }
 
-    /* Selection Logic for Section Selection Card Panels */
     let chosenSection = 'None';
 
     function selectSection(section) {
@@ -2212,10 +1046,6 @@
         elaBtn.classList.remove('selected');
         display.innerText = 'Selected section: Math';
       }
-
-      setTimeout(() => {
-        alert(`Starting diagnostic test with ${section} section first!`);
-      }, 300);
     }
   </script>
 
