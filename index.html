@@ -1212,7 +1212,7 @@
       overflow-y: auto;
     }
 
-    /* Top Bar for Section Selection Overlay */
+    /* Top Bar for Section Selection Overlay - Changed to Pure White */
     .overlay-top-bar {
       width: 100%;
       height: 70px;
@@ -1220,7 +1220,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: transparent;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .overlay-logo-group {
@@ -1251,44 +1252,45 @@
 
     .overlay-close-x {
       font-family: Arial, sans-serif;
-      font-size: 1.8rem;
-      font-weight: normal;
-      color: #888888;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333333;
       cursor: pointer;
       user-select: none;
       transition: color 0.2s ease, transform 0.2s ease;
+      line-height: 1;
     }
 
     .overlay-close-x:hover {
-      color: #1B3B6F;
-      transform: scale(1.1);
+      color: #000000;
+      transform: scale(1.15);
     }
 
-    /* Main Content Wrapper */
+    /* Main Content Wrapper - Shifted up */
     .overlay-content-wrapper {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 30px 20px;
+      justify-content: flex-start;
+      padding: 25px 20px 40px 20px;
     }
 
-    /* Dedicated Container for Welcome Title (Light Blue, Rounded Corners, Centered) */
+    /* Dedicated Container for Welcome Title (Smaller and Moved Up) */
     .welcome-header-card {
       background-color: #D0E4EF;
-      border-radius: 35px;
-      padding: 16px 36px;
-      max-width: 500px;
+      border-radius: 25px;
+      padding: 10px 24px;
+      max-width: 400px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      margin-bottom: 25px; /* Separation from Section Selection container */
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+      margin-bottom: 15px;
     }
 
     .welcome-header-title {
       font-family: Arial, sans-serif;
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       font-weight: bold;
       color: #1B3B6F;
       margin: 0;
@@ -2023,7 +2025,7 @@
     </div>
 
     <div class="overlay-content-wrapper">
-      <!-- Separate Light Blue Rounded Container for Welcome Header -->
+      <!-- Separate Light Blue Rounded Container for Welcome Header (Smaller & Moved Up) -->
       <div class="welcome-header-card">
         <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
       </div>
