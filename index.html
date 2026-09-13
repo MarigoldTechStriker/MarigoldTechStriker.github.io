@@ -2210,6 +2210,46 @@
         display.innerText = 'Selected section: Math';
       }
     }
+
+    /* GLOBAL KEYBOARD SHORTCUT LISTENER */
+    document.addEventListener('keydown', (event) => {
+      const subModal = document.getElementById('subscriptionModal');
+      const diagOverlay = document.getElementById('diagnosticOverlay');
+      const sectionOverlay = document.getElementById('sectionSelectOverlay');
+
+      const isSubModalOpen = subModal.style.display === 'flex';
+      const isDiagOverlayOpen = diagOverlay.style.display === 'flex';
+      const isSectionOverlayOpen = sectionOverlay.style.display === 'flex';
+
+      // ESCAPE KEY: Close any open modal/overlay
+      if (event.key === 'Escape') {
+        if (isSectionOverlayOpen) {
+          closeSectionSelectOverlay();
+        } else if (isDiagOverlayOpen) {
+          closeDiagnosticOverlay();
+        } else if (isSubModalOpen) {
+          closeModal();
+        }
+      }
+
+      // ARROW KEYS: Navigate subscription modal when open
+      if (isSubModalOpen) {
+        if (event.key === 'ArrowLeft') {
+          navigatePlan(-1);
+        } else if (event.key === 'ArrowRight') {
+          navigatePlan(1);
+        }
+      }
+
+      // NUMERIC SHORTCUTS: Quick-select sections on section overlay
+      if (isSectionOverlayOpen) {
+        if (event.key === '1') {
+          selectSection('ELA');
+        } else if (event.key === '2') {
+          selectSection('Math');
+        }
+      }
+    });
   </script>
 
 </body>
