@@ -1403,8 +1403,37 @@
       font-family: Arial, sans-serif;
       font-size: 1.05rem;
       color: #1B3B6F;
-      margin-bottom: 25px;
+      margin-bottom: 18px;
       text-align: center;
+    }
+
+    /* Mobile-Friendly Clamped Section Continue Button */
+    .section-continue-btn {
+      margin-bottom: 25px;
+      background-color: #ffffff;
+      color: #888888;
+      border: 2px solid #CCCCCC;
+      padding: clamp(10px, 2vw, 14px) clamp(28px, 5vw, 42px);
+      border-radius: 25px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-continue-btn.active {
+      background-color: #007BFF;
+      color: #ffffff;
+      border-color: #007BFF;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    }
+
+    .section-continue-btn.active:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-1px);
     }
 
     .tip-notice-box {
@@ -2049,6 +2078,9 @@
 
         <div class="selected-section-text" id="selectedSectionDisplay">Selected section: None</div>
 
+        <!-- NEW MOBILE-FRIENDLY CLAMPED CONTINUE BUTTON -->
+        <button class="section-continue-btn" id="sectionContinueBtn">Continue →</button>
+
         <div class="tip-notice-box">
           <b>Tip:</b> On the new digital SHSAT you will choose which section you want to do first. You will not be able to switch between sections during the test until you finish your selected section so start with the section you are most confident in.
         </div>
@@ -2199,15 +2231,18 @@
       const elaBtn = document.getElementById('elaBtn');
       const mathBtn = document.getElementById('mathBtn');
       const display = document.getElementById('selectedSectionDisplay');
+      const continueBtn = document.getElementById('sectionContinueBtn');
 
       if (section === 'ELA') {
         elaBtn.classList.add('selected');
         mathBtn.classList.remove('selected');
         display.innerText = 'Selected section: ELA';
+        continueBtn.classList.add('active');
       } else if (section === 'Math') {
         mathBtn.classList.add('selected');
         elaBtn.classList.remove('selected');
         display.innerText = 'Selected section: Math';
+        continueBtn.classList.add('active');
       }
     }
 
