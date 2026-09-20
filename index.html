@@ -967,7 +967,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay - Updated with background blur & responsive flex alignment */
+    /* Modal Overlay - Background blur & responsive flex alignment */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -1019,7 +1019,7 @@
       color: #ffffff;
       border-color: #007BFF;
       transform: scale(1.05);
-      outline: 2px solid #0056b3;
+      outline: none;
     }
 
     .modal-content {
@@ -1061,14 +1061,14 @@
 
     /* CUSTOM NAVY BLUE CHECKMARK LIST FOR MODAL */
     .modal-list {
-      list-style: none; /* Removes standard bullets */
+      list-style: none;
       padding-left: 0;
       margin-bottom: 15px;
     }
 
     .modal-list li {
       position: relative;
-      padding-left: 28px; /* Room for custom checkmark icon */
+      padding-left: 28px;
       margin-bottom: 10px;
       font-size: 0.95rem;
       color: #444444;
@@ -1080,7 +1080,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      color: #1B3B6F; /* Matching Navy Blue */
+      color: #1B3B6F;
       font-weight: bold;
       font-size: 1.1rem;
     }
@@ -1105,11 +1105,16 @@
       margin-bottom: 10px;
       font-size: 1rem;
       transition: background-color 0.2s ease;
+      outline: none;
+      box-shadow: none;
     }
 
-    .modal-action-btn:hover, .modal-action-btn:focus-visible { 
+    .modal-action-btn:hover, 
+    .modal-action-btn:focus,
+    .modal-action-btn:focus-visible { 
       background-color: #0056b3; 
-      outline: 2px solid #003875;
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     .modal-close-btn {
@@ -1123,12 +1128,18 @@
       width: 100%;
       font-size: 0.95rem;
       font-weight: bold;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      outline: none;
+      box-shadow: none;
     }
 
-    .modal-close-btn:hover, .modal-close-btn:focus-visible { 
+    .modal-close-btn:hover, 
+    .modal-close-btn:focus,
+    .modal-close-btn:focus-visible { 
       background-color: #F0F0F0; 
-      outline: 2px solid #999999;
+      border-color: #BBBBBB;
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     /* FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY */
@@ -1139,7 +1150,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #EAEAEA; /* Cream White */
+      background-color: #EAEAEA;
       z-index: 3000;
       justify-content: center;
       align-items: center;
@@ -1245,7 +1256,7 @@
       transform: translateY(-1px);
     }
 
-    /* REDESIGNED SECTION SELECTION OVERLAY (CREAM WHITE BACKGROUND) */
+    /* REDESIGNED SECTION SELECTION OVERLAY */
     .section-select-overlay {
       display: none;
       position: fixed;
@@ -1253,14 +1264,13 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #EAEAEA; /* Cream White to match Diagnostic Readiness page */
+      background-color: #EAEAEA;
       z-index: 3000;
       flex-direction: column;
       box-sizing: border-box;
       overflow-y: auto;
     }
 
-    /* Top Bar for Section Selection Overlay - Changed to Pure White */
     .overlay-top-bar {
       width: 100%;
       height: 70px;
@@ -1314,7 +1324,6 @@
       transform: scale(1.15);
     }
 
-    /* Main Content Wrapper - Shifted up */
     .overlay-content-wrapper {
       flex: 1;
       display: flex;
@@ -1324,7 +1333,6 @@
       padding: 25px 20px 40px 20px;
     }
 
-    /* Dedicated Container for Welcome Title (Smaller and Moved Up) */
     .welcome-header-card {
       background-color: #D0E4EF;
       border-radius: 25px;
@@ -1344,10 +1352,9 @@
       margin: 0;
     }
 
-    /* Pure White Inner Box with Square Edges Direct on Cream White */
     .cream-inner-panel {
-      background-color: #ffffff; /* Pure white background */
-      border-radius: 0px;        /* Square edges */
+      background-color: #ffffff;
+      border-radius: 0px;
       border: 1px solid #D8D8D8;
       padding: 35px 30px;
       max-width: 680px;
@@ -1370,13 +1377,12 @@
     .section-select-subtitle {
       font-family: Arial, sans-serif;
       font-size: 0.95rem;
-      font-weight: normal; /* Not bold */
-      color: #1B3B6F;     /* Navy Blue */
+      font-weight: normal;
+      color: #1B3B6F;
       margin-bottom: 30px;
       text-align: center;
     }
 
-    /* Panels Grid for ELA First and Math First */
     .section-cards-container {
       display: flex;
       gap: 25px;
@@ -1455,7 +1461,6 @@
       text-align: center;
     }
 
-    /* Mobile-Friendly Clamped Section Continue Button */
     .section-continue-btn {
       margin-bottom: 25px;
       background-color: #ffffff;
@@ -1556,7 +1561,6 @@
       .score-stripe-carousel-blue, .score-stripe-carousel-green { padding: 16px 0; }
       .see-for-yourself-arrow { font-size: 2.2rem; }
 
-      /* Mobile optimized Modal Navigation Container */
       .modal-container-wrapper { 
         position: relative; 
         padding: 0 5px;
@@ -2054,7 +2058,6 @@
 
   </main>
 
-  <!-- Modal overlay updated with accessibility attributes -->
   <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)" role="dialog" aria-modal="true" aria-labelledby="modalHeader" aria-describedby="modalBody">
     <div class="modal-container-wrapper">
       <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)" aria-label="Previous Plan">&lt;</button>
@@ -2072,7 +2075,6 @@
     </div>
   </div>
 
-  <!-- FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY -->
   <div id="diagnosticOverlay" class="diagnostic-popup-overlay">
     <span class="diagnostic-popup-close" onclick="closeDiagnosticOverlay()">&times;</span>
     
@@ -2098,7 +2100,6 @@
     </div>
   </div>
 
-  <!-- REDESIGNED SECTION SELECTION OVERLAY (CREAM WHITE BACKGROUND) -->
   <div id="sectionSelectOverlay" class="section-select-overlay">
     <div class="overlay-top-bar">
       <div class="overlay-logo-group">
@@ -2111,12 +2112,10 @@
     </div>
 
     <div class="overlay-content-wrapper">
-      <!-- Separate Light Blue Rounded Container for Welcome Header (Smaller & Moved Up) -->
       <div class="welcome-header-card">
         <h1 class="welcome-header-title">Welcome, Diagnostic Taker!</h1>
       </div>
 
-      <!-- Pure White Square-Edge Inner Container Directly on Cream White -->
       <div class="cream-inner-panel">
         <h2 class="section-select-main-title">Section Selection</h2>
         <p class="section-select-subtitle">Choose which section you want to start first.</p>
@@ -2135,7 +2134,6 @@
 
         <div class="selected-section-text" id="selectedSectionDisplay">Selected section: None</div>
 
-        <!-- NEW MOBILE-FRIENDLY CLAMPED CONTINUE BUTTON -->
         <button class="section-continue-btn" id="sectionContinueBtn">Continue →</button>
 
         <div class="tip-notice-box">
@@ -2146,7 +2144,6 @@
   </div>
 
   <script>
-    // Mobile Navigation Drawer Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
 
@@ -2257,10 +2254,8 @@
       document.getElementById('subscriptionModal').style.display = 'flex';
       document.body.style.overflow = 'hidden';
 
-      // Pause score carousel scrolling while modal is active
       toggleCarouselAnimations(true);
 
-      // Focus close button for accessibility
       setTimeout(() => {
         const closeBtn = document.querySelector('#subscriptionModal .modal-close-btn');
         if (closeBtn) closeBtn.focus();
@@ -2282,7 +2277,6 @@
       document.getElementById('subscriptionModal').style.display = 'none';
       document.body.style.overflow = 'auto';
 
-      // Resume score carousel scrolling
       toggleCarouselAnimations(false);
 
       if (previouslyFocusedElement) {
@@ -2297,7 +2291,6 @@
       }
     }
 
-    /* Open Diagnostic Readiness Overlay */
     function openDiagnosticInfoModal() {
       openDiagnosticOverlay();
     }
@@ -2312,7 +2305,6 @@
       document.body.style.overflow = 'auto';
     }
 
-    /* Proceed to Section Selection Overlay via Continue Button */
     function proceedToSectionSelection() {
       closeDiagnosticOverlay();
       document.getElementById('sectionSelectOverlay').style.display = 'flex';
@@ -2324,7 +2316,6 @@
       document.body.style.overflow = 'auto';
     }
 
-    /* Selection Logic for Section Selection Card Panels */
     let chosenSection = 'None';
 
     function selectSection(section) {
@@ -2347,7 +2338,6 @@
       }
     }
 
-    /* GLOBAL KEYBOARD SHORTCUT LISTENER */
     document.addEventListener('keydown', (event) => {
       const subModal = document.getElementById('subscriptionModal');
       const diagOverlay = document.getElementById('diagnosticOverlay');
@@ -2357,7 +2347,6 @@
       const isDiagOverlayOpen = diagOverlay.style.display === 'flex';
       const isSectionOverlayOpen = sectionOverlay.style.display === 'flex';
 
-      // ESCAPE KEY: Close any open modal/overlay
       if (event.key === 'Escape') {
         if (isSectionOverlayOpen) {
           closeSectionSelectOverlay();
@@ -2368,7 +2357,6 @@
         }
       }
 
-      // ARROW KEYS: Navigate subscription modal when open
       if (isSubModalOpen) {
         if (event.key === 'ArrowLeft') {
           navigatePlan(-1);
@@ -2377,7 +2365,6 @@
         }
       }
 
-      // NUMERIC SHORTCUTS: Quick-select sections on section overlay
       if (isSectionOverlayOpen) {
         if (event.key === '1') {
           selectSection('ELA');
