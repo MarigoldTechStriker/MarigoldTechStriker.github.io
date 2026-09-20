@@ -1046,13 +1046,31 @@
       margin-bottom: 25px;
     }
 
+    /* CUSTOM NAVY BLUE CHECKMARK LIST FOR MODAL */
     .modal-list {
-      list-style-type: disc;
-      padding-left: 20px;
+      list-style: none; /* Removes standard bullets */
+      padding-left: 0;
       margin-bottom: 15px;
     }
 
-    .modal-list li { margin-bottom: 8px; }
+    .modal-list li {
+      position: relative;
+      padding-left: 28px; /* Room for custom checkmark icon */
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #444444;
+      line-height: 1.5;
+    }
+
+    .modal-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #1B3B6F; /* Matching Navy Blue */
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
 
     .refund-note {
       font-size: 0.85rem;
@@ -2161,7 +2179,7 @@
 
       document.getElementById('modalHeader').innerText = plan.title;
 
-      let html = '<ul class="modal-list">';
+      let html = '<ul class="modal-list" role="list">';
       plan.features.forEach(item => {
         html += `<li>${item}</li>`;
       });
