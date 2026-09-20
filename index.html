@@ -852,6 +852,11 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* Pause animation class dynamically toggled by JS when modal is open */
+    .carousel-paused {
+      animation-play-state: paused !important;
+    }
+
     .subscription-cards-grid {
       display: flex;
       justify-content: center;
@@ -962,7 +967,7 @@
 
     .resource-link:hover { color: #0056b3; }
 
-    /* Modal Overlay */
+    /* Modal Overlay - Updated with background blur & responsive flex alignment */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -971,10 +976,12 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       justify-content: center;
       align-items: center;
       z-index: 2000;
-      padding: 20px;
+      padding: 16px;
     }
 
     .modal-container-wrapper {
@@ -983,16 +990,18 @@
       gap: 12px;
       max-width: 520px;
       width: 100%;
+      position: relative;
     }
 
     .modal-nav-arrow {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       border: 1px solid #CCCCCC;
       color: #333333;
       font-size: 1.5rem;
       font-weight: bold;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1000,29 +1009,33 @@
       cursor: pointer;
       user-select: none;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
       flex-shrink: 0;
+      z-index: 10;
     }
 
-    .modal-nav-arrow:hover {
+    .modal-nav-arrow:hover, .modal-nav-arrow:focus-visible {
       background-color: #007BFF;
       color: #ffffff;
       border-color: #007BFF;
       transform: scale(1.05);
+      outline: 2px solid #0056b3;
     }
 
     .modal-content {
       background-color: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
+      padding: 28px 24px;
+      border-radius: 20px;
       width: 100%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       position: relative;
       animation: modalPop 0.2s ease-in-out;
     }
 
     @keyframes modalPop {
-      from { transform: scale(0.9); opacity: 0; }
+      from { transform: scale(0.92); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
 
@@ -1083,27 +1096,40 @@
       background-color: #007BFF;
       color: #ffffff;
       border: none;
+      min-height: 44px;
       padding: 12px 20px;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       width: 100%;
       margin-bottom: 10px;
+      font-size: 1rem;
+      transition: background-color 0.2s ease;
     }
 
-    .modal-action-btn:hover { background-color: #0056b3; }
+    .modal-action-btn:hover, .modal-action-btn:focus-visible { 
+      background-color: #0056b3; 
+      outline: 2px solid #003875;
+    }
 
     .modal-close-btn {
       background-color: transparent;
       color: #666666;
       border: 1px solid #CCCCCC;
-      padding: 8px 20px;
-      border-radius: 6px;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: 8px;
       cursor: pointer;
       width: 100%;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
     }
 
-    .modal-close-btn:hover { background-color: #F0F0F0; }
+    .modal-close-btn:hover, .modal-close-btn:focus-visible { 
+      background-color: #F0F0F0; 
+      outline: 2px solid #999999;
+    }
 
     /* FULL-SCREEN CUSTOM DIAGNOSTIC READINESS OVERLAY */
     .diagnostic-popup-overlay {
@@ -1530,16 +1556,24 @@
       .score-stripe-carousel-blue, .score-stripe-carousel-green { padding: 16px 0; }
       .see-for-yourself-arrow { font-size: 2.2rem; }
 
-      .modal-container-wrapper { position: relative; padding: 0 10px; }
-      .modal-nav-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.95);
+      /* Mobile optimized Modal Navigation Container */
+      .modal-container-wrapper { 
+        position: relative; 
+        padding: 0 5px;
+        max-width: 100%;
       }
-      #prevBtn { left: -10px; }
-      #nextBtn { right: -10px; }
+      .modal-content {
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+      .modal-nav-arrow {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 1.2rem;
+      }
+      #prevBtn { margin-right: -4px; }
+      #nextBtn { margin-left: -4px; }
 
       .circle-panel { width: 280px; height: 280px; }
       .pill-1 { transform: rotate(-7deg) translateX(-20px); }
@@ -2020,11 +2054,12 @@
 
   </main>
 
-  <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)">
+  <!-- Modal overlay updated with accessibility attributes -->
+  <div id="subscriptionModal" class="modal-overlay" onclick="closeModalOutside(event)" role="dialog" aria-modal="true" aria-labelledby="modalHeader" aria-describedby="modalBody">
     <div class="modal-container-wrapper">
-      <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)">&lt;</button>
+      <button id="prevBtn" class="modal-nav-arrow" onclick="navigatePlan(-1)" aria-label="Previous Plan">&lt;</button>
       
-      <div class="modal-content">
+      <div class="modal-content" tabIndex="-1">
         <div id="modalHeader" class="modal-header">Subscription Header</div>
         <div class="modal-line"></div>
         <div id="modalBody" class="modal-body">Placeholder text</div>
@@ -2033,7 +2068,7 @@
         </div>
       </div>
 
-      <button id="nextBtn" class="modal-nav-arrow" onclick="navigatePlan(1)">&gt;</button>
+      <button id="nextBtn" class="modal-nav-arrow" onclick="navigatePlan(1)" aria-label="Next Plan">&gt;</button>
     </div>
   </div>
 
@@ -2134,6 +2169,7 @@
     /* Subscription Modal Logic */
     const planKeys = ['plan400', 'plan30', 'plan40'];
     let currentPlanIndex = 0;
+    let previouslyFocusedElement = null;
 
     const planDetails = {
       plan400: {
@@ -2196,12 +2232,39 @@
       document.getElementById('nextBtn').style.visibility = 'visible';
     }
 
+    function toggleCarouselAnimations(pause) {
+      const greenTrack = document.querySelector('.score-stripe-track-green');
+      const blueTrack = document.querySelector('.score-stripe-track-blue');
+      const reviewsTrack = document.querySelector('.reviews-track-full');
+
+      if (pause) {
+        if (greenTrack) greenTrack.classList.add('carousel-paused');
+        if (blueTrack) blueTrack.classList.add('carousel-paused');
+        if (reviewsTrack) reviewsTrack.classList.add('carousel-paused');
+      } else {
+        if (greenTrack) greenTrack.classList.remove('carousel-paused');
+        if (blueTrack) blueTrack.classList.remove('carousel-paused');
+        if (reviewsTrack) reviewsTrack.classList.remove('carousel-paused');
+      }
+    }
+
     function openModal(planKey) {
+      previouslyFocusedElement = document.activeElement;
       currentPlanIndex = planKeys.indexOf(planKey);
       if (currentPlanIndex === -1) currentPlanIndex = 0;
 
       renderPlanModal(planKeys[currentPlanIndex]);
       document.getElementById('subscriptionModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      // Pause score carousel scrolling while modal is active
+      toggleCarouselAnimations(true);
+
+      // Focus close button for accessibility
+      setTimeout(() => {
+        const closeBtn = document.querySelector('#subscriptionModal .modal-close-btn');
+        if (closeBtn) closeBtn.focus();
+      }, 50);
     }
 
     function navigatePlan(direction) {
@@ -2217,12 +2280,20 @@
 
     function closeModal() {
       document.getElementById('subscriptionModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+
+      // Resume score carousel scrolling
+      toggleCarouselAnimations(false);
+
+      if (previouslyFocusedElement) {
+        previouslyFocusedElement.focus();
+      }
     }
 
     function closeModalOutside(event) {
       const modal = document.getElementById('subscriptionModal');
       if (event.target === modal) {
-        modal.style.display = 'none';
+        closeModal();
       }
     }
 
@@ -2233,20 +2304,24 @@
 
     function openDiagnosticOverlay() {
       document.getElementById('diagnosticOverlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
 
     function closeDiagnosticOverlay() {
       document.getElementById('diagnosticOverlay').style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
 
     /* Proceed to Section Selection Overlay via Continue Button */
     function proceedToSectionSelection() {
       closeDiagnosticOverlay();
       document.getElementById('sectionSelectOverlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
 
     function closeSectionSelectOverlay() {
       document.getElementById('sectionSelectOverlay').style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
 
     /* Selection Logic for Section Selection Card Panels */
