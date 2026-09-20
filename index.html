@@ -952,6 +952,108 @@
       text-align: center;
     }
 
+    /* YTTRIUM SECTION */
+    .yttrium-section-fullwidth {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding: 80px 0;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .yttrium-inner {
+      max-width: 900px;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .yttrium-greeting {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: #1B3B6F;
+      margin-bottom: 4px;
+    }
+
+    .yttrium-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .yttrium-subtitle {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #1B3B6F;
+      margin-bottom: 40px;
+    }
+
+    .yttrium-list {
+      text-align: left;
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .yttrium-list li {
+      color: #1B3B6F;
+      font-weight: bold;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      margin-bottom: 14px;
+    }
+
+    .yttrium-action-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 580px;
+    }
+
+    .yttrium-btn {
+      background-color: #007BFF;
+      color: #ffffff;
+      border: 2px solid #007BFF;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 123, 255, 0.25);
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .yttrium-btn:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 123, 255, 0.35);
+    }
+
+    .yttrium-tagline {
+      font-family: Arial, sans-serif;
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+      color: #1B3B6F;
+    }
+
     .resource-list {
       list-style-type: disc;
       padding-left: 25px;
@@ -1520,6 +1622,8 @@
       .diagnostic-card-left, .diagnostic-card-right { padding: 30px 25px; }
       .diagnostic-card-left h2 { font-size: 1.8rem; }
       .diagnostic-card-right ul { font-size: 1rem; }
+      
+      .yttrium-section-fullwidth { padding: 60px 0; }
     }
 
     @media (max-width: 768px) {
@@ -1589,6 +1693,16 @@
 
       .section-cards-container { flex-direction: column; gap: 15px; }
       .cream-inner-panel { padding: 20px 15px; }
+
+      .yttrium-action-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .yttrium-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -2054,6 +2168,32 @@
       </div>
 
       <p class="subscription-footer-caption">Cancel anytime • Click on a plan for more details</p>
+    </section>
+
+    <!-- NEW YTTRIUM SECTION -->
+    <section class="yttrium-section-fullwidth">
+      <div class="yttrium-inner">
+        <p class="yttrium-greeting">Say hello to &rarr;</p>
+        <h2 class="yttrium-title">Yttrium</h2>
+        <p class="yttrium-subtitle">Your all-in-one classroom solution</p>
+
+        <ul class="modal-list yttrium-list" role="list">
+          <li>Assign practice tests and modules</li>
+          <li>Access student analytics</li>
+          <li>Create dynamic focus groups</li>
+          <li>Instant grading</li>
+          <li>Instantly identify student weaknesses</li>
+          <li>Access to a vast question bank</li>
+          <li>Historical data tracking</li>
+        </ul>
+
+        <div class="yttrium-action-row">
+          <button class="yttrium-btn" onclick="alert('Learning more about Yttrium...')">
+            Learn More &rarr;
+          </button>
+          <span class="yttrium-tagline">For students, for tutors, for You</span>
+        </div>
+      </div>
     </section>
 
   </main>
