@@ -6,7 +6,7 @@
   <title>Ever Upwards! - SHSAT Prep</title>
   
   <meta name="description" content="Master the Specialized High School Admissions Test (SHSAT) with our tailored resources and plans. Buy a plan today to access realistic practice tests, plenty of practice modules, and a study plan for you. Get a free diagnostic today and start your journey to a life-changing score.">
-  <meta name="robots" content="index">
+  <meta name="robots" content="index, follow">
   
   <style>
     * {
@@ -324,7 +324,7 @@
     }
 
     /* Main Container */
-    .container {
+    main#main-content {
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px 20px 20px;
@@ -987,7 +987,7 @@
     }
 
     .yttrium-title {
-      font-family: Arial, Helvetica, san-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(3rem, 6.5vw, 4.5rem);
       font-weight: bold;
       color: #1B3B6F;
@@ -1716,7 +1716,7 @@
 </head>
 <body>
 
-  <nav class="top-nav">
+  <nav class="top-nav" aria-label="Main Navigation">
     <div class="nav-container">
       <div class="nav-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <span class="logo-shsat">SHSAT</span>
@@ -1749,12 +1749,14 @@
     <div class="hero-content">
       <div class="hero-left">
         <div class="hero-title-group">
-          <span class="title-serif">Your Dream School</span>
-          <div class="title-sans-row">
-            <span class="title-serif">Is Reality</span>
-            <span class="hero-arrow">&gt;</span>
-          </div>
-          <span class="title-serif">With Us</span>
+          <h1 class="title-serif">
+            Your Dream School
+            <span class="title-sans-row">
+              Is Reality
+              <span class="hero-arrow">&gt;</span>
+            </span>
+            With Us
+          </h1>
         </div>
 
         <p class="hero-caption">Anywhere, anytime, with the best price.</p>
@@ -1790,12 +1792,13 @@
     </div>
   </header>
 
-  <main class="container">
+  <!-- SEMANTIC MAIN CONTENT WRAPPER FOR SEO & AI CRAWLERS -->
+  <main id="main-content" class="container">
 
     <section id="resources" class="panel">
-      <h3 class="panel-title">Resources</h3>
+      <h2 class="panel-title">Resources</h2>
       <ul class="resource-list">
-        <li><a href="#" class="resource-link" onclick="openDiagnosticInfoModal(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
+        <li><a href="#resources" class="resource-link" onclick="openDiagnosticInfoModal(); return false;">Free SHSAT Diagnostic Test & Score Breakdown</a></li>
         <li><a href="#" class="resource-link">SHSAT Exam Structure & Timing Guide</a></li>
       </ul>
     </section>
@@ -1867,7 +1870,7 @@
       <div class="reviews-carousel-full">
         <div class="reviews-track-full">
           
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 410 → 495</div>
             <p class="review-description">Very helpful seeing what I need to study</p>
             <div class="review-profile-footer">
@@ -1881,9 +1884,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 420 → 501</div>
             <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
             <div class="review-profile-footer">
@@ -1897,9 +1900,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 450 → 535</div>
             <p class="review-description">The tailored study plan made me so much better on the English section</p>
             <div class="review-profile-footer">
@@ -1913,9 +1916,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 430 → 512</div>
             <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
             <div class="review-profile-footer">
@@ -1929,9 +1932,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 410 → 495</div>
             <p class="review-description">Very helpful seeing what I need to study</p>
             <div class="review-profile-footer">
@@ -1945,9 +1948,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 420 → 501</div>
             <p class="review-description">The practice tests are very accurate to what I saw on the real thing</p>
             <div class="review-profile-footer">
@@ -1961,9 +1964,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 450 → 535</div>
             <p class="review-description">The tailored study plan made me so much better on the English section</p>
             <div class="review-profile-footer">
@@ -1977,9 +1980,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="review-card-redesigned">
+          <article class="review-card-redesigned">
             <div class="review-score-badge">SHSAT Score: 430 → 512</div>
             <p class="review-description">Great price and incredible practice modules. Got accepted into Stuyvesant!</p>
             <div class="review-profile-footer">
@@ -1993,7 +1996,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </article>
 
         </div>
       </div>
@@ -2066,10 +2069,10 @@
 
     </section>
 
-    <div class="see-for-yourself-container">
+    <aside class="see-for-yourself-container" aria-label="Call to Action Indicator">
       <div class="see-for-yourself-text">See for Yourself</div>
       <div class="see-for-yourself-arrow">&darr;</div>
-    </div>
+    </aside>
 
     <section id="subscriptions" class="subscription-panel-navy-fullwidth">
       <h2 class="subscription-title-serif">Choose the Plan for You</h2>
@@ -2194,8 +2197,8 @@
           <li>Having private one-on-one classrooms</li>
           <li>Creating dynamic focus groups</li>
           <li>Instantly check class schedules and rosters</li>
-          <span class="yttrium-tagline">Yttrium: Answering every Y.</span>
         </ul>
+        <p class="yttrium-tagline">Yttrium: Answering every Y.</p>
 
         <div class="yttrium-action-row">
           <button class="yttrium-btn" onclick="alert('Learning more about Yttrium...')">
