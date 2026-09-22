@@ -1,1 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yttrium Classrooms - SHSAT Prep</title>
+  
+  <meta name="description" content="Yttrium Classrooms: Built for tutors to inspire the future. Manage rosters, assign practice tests, and track student performance seamlessly.">
+  <meta name="robots" content="index, follow">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    body {
+      background-color: #ffffff;
+      color: #1B3B6F;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #1B3B6F;
+      color: #ffffff;
+      padding: 8px 16px;
+      z-index: 2000;
+      text-decoration: none;
+      border-radius: 0 0 8px 0;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      min-height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: baseline;
+      text-decoration: none;
+      color: #1B3B6F;
+      font-weight: bold;
+    }
+
+    .logo-shsat {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.8rem;
+      color: #1B3B6F;
+    }
+
+    .logo-cat {
+      font-size: 1.1rem;
+      color: #1B3B6F;
+      margin-left: 2px;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: #1B3B6F;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-link-btn {
+      color: #1B3B6F;
+      font-size: 0.98rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link-btn:hover, .nav-link-btn:focus-visible {
+      color: #007BFF;
+      outline: 2px solid #007BFF;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .login-btn-nav {
+      background-color: #1B3B6F;
+      color: #ffffff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .login-btn-nav:hover, .login-btn-nav:focus-visible {
+      background-color: #0056b3;
+      outline: 2px solid #007BFF;
+      outline-offset: 2px;
+    }
+
+    /* Main Content Wrapper */
+    main#main-content {
+      width: 100%;
+      max-width: 800px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Hero Banner Area */
+    .pill-badge {
+      background-color: #D0E4EF;
+      color: #1B3B6F;
+      border-radius: 30px;
+      padding: 8px 24px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #1B3B6F;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+
+    .at-a-glance-badge {
+      background-color: #E8EEF5;
+      color: #1B3B6F;
+      border: 1px solid #C0D2E8;
+      border-radius: 25px;
+      padding: 8px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    /* Checklist Section */
+    .checklist-container {
+      width: 100%;
+      max-width: 650px;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+
+    .modal-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .modal-list li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 20px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #1B3B6F;
+      line-height: 1.5;
+    }
+
+    .modal-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #1B3B6F;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    /* Section Header */
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 25px;
+    }
+
+    /* Dropdown Accordions */
+    .accordion-container {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .accordion-item {
+      border: 2px solid #1B3B6F;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #ffffff;
+      text-align: left;
+    }
+
+    .accordion-header {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 16px 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: #F2F7FC;
+    }
+
+    .accordion-header:focus-visible {
+      outline: 3px solid #007BFF;
+      outline-offset: -3px;
+    }
+
+    .accordion-icon {
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 0 20px 20px 20px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #1B3B6F;
+      border-top: 1px solid #D0E4EF;
+      padding-top: 15px;
+    }
+
+    .accordion-item.open .accordion-content {
+      display: block;
+    }
+
+    /* Pricing Panel */
+    .pricing-panel {
+      width: 100%;
+      max-width: 650px;
+      border: 2px solid #1B3B6F;
+      border-radius: 20px;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 6px 20px rgba(27, 59, 111, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #1B3B6F;
+      margin-bottom: 6px;
+    }
+
+    .pricing-subtitle {
+      font-size: 1rem;
+      color: #1B3B6F;
+      margin-bottom: 24px;
+      font-weight: normal;
+    }
+
+    .pricing-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .pricing-list li {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: #1B3B6F;
+      line-height: 1.4;
+    }
+
+    .get-started-btn {
+      background-color: #1B3B6F;
+      color: #ffffff;
+      border: 2px solid #1B3B6F;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .get-started-btn:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .get-started-btn:focus-visible {
+      outline: 3px solid #007BFF;
+      outline-offset: 3px;
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #1B3B6F;
+      border-top: 1px solid #E0E0E0;
+      margin-top: auto;
+    }
+
+    /* Mobile Responsive Rules */
+    @media (max-width: 768px) {
+      .mobile-menu-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+
+      .nav-links.active { display: flex; }
+      .login-btn-nav { width: 80%; }
+
+      .pricing-panel {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation Bar -->
+  <nav class="top-nav" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="SHSATcat Home">
+        <span class="logo-shsat">SHSAT</span>
+        <span class="logo-cat">cat</span>
+      </a>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link-btn">Home</a>
+        <a href="index.html#resources" class="nav-link-btn">Resources</a>
+        <a href="index.html#raise-score" class="nav-link-btn">How we help</a>
+        <a href="index.html#reviews" class="nav-link-btn">Reviews</a>
+        <a href="index.html#subscriptions" class="nav-link-btn">Plans</a>
+        <button class="login-btn-nav" onclick="alert('Login clicked!')">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Header -->
+    <header>
+      <div class="pill-badge">Welcome, Diagnostic users</div>
+      <h1 class="hero-title">Yttrium Classrooms</h1>
+      <p class="hero-subtitle">Built for tutors to inspire the future.</p>
+      <div class="at-a-glance-badge">At a Glance</div>
+    </header>
+
+    <!-- Checklist Section -->
+    <section class="checklist-container" aria-label="Yttrium Features Checklist">
+      <ul class="modal-list" role="list">
+        <li><b>Saving Your Valuable Time.</b> Instantly assign practice tests, access question banks, and grade results.</li>
+        <li><b>Acting On Insight.</b> We'll pinpoint student weaknesses and track their historical performance over time.</li>
+        <li><b>Flexible Classrooms.</b> Manage 1-on-1 sessions, dynamic focus groups, schedules, and rosters in one place.</li>
+        <li><b>Building Trust.</b> Our tools are already used by families across New York City to get into top high schools.</li>
+      </ul>
+    </section>
+
+    <!-- Learn More Section -->
+    <section aria-labelledby="learn-more-title" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+      <h2 id="learn-more-title" class="section-title">Learn More</h2>
+
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="accordion-1" id="accordion-header-1">
+            <span>How does Yttrium integrate with my current tutoring roster?</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div id="accordion-1" class="accordion-content" role="region" aria-labelledby="accordion-header-1">
+            Yttrium allows you to import student rosters instantly, set up 1-on-1 schedules, and group students into targeted focus groups with just a few clicks.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="accordion-2" id="accordion-header-2">
+            <span>Can I assign specific practice modules to individual students?</span>
+            <span class="accordion-icon" aria-hidden="true">▼</span>
+          </button>
+          <div id="accordion-2" class="accordion-content" role="region" aria-labelledby="accordion-header-2">
+            Yes, you can select custom question banks or full-length computer-adaptive tests and assign them directly to individual students or whole cohorts based on their identified weaknesses.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Started & Pricing Section -->
+    <section class="pricing-panel" aria-labelledby="get-started-title">
+      <h2 id="get-started-title" class="pricing-title">Get Started</h2>
+      <p class="pricing-subtitle">Minimum requirement of 4 students</p>
+
+      <ul class="pricing-list">
+        <li><b>$3/month</b> account fee for tutors</li>
+        <li><b>$25/month</b> account fee per student</li>
+      </ul>
+
+      <button class="get-started-btn" id="getStartedBtn" onclick="alert('Proceeding to Yttrium signup...')">
+        Get Started
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 SHSATcat. All rights reserved. Press <b>?</b> for keyboard shortcuts.</p>
+  </footer>
+
+  <script>
+    // Mobile Navigation Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+      navLinks.classList.toggle('active');
+    });
+
+    // Dropdown Accordion Toggle Logic
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        // Close all existing open items
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle requested item
+        if (!isOpen) {
+          item.classList.add('open');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Keyboard Shortcuts Event Handler
+    document.addEventListener('keydown', (event) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+      switch (event.key) {
+        case 'h':
+        case 'H':
+          window.location.href = 'index.html';
+          break;
+        case 's':
+        case 'S':
+          document.getElementById('getStartedBtn').focus();
+          break;
+        case '?':
+          alert('Keyboard Shortcuts:\n\n• H - Go to Home Page\n• S - Focus Get Started Button\n• Esc - Close Mobile Menu');
+          break;
+        case 'Escape':
+          if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.focus();
+          }
+          break;
+      }
+    });
+  </script>
+
+</body>
+</html>
